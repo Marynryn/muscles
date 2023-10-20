@@ -1,6 +1,7 @@
 @media screen and (min-width: 375px) {
 
 .modal-window {
+    position: relative;
     margin: 0 auto;
     width: 295px;
     border-radius: 20px;
@@ -20,7 +21,6 @@ display: flex;
 .name-exercies{
 color: #F4F4F4;
 margin-top: 20px;
-font-family: Neue Montreal;
 font-size: 20px;
 font-style: normal;
 font-weight: 500;
@@ -33,7 +33,6 @@ line-height: 20px;
     display: flex;
     flex-direction: row;
     color: #F4F4F4;
-    font-family: Neue Montreal;
     font-size: 12px;
     font-style: normal;
     font-weight: 400;
@@ -43,7 +42,6 @@ line-height: 20px;
 
 .info {
     color: #F4F4F4;
-    font-family: Neue Montreal;
     font-size: 14px;
     font-style: normal;
     font-weight: 500;
@@ -53,7 +51,6 @@ line-height: 20px;
 
 .name-info {
     color: rgba(244, 244, 244, 0.40);
-    font-family: Neue Montreal;
     font-size: 12px;        
     font-style: normal;
     font-weight: 400;
@@ -94,7 +91,6 @@ line-height: 20px;
 .description-of-exercises {
 margin-bottom: 20px;
 color: rgba(244, 244, 244, 0.60);
-font-family: Neue Montreal;
 font-size: 14px;
 font-style: normal;
 font-weight: 400;
@@ -104,7 +100,6 @@ line-height: 18px;
 
 .btn-add-to-favorites {
 color: #242424;
-font-family: Neue Montreal;
 font-size: 14px;
 font-style: normal;
 font-weight: 400;
@@ -118,4 +113,20 @@ gap: 8px;
 border-radius: 30px;
 background: #F4F4F4;
 }
+
+.button-close {
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    position: absolute;
+    right: 24px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    fill: #fff;
+}
+
+
 }
