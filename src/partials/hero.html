@@ -1,1 +1,72 @@
-<h1>Hello world</h1>
+<section class="hero-background">
+  <div class="container">
+    <div class="hero-container">
+      <div class="hero-box1">
+        <div class="first-section">
+          <h1 class="hero-header">
+            get <span class="hero-span">body</span> in shape,<span
+              class="hero-span"
+              >stay</span
+            >
+          </h1>
+
+          <div class="hero-subtitle">
+            <div class="hero-p">
+              Transform your physique and embrace a healthier lifestyle with our
+              comprehensive fitness and nutrition support.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-box2">
+        <div class="hero-image">
+          <picture>
+            <source
+              media="(min-width: 1280px)"
+              srcset="
+                ./img/hero-image-desktop-optim.png    1x,
+                ./img/hero-image-desktop-optim@2x.png 2x
+              "
+            />
+            <source
+              media="(min-width: 768px)"
+              srcset="
+                ./img/hero-image-tablet-optim.png    1x,
+                ./img/hero-image-tablet-optim@2x.png 2x
+              "
+            />
+            <source
+              media="(max-width: 767px)"
+              srcset="
+                ./img/hero-image-optim.png    1x,
+                ./img/hero-image-optim@2x.png 2x
+              "
+            />
+            <img
+              src="./img/hero-image-optim.png"
+              alt="womans"
+              width="704"
+              height="550"
+            />
+          </picture>
+        </div>
+      </div>
+      <div class="hero-filters-wrapper">
+        <div class="hero-filters">
+          <button type="button" class="hero-button-filters button-filter">
+            #Sport
+          </button>
+          <button type="button" class="hero-button-filters button-filter">
+            #Healthy
+          </button>
+          <button type="button" class="hero-button-filters button-filter">
+            #Workout
+          </button>
+          <button type="button" class="hero-button-filters button-filter">
+            #Diet
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
