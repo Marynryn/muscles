@@ -140,7 +140,7 @@
   text-overflow: ellipsis;
 }
 
-@media (min-width: 768px) {
+@media screen and (min-width: 768px) {
   .quote-list {
     flex-direction: row;
     flex-wrap: wrap;
@@ -183,7 +183,7 @@
   .quote-img-item {
     background-image: url('../img/quote/quote-tablet-exer-1x.jpg');
     width: 288px;
-    height: 258px;
+    height: 249px;
   }
 
   @media (min-device-pixel-ratio: 2),
@@ -203,7 +203,7 @@
   }
 }
 
-@media (min-width: 1440px) {
+@media screen and (min-width: 1440px) {
   .quote-list {
     flex-direction: column;
     gap: 32px;
