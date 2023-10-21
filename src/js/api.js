@@ -29,8 +29,6 @@ export const getData = async (method, page, limit, filter, txtfilter, bodypart, 
   return req.data;
 };
 
-// getData(method, null, null, quote);
-
 // Пишемо в свій JS Файл
 // import { getData } from './api.js';
 
