@@ -1,4 +1,4 @@
-import { getData } from './js/api';
+
 import './js/quote';
 import './js/body_parth';
 import './js/footer';
