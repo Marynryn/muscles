@@ -1,0 +1,230 @@
+.quote-list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  align-items: center;
+}
+
+.js-quote-item::after {
+  content: '';
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url('../img/quote/icon-comas.svg');
+}
+
+.js-quote-item::before {
+  content: '';
+  position: absolute;
+  left: 20px;
+  width: 34px;
+  height: 32px;
+  display: flex;
+  background-position: center;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-image: url('../img/quote/icon-run.svg');
+}
+
+.js-quote-item {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 20px 20px 72px;
+  border-radius: 20px;
+  position: relative;
+  background-color: var(--body-text-color);
+}
+
+.js-quote-title {
+  color: var(--background-color);
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.js-quote-text-container {
+  overflow: hidden;
+  width: 243px;
+  height: 88px;
+  margin-bottom: 16px;
+}
+.js-quote-text {
+  color: rgba(244, 244, 244, 0.6);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.28;
+}
+.js-quote-autor {
+  color: var(--background-color);
+}
+
+.quote-img {
+  border-radius: 20px;
+}
+
+.quote-img-item {
+  background-image: url('../img/quote/quote-mobile-exer-1x.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 335px;
+  height: 242px;
+  border-radius: 20px;
+}
+
+@media (min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
+  .quote-img-item {
+    background-image: url('../img/quote/quote-mobile-exer-2x.jpg');
+  }
+}
+
+.quote-static-item::before {
+  content: '';
+  position: absolute;
+  left: 20px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  background-position: center;
+  background-color: var(--body-text-color);
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-image: url('../img/quote/icon-pesos.svg');
+}
+
+.quote-static-item {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 20px 20px 70px;
+  border-radius: 20px;
+  position: relative;
+  background-color: var(--primary-white-color);
+}
+.quote-title {
+  color: var(--body-text-color);
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.quote-title-sec {
+  color: rgba(36, 36, 36, 0.6);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.28;
+  margin-bottom: 16px;
+}
+.quote-text-container {
+}
+
+.quote-text {
+  color: var(--body-text-color);
+  overflow: hidden;
+  width: 245px;
+  height: 105px;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.28;
+  text-overflow: ellipsis;
+}
+
+@media (min-width: 768px) {
+  .quote-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    row-gap: 16px;
+    column-gap: 32px;
+  }
+  .js-quote-item::after {
+    top: 40px;
+    right: 40px;
+    width: 24px;
+    height: 24px;
+  }
+
+  .js-quote-item::before {
+    left: 40px;
+  }
+  .js-quote-item {
+    padding: 40px 40px 40px 90px;
+  }
+  .js-quote-title {
+    font-size: 24px;
+    line-height: 1.33;
+  }
+  .js-quote-text-container {
+    overflow: hidden;
+    width: 270px;
+    margin-bottom: 18px;
+  }
+  .js-quote-text {
+    font-size: 16px;
+  }
+  .quote-static-item::before {
+    left: 40px;
+  }
+
+  .quote-static-item {
+    padding: 40px 40px 40px 90px;
+  }
+
+  .quote-img-item {
+    background-image: url('../img/quote/quote-tablet-exer-1x.jpg');
+    width: 288px;
+    height: 258px;
+  }
+
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    .quote-img-item {
+      background-image: url('../img/quote/quote-tablet-exer-2x.jpg');
+    }
+  }
+  .quote-title {
+    font-size: 24px;
+    line-height: 1.33;
+    margin-bottom: 6px;
+  }
+  .quote-text {
+    width: 270px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .quote-list {
+    flex-direction: column;
+    gap: 32px;
+  }
+  .js-quote-text-container {
+    width: 314px;
+  }
+  .quote-img-item {
+    background-image: url('../img/quote/quote-desctop-exer-1x.jpg');
+    width: 444px;
+    height: 242px;
+  }
+
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    .quote-img-item {
+      background-image: url('../img/quote/quote-desctop-exer-2x.jpg');
+    }
+  }
+  .quote-text {
+    width: 314px;
+  }
+}
