@@ -1,132 +1,203 @@
-@media screen and (min-width: 375px) {
+.is-hiden {
+
+}
 
 .modal-window {
-    position: relative;
-    margin: 0 auto;
-    width: 295px;
-    border-radius: 20px;
-    background: #242424;
-    color: aliceblue;
-    padding: 40px 20px;
+position: relative;
+margin: 0 auto;
+max-width: 100%;
+border-radius: 20px;
+background: var(--body-text-color);
+color: var(--background-color);
+padding:40px 20px;
+}
+
+.button-close {
+background-color: transparent;
+border: none;
+box-shadow: none;
+position: absolute;
+cursor: pointer;
+display: flex;
+justify-content: center;
+align-items: center;
+padding: 0;
+fill: var(--background-color);
+}
+
+/*!---------MOBILE---------*/
+
+@media screen and (min-width: 375px) {
+
+.button-close {
+top: 14px;
+right: 14px;
+}
+
+.modal-window {
+width: 335px;
+padding: 32px;
 }
 
 .modal-window img {
 display: flex;
-    width: 295px;
-    height: 258px;
-    justify-content: center;
-    align-items: center;
+border-radius: 12px;
+width: 295px;
+height: 258px;
+justify-content: center;
+align-items: center;
 }
 
 .name-exercies{
-color: #F4F4F4;
+color: var(--background-color);
 margin-top: 20px;
 font-size: 20px;
-font-style: normal;
 font-weight: 500;
-line-height: 20px; 
-/* 100% */
+line-height: 1;
+}
+
+.rating {
+color: var(--background-color);
+font-size: 12px;
 }
 
 .rating-stars {
-    margin-top: 10px;
-    display: flex;
-    flex-direction: row;
-    color: #F4F4F4;
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 18px;
-    /* 150% */
+margin-top: 10px;
+display: flex;
+flex-direction: row;
+color: var(--background-color);
+font-size: 12px;
 }
 
 .info {
-    color: #F4F4F4;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 18px;
-    /* 128.571% */
+color: var(--background-color);
+font-size: 14px;
+font-weight: 500;
+line-height: 1,28;
 }
 
 .name-info {
-    color: rgba(244, 244, 244, 0.40);
-    font-size: 12px;        
-    font-style: normal;
-    font-weight: 400;
-    line-height: 18px;
-    /* 150% */
+color: rgba(244, 244, 244, 0.40);
+font-size: 12px;
 }
 
 .options-info {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
+display: flex;
+flex-direction: column;
+gap: 4px;
 }
 
 .info-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
+display: flex;
+flex-wrap: wrap;
+gap: 20px;
 }
 
 .info-of-exercises::before {
-    content: '';
-    display: block;
-    height: 2px;
-    background: rgba(244, 244, 244, 0.20);
-    width: 295px;
-    margin: 20px auto 8px;
+content: '';
+display: block;
+height: 1px;
+background: rgba(244, 244, 244, 0.20);
+width: 100%;
+margin: 20px auto 8px;
 }
 
 .info-of-exercises::after {
-    content: '';
-    display: block;
-    height: 2px;
-    background: rgba(244, 244, 244, 0.20);
-    width: 295px;
-    margin: 8px auto 20px;
+content: '';
+display: block;
+height: 1px;
+background: rgba(244, 244, 244, 0.20);
+width: 100%;
+margin: 8px auto 20px;
 }
 
 .description-of-exercises {
 margin-bottom: 20px;
 color: rgba(244, 244, 244, 0.60);
 font-size: 14px;
-font-style: normal;
-font-weight: 400;
-line-height: 18px;
-/* 128.571% */
+line-height: 1,28;
 }
 
 .btn-add-to-favorites {
 color: #242424;
+width: 183px;
+height: 48px;
 font-size: 14px;
-font-style: normal;
-font-weight: 400;
-line-height: 18px;
-/* 128.571% */
+line-height: 1,28;
 display: flex;
 padding: 12px 24px;
 justify-content: center;
 align-items: center;
 gap: 8px;
 border-radius: 30px;
-background: #F4F4F4;
+background: var(--background-color);
+}
+}
+
+/*!---------TABLET---------*/
+
+@media screen and (min-width: 768px) {
+.modal-window {
+    width: 704px;
+    padding: 32px;
+}
+
+.modal-window img {
+    width: 270px;
+    height: 259px;
+}
+
+
+.img-and-text {
+    display: flex;
+    flex-direction: row;
+    gap: 28px;
+}
+
+.name-exercies {
+    margin: 0;
+    font-size: 24px;
+    line-height: 32px;
 }
 
 .button-close {
-    background-color: transparent;
-    border: none;
-    box-shadow: none;
-    position: absolute;
-    right: 24px;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0;
-    fill: #fff;
+    top: 16px;
+    right: 16px;
+    width: 24px;
+    height: 24px;
 }
 
+.info-list {
+    gap: 16px;
+}
 
+.info-of-exercises::before {
+    margin: 16px auto 8px;
+}
+
+.info-of-exercises::after {
+    margin: 8px auto 16px;
+}
+
+ .description-of-exercises {
+    margin-bottom: 64px;
+ }
+
+ .btn-add-to-favorites {
+     color: var(--body-text-color);
+
+ }
+
+ .rating-stars{
+    margin-top: 8px;
+ }
+
+}
+
+/*!---------DESKTOP---------*/
+
+@media screen and (min-width: 1440px) {
+    .modal-window {
+        width: 708px;
+    }
 }
