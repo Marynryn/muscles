@@ -1,5 +1,4 @@
 import axios from 'axios';
-
 const BASE_URL = 'https://your-energy.b.goit.study/api/';
 
 axios.defaults.baseURL = BASE_URL;
@@ -107,13 +106,14 @@ export const postData = async (endpoint, body) => {
 // 4. Додавання рейтингу окремій вправі
 // https://your-energy.b.goit.study/api/exercises/ exerciseID /rating
 // https://your-energy.b.goit.study/api/exercises/64f389465ae26083f39b17df/4.02
+
 // async function startApi() {
 //   try {
 //     const exerciseid = '64f389465ae26083f39b17df';
 //     const endpoint = `exercises/${exerciseid}/rating`;
 //       const body = {
 //           rate: 5,
-//           email: 'tess2s@gmail.com',
+//           email: 'tesdfd@gmail.com',
 //           review: 'My best exercise',
 //       };
 
@@ -145,7 +145,7 @@ export const postData = async (endpoint, body) => {
 //   try {
 //     const endpoint = 'subscription';
 //     const body = {
-//       email: 'tes23t@gmail.com',
+//       email: 'tes@gmail.com',
 //     };
 //     const data = await postData(endpoint, body);
 //   } catch (e) {
