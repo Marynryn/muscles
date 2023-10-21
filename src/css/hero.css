@@ -36,9 +36,10 @@
 
 .hero-image {
   padding-bottom: 16px;
+  border-radius: 60%;
 }
 
-.hero-box2 {
+.image-rounded {
   border-radius: 60px;
 }
 
