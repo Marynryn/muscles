@@ -46,19 +46,6 @@ export const postData = async (endpoint, body) => {
   }
 };
 
-async function startApi() {
-  try {
-    const endpoint = 'subscription';
-    const body = {
-      email: 'tes23t@gmail.com',
-    };
-    const data = await postData(endpoint, body);
-  } catch (e) {
-    throw new Error(e.message);
-  }
-}
-startApi();
-
 // Пишемо в свій JS Файл
 // import { getData } from './api.js';
 
@@ -154,4 +141,16 @@ startApi();
 
 // 6. Оформлення підписки на розсилку нових вправ
 //https://your-energy.b.goit.study/api/subscription
+// async function startApi() {
+//   try {
+//     const endpoint = 'subscription';
+//     const body = {
+//       email: 'tes23t@gmail.com',
+//     };
+//     const data = await postData(endpoint, body);
+//   } catch (e) {
+//     throw new Error(e.message);
+//   }
+// }
+// startApi();
 
