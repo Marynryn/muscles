@@ -4,10 +4,11 @@ body {
 font-family: 'PP Neue Montreal', sans-serif;  
 margin: 0 auto;                                 
 font-size: 16px;
-line-height: 24px;
+line-height: 1.5;
 font-weight: 400;
 color: var(--body-text-color);
 background-color: var(--background-color);
+
 }
 
 /* html {
@@ -24,7 +25,8 @@ p {
   margin: 0;
 }
 
-ul, ol {
+ul,
+ol {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -44,13 +46,16 @@ img {
   max-width: 100%;
   height: auto;
 }
-
+.hidden{
+opacity: 0;
+pointer-events: none;
+}
 .container {
   width: 100%;
-  padding-left:20px;
+  padding-left: 20px;
   padding-right: 20px;
 }
-.section {
+section {
   padding-bottom: 80px;
 }
 @media screen and (min-width: 375px) {
@@ -59,20 +64,21 @@ img {
     margin: 0 auto;
   }
 }
-@media screen and (min-width: 768px){
+@media screen and (min-width: 768px) {
   .container {
-  max-width: 768px;
-  padding-left: 32px;
-  padding-right: 32px;
- }
-  .section {
-  padding-bottom:100px;}
+    max-width: 768px;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+  section {
+    padding-bottom: 100px;
+  }
 }
-@media screen and (min-width: 1440px){
+@media screen and (min-width: 1440px) {
   .container {
-  max-width: 1440px;
-  }  
-  .section {
-   padding-bottom: 90px;
-   }
- }
+    max-width: 1440px;
+  }
+  section {
+    padding-bottom: 90px;
+  }
+}
