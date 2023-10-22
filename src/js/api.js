@@ -46,7 +46,7 @@ export const postData = async (endpoint, body) => {
 };
 
 // Пишемо в свій JS Файл
-// import { getData } from './api.js';
+// import { getData, patchData, postData } from './api.js';
 
 // 1. Перелік фільтрів (вправ) з урахування назви фільтру, кількості категорій у відповіді на запит та порядкового номеру сторінки:
 // https://your-energy.b.goit.study/api/filters?filter=Muscles&page=1&limit=12
