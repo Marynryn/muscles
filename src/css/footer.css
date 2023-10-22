@@ -16,7 +16,9 @@ footer {
   display: flex;
   flex-wrap: wrap;
 }
-
+.icon{
+    color:#F4F4F4
+}
 .text{
     color: #F4F4F4;
     font-family: Neue Montreal;
