@@ -261,7 +261,9 @@
   border-radius: 20px;
   padding: 20px 196px 20px 20px;
   background-color: var(--primary-white-color);
+  margin-bottom: 20px;
 }
+
 .quote-icon {
   margin-bottom: 15px;
 }
@@ -300,6 +302,10 @@
     width: 100%;
     padding: 40px 40px 40px 90px;
   }
+  .favorites-desctop {
+    display: flex;
+    gap: 16px;
+  }
 
   .quote-static-item-favorites {
     padding: 25px 200px 25px 25px;
@@ -318,10 +324,7 @@
     }
   }
 }
-@media screen and (min-width: 768px) {
-  .quote-static-item-favorites {
-    padding: 25px 95px 25px 25px;
-  }
+@media screen and (min-width: 1400px) {
   .quote-img-item-favorites {
     background-image: url('../img/quote/quote-desctop-favorites-1x.jpg');
     width: 239px;
@@ -332,5 +335,11 @@
     .quote-img-item-favorites {
       background-image: url('../img/quote/quote-desctop-favorites-2x.jpg');
     }
+  }
+
+  .quote-static-item-favorites {
+    padding: 25px 95px 25px 25px;
+    width: 239px;
+    height: 141px;
   }
 }
