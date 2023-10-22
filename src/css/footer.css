@@ -17,6 +17,45 @@ footer {
   flex-wrap: wrap;
 }
 
+.text{
+    color: #F4F4F4;
+    font-family: Neue Montreal;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+}
+
+.your-energy {
+    color: #C6CDD1;
+    font-family: Neue Montreal;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: -0.28px;
+}
+
+.privacy {
+    color: #C6CDD1;
+    text-align: right;
+    font-family: Neue Montreal;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: -0.28px;
+}
+
+.yers {
+    color: #C6CDD1;
+    font-family: Neue Montreal;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: -0.28px;
+}
 /* Стили для мобильных устройств*/
 @media (max-width: 375px) {
   footer {
