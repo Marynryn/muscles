@@ -14,8 +14,8 @@
     />
     <link href="https://fonts.cdnfonts.com/css/pp-neue-montreal?styles=158867,158868,158869" rel="stylesheet">          
     
-    <script type="module" crossorigin src="/muscles/assets/styles-1ecba9a6.js"></script>
-    <link rel="stylesheet" href="/muscles/assets/styles-0d130c44.css">
+    <script type="module" crossorigin src="/muscles/assets/styles-37fa52e5.js"></script>
+    <link rel="stylesheet" href="/muscles/assets/styles-0d8f46e0.css">
   </head>
   <body>
        <!-- Header -->
@@ -156,18 +156,77 @@
       </section>
     </main>
     <!-- Modal- Exercise-->
-    <section class="modal-section hiden">
+    
+
+<ul class="js-list-cards-photo">
+    <li class="card-info-item" data-id="${_id}">
+        <div class="common-div">
+            <a class="link-workout">workout</a>
+            <p class="js-text">${rating}</p>
+
+            <button type="button" class="btn-start"> Start <svg class="icon-arrow" width="16" height="16">
+                    <use href="../img/icons.svg#icon-arrow"></use>
+                </svg></button>
+
+        </div>
+        <h3 class="fav-title">
+            <svg class="fav-icon-running" width="24" height="24">
+                <use href="../img/icons.svg#icon-running-stick" height="16" y="4"></use>
+            </svg>NAME
+        </h3>
+
+        <ul class="js-fav-list">
+            <li class="fav-list-text">
+                <p class="fav-label">Burned calories:<span class="fav-text-span">314/3</span></p>
+            </li>
+            <li class="fav-list-text">
+                <p class="fav-label">Body part:<span class="fav-text-span">3</span></p>
+            </li>
+            <li class="fav-list-text">
+                <p class="fav-label">Target:<span class="fav-text-span">4</span></p>
+            </li>
+        </ul>
+
+    </li>
+
+
+</ul>
+
+<section class="modal-section is-hidden">
+
 <div class="modal-window">
     <button type="button" class="button-close" data-modal-close>
-        <svg class="modal-icon" width="24" height="24">
-            <use href="../img/icons.svg#icon-close"></use>
+        <svg class="modal-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17 7L7 17M7 7L17 17" stroke="#F4F4F4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
         </svg>
     </button>
+<div class="img-and-text">
 <img src="https://qph.cf2.quoracdn.net/main-qimg-3bf7a23c8d7d8c9e6975f462ff8ff8b0-lq">
+<div class="text-info">
 <h2 class="name-exercies">Stationary bike walk</h2>
-<div class="rating-stars">
-    <p class="rating">4</p>
-    <span class="star">⭐</span>
+
+<div class="rating">
+    <div class="rating_value">3.2</div>
+<div class="stars">
+    <svg class="star" width="16" height="16">
+        <use href="../img/icons.svg#icon-star"></use>
+    </svg>
+    <svg class="star" width="16" height="16">
+        <use href="../img/icons.svg#icon-star"></use>
+    </svg>
+    <svg class="star" width="16" height="16">
+        <use href="../img/icons.svg#icon-star"></use>
+    </svg>
+    <svg class="star" width="16" height="16">
+        <use href="../img/icons.svg#icon-star"></use>
+    </svg>
+    <svg class="star" width="16" height="16">
+        <use href="../img/icons.svg#icon-star"></use>
+    </svg>
+    
+</div>
+
+
 </div>
 <div class="info-of-exercises">
 <ul class="info-list">
@@ -187,17 +246,20 @@
         <span class="name-info">Popular</span>
         <p class="info">0</p>
     </li>
-    
 </ul>
 </div>
 <article class="description-of-exercises">
     While not a muscle, this system is essential for endurance training. Aerobic exercises like running, cycling, and
     swimming improve cardiovascular health
 </article>
+</div>
+</div>
 <button class="btn-add-to-favorites" type="button">Add to favorites
  <span>
-    <svg class="btn-icon-heart" width="18" height="18">
-        <use href="../img/icons.svg#icon-heart"></use>
+    <svg class="btn-icon-heart" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+            d="M15.6306 3.45765C15.2475 3.0744 14.7927 2.77038 14.2921 2.56296C13.7915 2.35554 13.2549 2.24878 12.7131 2.24878C12.1712 2.24878 11.6347 2.35554 11.1341 2.56296C10.6335 2.77038 10.1786 3.0744 9.79558 3.45765L9.00058 4.25265L8.20558 3.45765C7.43181 2.68388 6.38235 2.24918 5.28808 2.24918C4.1938 2.24918 3.14435 2.68388 2.37058 3.45765C1.59681 4.23142 1.16211 5.28087 1.16211 6.37515C1.16211 7.46942 1.59681 8.51888 2.37058 9.29265L3.16558 10.0876L9.00058 15.9226L14.8356 10.0876L15.6306 9.29265C16.0138 8.90958 16.3178 8.45476 16.5253 7.95416C16.7327 7.45357 16.8394 6.91701 16.8394 6.37515C16.8394 5.83328 16.7327 5.29673 16.5253 4.79613C16.3178 4.29554 16.0138 3.84072 15.6306 3.45765Z"
+            stroke="#242424" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
     </svg>
  </span>
 </button>
