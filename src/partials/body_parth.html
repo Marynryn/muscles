@@ -1,79 +1,34 @@
-<div class="container">
-    <h2 class="exercises-title">Exercises</h2>
-    <!-- <form class="exercises-form hidden">
-        <input type="text" placeholder="Search" name="exercises-input">
-        <button type="submit" class="exercises-btn">
+<div class="container-exercises">
+    <h3><span class="exercises-title">Exercises</span><span class="title-span-exercise"></span></h3>
+
+    <form class="exercises-form">
+        <input type="text" placeholder="Search" name="target" class="exercises-input" id="exercises-input">
+        <button type="submit" class="exercises-btn-form">
             <svg class="exercises-search">
                 <use href="../img/icons.svg#icon-search"></use>
             </svg>
         </button>
-    </form> -->
+    </form>
 
-    <div>
-        <!-- <input type="text" placeholder="Search" name="exercises-input" class="exercises-input" id="exercises-input"> -->
-        <button type="submit" class="exercises-btn">
-            <svg class="exercises-search">
-                <!-- <use href="../img/icons.svg#icon-search"></use> -->
-            </svg>
-        </button>
-    </div>
-
-    <ul class="exercises-list ">
-
-        <li class="exercises-item exercises-item-active">
-            <button type="button" class="exercises-btn current js-btn-body-parts">Body parts</button>
+    <ul class="exercises-list">
+        <li class="exercises-item">
+            <button type="button" class="exercises-btn js-btn-body-parts" data-id="bodypart">Body parts</button>
         </li>
 
         <li class="exercises-item">
-            <button type="button" class="exercises-btn js-btn-muscles">Muscles</button>
+            <button type="button" class="exercises-btn js-btn-muscles" data-id="muscles">Muscles</button>
         </li>
 
         <li class="exercises-item">
-            <button type="button" class="exercises-btn js-btn-equipment">Equipment</button>
+            <button type="button" class="exercises-btn js-btn-equipment" data-id="equipment">Equipment</button>
         </li>
     </ul>
 
     <!-- For cards with photo -->
-    <ul class="js-list-cards-photo">
-        <!-- <li class="card-info-item" data-id="${_id}">
-            <div class="div-icon-workout">
-                <div class="div-workout-rating">
-                    <a class="link-workout">workout</a>
-                    <p class="js-text">4.0<svg class="icon-star" width="18" height="18">
-                            <use href="../img/icons.svg#icon-star"></use>
-                        </svg>
-                    </p>
-                </div>
-                <button type="button" class="btn-start"> Start <svg class="icon-arrow" width="16" height="16">
-                        <use href="../img/icons.svg#icon-arrow"></use>
-                    </svg>
-                </button>
+    <ul class="js-list-cards-photo"></ul>
 
-            </div>
-            <h3 class="fav-title">
-                <svg class="fav-icon-running" width="24" height="24">
-                    <use href="../img/icons.svg#icon-running-stick" height="16" y="4"></use>
-                </svg>NAME
-            </h3>
+    <ul class="js-list-cards-information"></ul>
 
-            <ul class="js-fav-list">
-                <li class="fav-list-text">
-                    <p class="fav-label">Burned calories: <span class="fav-text-span"> 314 / 3</span></p>
-                </li>
-                <li class="fav-list-text">
-                    <p class="fav-label">Body part: <span class="fav-text-span"> 3</span></p>
-                </li>
-                <li class="fav-list-text">
-                    <p class="fav-label">Target: <span class="fav-text-span"> 4</span></p>
-                </li>
-            </ul>
-
-        </li> -->
-
-
-    </ul>
-
-
-    <!-- For cards with information -->
-    <ul class="js-list-cards-info"></ul>
+    <!-- Tui Pagination -->
+    <div id="pagination" class="tui-pagination"></div>
 </div>
