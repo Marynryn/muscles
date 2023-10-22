@@ -5,50 +5,91 @@ footer {
     padding: 20px 0;
 }
 
-.container {
+/* .container {
     max-width: 1440px;
     margin: 0 auto;
     padding: 0 20px;
     box-sizing: border-box;
-}
+} */
 
 .row {
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
+}
+.icon{
+    fill:#F4F4F4;
+}
+.text{
+    color: #F4F4F4;
+    font-family: Neue Montreal;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
 }
 
+.your-energy {
+    color: #C6CDD1;
+    font-family: Neue Montreal;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: -0.28px;
+}
+
+.privacy {
+    color: #C6CDD1;
+    text-align: right;
+    font-family: Neue Montreal;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: -0.28px;
+}
+
+.yers {
+    color: #C6CDD1;
+    font-family: Neue Montreal;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: -0.28px;
+}
 /* Стили для мобильных устройств*/
 @media (max-width: 375px) {
-    footer {
-        height: 588px;
-    }
+  footer {
+    height: 588px;
+  }
 
-    .col-12 {
-        flex: 0 0 100%;
-        max-width: 100%;
-    }
+  .col-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
 }
 
 /* Стили для планшетов*/
 @media (min-width: 376px) and (max-width: 768px) {
-    footer {
-        height: 526px;
-    }
+  footer {
+    height: 526px;
+  }
 
-    .col-12 {
-        flex: 0 0 100%;
-        max-width: 100%;
-    }
+  .col-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
 }
 
 /* Стили для настольных компьютеров*/
 @media (min-width: 769px) and (max-width: 1440px) {
-    footer {
-        height: 328px;
-    }
+  footer {
+    height: 328px;
+  }
 
-    .col-md-4 {
-        flex: 0 0 33.333%;
-        max-width: 33.333%;
-    }
+  .col-md-4 {
+    flex: 0 0 33.333%;
+    max-width: 33.333%;
+  }
 }
