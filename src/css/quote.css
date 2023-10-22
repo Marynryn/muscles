@@ -1,11 +1,21 @@
-.quote-list {
+.quote-item {
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   row-gap: 20px;
   align-items: center;
 }
 
-.js-quote-item::after {
+.quote-title {
+  color: var(--background-color);
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.js-quote-container::after {
   content: '';
   position: absolute;
   right: 20px;
@@ -18,7 +28,7 @@
   background-image: url('../img/quote/icon-comas.svg');
 }
 
-.js-quote-item::before {
+.js-quote-container::before {
   content: '';
   position: absolute;
   left: 20px;
@@ -31,7 +41,7 @@
   background-image: url('../img/quote/icon-run.svg');
 }
 
-.js-quote-item {
+.js-quote-container {
   display: flex;
   flex-direction: column;
   padding: 20px 20px 20px 72px;
@@ -40,33 +50,23 @@
   background-color: var(--body-text-color);
 }
 
-.js-quote-title {
-  color: var(--background-color);
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 1;
-  margin-bottom: 6px;
-}
-.js-quote-text-container {
-  overflow: hidden;
-  width: 243px;
-  height: 88px;
-  margin-bottom: 16px;
-}
 .js-quote-text {
   color: rgba(244, 244, 244, 0.6);
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
   line-height: 1.28;
+  overflow: hidden;
+  width: 243px;
+  height: 88px;
+  margin-bottom: 16px;
 }
 .js-quote-autor {
   color: var(--background-color);
-}
-
-.quote-img {
-  border-radius: 20px;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.28;
 }
 
 .quote-img-item {
@@ -109,7 +109,7 @@
   position: relative;
   background-color: var(--primary-white-color);
 }
-.quote-title {
+.quote-static-title {
   color: var(--body-text-color);
   font-size: 20px;
   font-style: normal;
@@ -117,7 +117,7 @@
   line-height: 1;
   margin-bottom: 4px;
 }
-.quote-title-sec {
+.quote-static-title-sec {
   color: rgba(36, 36, 36, 0.6);
   font-size: 14px;
   font-style: normal;
@@ -125,10 +125,8 @@
   line-height: 1.28;
   margin-bottom: 16px;
 }
-.quote-text-container {
-}
 
-.quote-text {
+.quote-static-text {
   color: var(--body-text-color);
   overflow: hidden;
   width: 245px;
@@ -139,45 +137,50 @@
   line-height: 1.28;
   text-overflow: ellipsis;
 }
+.decor-text {
+  white-space: nowrap;
+}
 
 @media screen and (min-width: 768px) {
-  .quote-list {
+  .quote-item {
     flex-direction: row;
     flex-wrap: wrap;
     row-gap: 16px;
     column-gap: 32px;
   }
-  .js-quote-item::after {
+  .container-tablet {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .js-quote-container::after {
     top: 40px;
     right: 40px;
     width: 24px;
     height: 24px;
   }
 
-  .js-quote-item::before {
+  .js-quote-container::before {
     left: 40px;
   }
-  .js-quote-item {
+
+  .js-quote-container {
     padding: 40px 40px 40px 90px;
   }
-  .js-quote-title {
+  .quote-title {
     font-size: 24px;
     line-height: 1.33;
   }
-  .js-quote-text-container {
+  .js-quote-text {
     overflow: hidden;
     width: 270px;
     margin-bottom: 18px;
   }
-  .js-quote-text {
+  .js-quote-autor {
     font-size: 16px;
-  }
-  .quote-static-item::before {
-    left: 40px;
-  }
-
-  .quote-static-item {
-    padding: 40px 40px 40px 90px;
   }
 
   .quote-img-item {
@@ -193,22 +196,36 @@
       background-image: url('../img/quote/quote-tablet-exer-2x.jpg');
     }
   }
-  .quote-title {
+  .quote-static-item {
+    padding: 40px 40px 40px 90px;
+  }
+  .quote-static-title {
     font-size: 24px;
     line-height: 1.33;
     margin-bottom: 6px;
   }
-  .quote-text {
+  .quote-static-text {
     width: 270px;
+    height: 97px;
+  }
+  .quote-static-item::before {
+    left: 40px;
   }
 }
 
 @media screen and (min-width: 1440px) {
-  .quote-list {
+  .quote-item {
     flex-direction: column;
     gap: 32px;
   }
-  .js-quote-text-container {
+  .container-tablet {
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 32px;
+  }
+
+  .js-quote-text {
     width: 314px;
   }
   .quote-img-item {
@@ -224,7 +241,96 @@
       background-image: url('../img/quote/quote-desctop-exer-2x.jpg');
     }
   }
-  .quote-text {
+  .quote-static-text {
     width: 314px;
+    height: 163px;
+  }
+  .decor-text {
+    white-space: normal;
+  }
+}
+
+/* ==========--------FAVORITES================== */
+.quote-item-favorites {
+  margin-bottom: 40px;
+}
+
+.quote-static-item-favorites {
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  padding: 20px 196px 20px 20px;
+  background-color: var(--primary-white-color);
+}
+.quote-icon {
+  margin-bottom: 15px;
+}
+.quote-static-title-favorites {
+  margin-bottom: 6px;
+}
+.quote-static-title-sec-favorites {
+  margin-bottom: 0;
+}
+.quote-img-item-favorites {
+  background-image: url('../img/quote/quote-mobile-favorites-1x.jpg');
+  width: 335px;
+  height: 119px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 20px;
+}
+
+@media (min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
+  .quote-img-item-favorites {
+    background-image: url('../img/quote/quote-mobile-favorites-2x.jpg');
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .quote-item-favorites {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+  }
+  .js-quote-container-favorites {
+    width: 100%;
+    padding: 40px 40px 40px 90px;
+  }
+
+  .quote-static-item-favorites {
+    padding: 25px 200px 25px 25px;
+  }
+  .quote-img-item-favorites {
+    background-image: url('../img/quote/quote-tablet-favorites-1x.jpg');
+    width: 344px;
+    height: 141px;
+  }
+
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    .quote-img-item-favorites {
+      background-image: url('../img/quote/quote-tablet-favorites-2x.jpg');
+    }
+  }
+}
+@media screen and (min-width: 768px) {
+  .quote-static-item-favorites {
+    padding: 25px 95px 25px 25px;
+  }
+  .quote-img-item-favorites {
+    background-image: url('../img/quote/quote-desctop-favorites-1x.jpg');
+    width: 239px;
+  }
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    .quote-img-item-favorites {
+      background-image: url('../img/quote/quote-desctop-favorites-2x.jpg');
+    }
   }
 }
