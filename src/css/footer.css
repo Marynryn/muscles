@@ -1,9 +1,16 @@
 /* Общие стили для футера */
 footer {
-  background-color: #000;
-  color: #fff;
-  padding: 20px 0;
+    background-color: #000;
+    color: #fff;
+    padding: 20px 0;
 }
+
+/* .container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+} */
 
 .row {
   display: flex;
