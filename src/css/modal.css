@@ -1,46 +1,19 @@
+
 .rating {
-    font-size: 25px;
-    display: inline-flex;
-    align-items: flex-end;
-}
-
-.rating_body {
-    position: relative;
-}
-
-.rating_body::before {
-    content: '★★★★★';
-    display: block;
-}
-
-.rating_items {
     display: flex;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
+    align-items: center;
 }
 
-.rating_active {
-    position: absolute;
-    height: 100%;
-    width: 0%;
-    overflow: hidden;
-    top: 0;
-
+.rating_value{
+    margin-right: 5px;
 }
 
-.rating_active::before {
-    content: '★★★★★';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    color: #EEA10C;;
+.star {
+    fill: rgba(244, 244, 244, 0.20);
 }
 
-.rating_value {
-    font-size: 100%;
+.active-star{
+    fill: #EEA10C;
 }
 
 .is-hidden {
@@ -51,17 +24,36 @@ pointer-events: none;
 .modal-section {
 position: fixed;
 top: 0;
-        bottom: 0;
-        right: 0;
-        left: 0;
-        overflow-y: auto;
-        -webkit-overflow-scrolling: touch;
-        display: flex;
-        flex-flow: column nowrap;
-        align-items: center;
-        z-index: 99;
-        justify-content: flex-start;
+bottom: 0;
+right: 0;
+left: 0;
+overflow-y: auto;
+-webkit-overflow-scrolling: touch;
+display: flex;
+flex-flow: column nowrap;
+align-items: center;
+z-index: 99;
+justify-content: flex-start;
+background: rgba(4, 4, 4, 0.40);
         
+}
+
+/* .modal-window {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    max-width: 100%;
+    border-radius: 20px;
+    background: var(--body-text-color);
+    color: var(--background-color);
+    padding: 40px 20px;
+    z-index: 100;
+} */
+
+.modal-open {
+    overflow: hidden;
 }
 
 .modal-window {
@@ -115,6 +107,7 @@ align-items: center;
 .name-exercies{
 color: var(--background-color);
 margin-top: 20px;
+margin-bottom: 10px;
 font-size: 20px;
 font-weight: 500;
 line-height: 1;
@@ -219,7 +212,8 @@ background: var(--background-color);
 }
 
 .name-exercies {
-    margin: 0;
+    margin-top: 0px;
+    margin-bottom: 8px;
     font-size: 24px;
     line-height: 32px;
 }
@@ -343,4 +337,14 @@ background: var(--background-color);
 
 .icon-arrow {
     transform: rotate(90deg);
+}
+
+/* js */
+
+.on-click-btn{
+border-radius: 30px;
+border: 1px solid var(--background-color);
+background-color: var(--body-text-color);
+color: var(--background-color) ;
+fill: var(--background-color);
 }
