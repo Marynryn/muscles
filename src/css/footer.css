@@ -23,8 +23,6 @@ footer {
   box-sizing: border-box;
 }  */
 
-.footer-space {
-}
 
 .footer-logo-icon {
   fill: white;
@@ -62,7 +60,7 @@ footer {
   background: #F4F4F4;
 }
 .footer-title {
-  min-width: 335px;
+  min-width: 280px;
   color: #f4f4f4;
   font-size: 40px;
   line-height: 48px;
@@ -80,7 +78,7 @@ footer {
 }
 
 .footer-input {
-  width: 350px;
+  min-width: 280px;
   display: flex;
   padding: 12px 0 12px 14px;
   align-items: center;
@@ -99,7 +97,8 @@ footer {
 
 .footer-button {
   display: flex;
-  padding: 12px 157px;
+  padding: 12px;
+  min-width: 280px;
   justify-content: center;
   align-items: center;
   border-radius: 30px;
@@ -116,7 +115,6 @@ footer {
   background: transparent;
 }
 
-
 .footer-info {
   color: #c6cdd1;
   font-size: 14px;
@@ -127,7 +125,6 @@ footer {
   margin-top: 100px;
   display: flex;
   align-items: end;
-  gap: 95px;
 }
 .footer-descrip {
  min-width: 200px
@@ -135,9 +132,6 @@ footer {
 .footer-privacy {
   min-width: 250px;
   margin-top: 10px;
-}
-.footer-2023 {
-
 }
 
 /* 
@@ -315,10 +309,6 @@ margin-bottom: 32px;
     min-width: 554px;
   }
 
-  .footer-2023 {
-  margin: auto;
-
-  }
 
   .footer-descrip {
     min-width: 200px;
