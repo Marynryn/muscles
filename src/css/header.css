@@ -112,6 +112,10 @@
     padding: 6px 12px;
     border-radius: 30px;
   }
+ .page2{
+  color: #f4f4f4;
+ }
+
   .header-pages-active {
     background-color: #f4f4f4;
     color: #242424;
