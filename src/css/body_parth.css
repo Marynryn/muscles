@@ -270,4 +270,7 @@
   }
 }
 @media screen and (min-width: 1440px) {
+  .container-favirites{
+    display: flex;
+  }
 }
