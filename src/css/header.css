@@ -1,8 +1,7 @@
-.header {
+
+.header-container {
   padding-top: 20px;
   padding-bottom: 20px;
-}
-.header-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -96,7 +95,7 @@
   fill: #4e4e4e;
 }
 @media (min-width: 768px) {
-  .header {
+  .header-container {
     padding-top: 24px;
     padding-bottom: 24px;
   }
@@ -157,7 +156,7 @@
   }
 }
 @media (min-width: 1440px) {
-  .header {
+  .header-container {
     padding-top: 28px;
     padding-bottom: 28px;
   }
