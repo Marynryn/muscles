@@ -64,7 +64,7 @@ background: var(--body-text-color);
 color: var(--background-color);
 padding:40px 20px;
 transform: translate(0, -50%) scalex(1);
-transform: translate(0, 25%)scaley(1);
+transform: translate(0, 50%)scaley(1);
 }
 
 .button-close {

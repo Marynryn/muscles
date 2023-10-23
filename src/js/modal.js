@@ -1,22 +1,19 @@
+import { getData, patchData, postData } from './api.js'
+import { modalStartBtn } from './body_parth.js'
+
+
+
 // ! open and close modal window
 const closeModalBtn = document.querySelector('[data-modal-close]');
 const modalWindow = document.querySelector(".modal-section")
-const openModalBtn = document.querySelector(".btn-start")
 
-closeModalBtn.addEventListener('click', closeModal )
-openModalBtn.addEventListener('click', openModal)
+closeModalBtn.addEventListener('click', closeOpenModal)
+modalStartBtn.addEventListener('click', closeOpenModal)
 
 function closeOpenModal() {
     modalWindow.classList.toggle('is-hidden');
 }
 
-function openModal () {
-    closeOpenModal()
-}
-
-function closeModal() {
-    closeOpenModal()
-}
 
 // ! add exercise in favorites
 const btnFavorites = document.querySelector(".btn-add-to-favorites")
