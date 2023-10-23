@@ -9,13 +9,11 @@
 }
 
 .hero-header {
-  color: var(--white-color);
-  text-shadow: 0px 4px 70px 0px rgba(0, 0, 0, 0.1);
+  color: var(--body-text-color);
   font-size: 40px;
-  font-weight: 500;
-  line-height: 1.1;
-  letter-spacing: -1.6px;
-  text-transform: uppercase;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.8px;
   margin-bottom: 14px;
 }
 
@@ -29,9 +27,18 @@
   padding-bottom: 20px;
 }
 
-.hero-span {
+.hero-span-italic {
   font-style: italic;
-  color: var(--light-green-color);
+}
+.hero-span-uppercase {
+  text-transform: uppercase;
+}
+.hero-span-lowercase {
+  text-transform: lowercase;
+}
+
+.hero-star-icon {
+  gap: 5px;
 }
 
 .hero-image {
@@ -41,30 +48,30 @@
 
 .image-rounded {
   border-radius: 60px;
+  width: 765px;
+  height: 509px;
 }
 
 .button-filter {
-  padding: 8px 14px;
-  border-radius: 1000px;
+  padding: 4px 16px;
+  border-radius: 30px;
   border-color: var(--hero-btn-hover-color);
   color: var(--hero-btn-hover-color);
   background-color: transparent;
-  border: 1px solid var(--white-color);
-  font-size: 10px;
+  border: 1px solid var(--body-text-color);
+  font-size: 14px;
   font-weight: 500;
-  text-transform: uppercase;
 }
 
 .hero-filters-wrapper {
   display: block;
   margin-left: auto;
-  max-width: 180px;
+  max-width: 250px;
 }
 
 .hero-filters {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: start;
+  justify-content: center;
   gap: 8px 4px;
 }
 
@@ -79,8 +86,6 @@
 }
 /* HERO-TABLET */
 @media screen and (min-width: 768px) {
- 
-
   .hero-container {
     padding-top: 66px;
     position: relative;
@@ -152,7 +157,6 @@
 }
 /* HERO-DESKTOP*/
 @media screen and (min-width: 1440px) {
-  
   .hero-container {
     padding-top: 133px;
     position: relative;
