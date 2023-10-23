@@ -268,7 +268,7 @@ function createMarkupCardInfo(arr) {
         </svg>
       </p>
     </div>
-    <button type="button" class="btn-start">
+    <button type="button" class="btn-start" >
       Start
       <svg class="icon-arrow" width="16" height="16">
         <use href="../img/icons.svg#icon-arrow"></use>

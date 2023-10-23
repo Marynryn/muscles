@@ -5,17 +5,10 @@ import { modalStartBtn } from './body_parth.js'
 
 // ! open and close modal window
 const closeModalBtn = document.querySelector('[data-modal-close]');
-const modalStartButton = document.querySelectorAll('BUTTON')
 const modalWindow = document.querySelector(".modal-section")
 
-closeModalBtn.addEventListener('click', closeOpenModal )
-modalStartButton.addEventListener('click', closeOpenModal )
-
-console.log(modalStartButton)
-
-// modalStartBtn.forEach(button =>
-//     button.addEventListener('click', ));
-      
+closeModalBtn.addEventListener('click', closeOpenModal)
+modalStartBtn.addEventListener('click', closeOpenModal)
 
 function closeOpenModal() {
     modalWindow.classList.toggle('is-hidden');
