@@ -44,6 +44,8 @@
 }
 .header-menu.is-open {
   transform: translateX(0);
+  width: 210px;
+  height: 812px;
 }
 .menu-closed-btn {
   stroke: #f4f4f4;
