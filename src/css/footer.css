@@ -32,9 +32,11 @@ footer {
   height: 24px;
 }
 
+
 .footer-social {
   margin-bottom: 40px;
 }
+
 
 .footer-soc-links {
   display: flex;
@@ -65,6 +67,9 @@ footer {
   font-size: 40px;
   line-height: 48px;
   letter-spacing: -0.8px;
+
+  margin-top: 40px;
+
 }
 
 .footer-form-subt {
@@ -252,10 +257,12 @@ footer {
   .footer-container {
     padding: 64px 32px 32px 32px;
   }
+
   .footer-space {
     display: flex;
     gap: 100px;
   }
+
 .footer-total {
   display: contents;
 }
@@ -264,7 +271,9 @@ footer {
 font-size: 56px;
 line-height: 60px; 
 letter-spacing: -1.12px;
+
 margin-bottom: 32px;
+
 }
 .footer-form-subt {
   font-size: 18px;
@@ -285,6 +294,7 @@ margin-bottom: 32px;
   }  */
   .footer-title  {
     min-width: 554px;
+
   }
   .footer-input::placeholder {
     font-size: 16px;
@@ -307,6 +317,7 @@ margin-bottom: 32px;
 
   .footer-2023 {
   margin: auto;
+=
   }
 
   .footer-descrip {
