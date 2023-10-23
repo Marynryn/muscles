@@ -187,3 +187,9 @@
   align-items: center;
   gap: 8px;
 }
+
+.decor-theme {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
