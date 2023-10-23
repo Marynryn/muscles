@@ -272,9 +272,9 @@
 .quote-item-favorites {
   margin-bottom: 40px;
 }
-.js-favorites-autor {
+/* .js-favorites-autor {
   display: none;
-}
+} */
 
 .quote-static-item-favorites {
   display: flex;
@@ -313,9 +313,9 @@
 }
 
 @media screen and (min-width: 768px) {
-  .js-favorites-autor {
+  /* .js-favorites-autor {
     display: contents;
-  }
+  } */
   .quote-item-favorites {
     display: flex;
     flex-wrap: wrap;

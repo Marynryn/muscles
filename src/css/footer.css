@@ -11,12 +11,7 @@ footer {
   padding: 20px 0;
   height: auto;
 }
-.container {
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: 0 20px;
-  box-sizing: border-box;
-}
+
 /* .container {
   margin: 0 auto;
   padding: 0 20px;
@@ -32,11 +27,9 @@ footer {
   height: 24px;
 }
 
-
 .footer-social {
   margin-bottom: 40px;
 }
-
 
 .footer-soc-links {
   display: flex;
@@ -59,7 +52,7 @@ footer {
 }
 .footer-link:hover {
   fill: #242424;
-  background: #F4F4F4;
+  background: #f4f4f4;
 }
 .footer-title {
   min-width: 335px;
@@ -69,7 +62,6 @@ footer {
   letter-spacing: -0.8px;
 
   margin-top: 40px;
-
 }
 
 .footer-form-subt {
@@ -110,12 +102,11 @@ footer {
   margin-top: 20px;
 }
 
-.footer-button:hover{
-  color: #F4F4F4;
-  border: 1px solid #F4F4F4;
+.footer-button:hover {
+  color: #f4f4f4;
+  border: 1px solid #f4f4f4;
   background: transparent;
 }
-
 
 .footer-info {
   color: #c6cdd1;
@@ -130,14 +121,13 @@ footer {
   gap: 95px;
 }
 .footer-descrip {
- min-width: 200px
+  min-width: 200px;
 }
 .footer-privacy {
   min-width: 250px;
   margin-top: 10px;
 }
 .footer-2023 {
-
 }
 
 /* 
@@ -240,7 +230,7 @@ footer {
     max-width: 100%;
   } */
   .footer-container {
-     padding: 40px 20px;
+    padding: 40px 20px;
   }
 }
 
@@ -263,28 +253,26 @@ footer {
     gap: 100px;
   }
 
-.footer-total {
-  display: contents;
-}
-.footer-title {
-  min-width: 448px;
-font-size: 56px;
-line-height: 60px; 
-letter-spacing: -1.12px;
+  .footer-total {
+    display: contents;
+  }
+  .footer-title {
+    min-width: 448px;
+    font-size: 56px;
+    line-height: 60px;
+    letter-spacing: -1.12px;
 
-margin-bottom: 32px;
-
-}
-.footer-form-subt {
-  font-size: 18px;
-  line-height: 24px
-}
-  
+    margin-bottom: 32px;
+  }
+  .footer-form-subt {
+    font-size: 18px;
+    line-height: 24px;
+  }
 }
 
 /* Стили для настольных компьютеров*/
 @media (min-width: 1440px) {
-   /* footer {
+  /* footer {
     height: 328px;
   } */
 
@@ -292,9 +280,8 @@ margin-bottom: 32px;
     flex: 0 0 33.333%;
     max-width: 33.333%;
   }  */
-  .footer-title  {
+  .footer-title {
     min-width: 554px;
-
   }
   .footer-input::placeholder {
     font-size: 16px;
@@ -306,7 +293,7 @@ margin-bottom: 32px;
   .footer-text {
     display: contents;
   }
-  
+
   .footer-space {
     display: flex;
     gap: 158px;
@@ -316,8 +303,7 @@ margin-bottom: 32px;
   }
 
   .footer-2023 {
-  margin: auto;
-
+    margin: auto;
   }
 
   .footer-descrip {
