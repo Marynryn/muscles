@@ -7,7 +7,15 @@
   position: relative;
   padding-bottom: 32px;
 }
-
+.hero-tags{
+  display: none;
+}
+.hero-workout{
+  min-width: 99px;
+}
+.hero-healthy{
+min-width: 94px;
+}
 .hero-header {
   color: var(--body-text-color);
   font-size: 40px;
@@ -70,7 +78,7 @@
 
 .button-filter {
   height: 26px;
-  padding: 4px 16px;
+  /* padding: 4px 16px; */
   border-radius: 30px;
   border-color: var(--hero-btn-hover-color);
   color: var(--hero-btn-hover-color);
@@ -78,18 +86,21 @@
   border: 1px solid var(--body-text-color);
   font-size: 14px;
   font-weight: 500;
+   width: 74px; 
+ 
 }
 
 .hero-filters-wrapper {
-  display: block;
-  margin-left: auto;
-  max-width: 250px;
-  padding: 30px;
-}
+  /* display: block; */
+ 
+   max-width: 375px;
+   padding: 30px 0;
+} 
 
 .hero-filters {
   display: flex;
-  justify-content: center;
+
+  /* justify-content: center; */
   gap: 10px 6px;
 }
 
@@ -169,20 +180,24 @@
     font-size: 16px;
     height: 32px;
     cursor: pointer;
+   margin-bottom: 10px;
+    
+ 
   }
 
-  .hero-filters-wrapper {
+  /* .hero-filters-wrapper {
     max-width: 250px;
-  }
+  } */
 
   .hero-filters {
     gap: 10px 8px;
+   margin-left: 350px;
   }
 }
 /* HERO-DESKTOP*/
 @media screen and (min-width: 1440px) {
   .hero-container {
-    padding-top: 96px;
+    padding-top: 68px;
     position: relative;
     padding-bottom: 32px;
     max-width: 1440px;
@@ -192,9 +207,7 @@
     width: 594px;
     font-size: 74px;
   }
-  .hero-image{
-    width: 1394px;
-  }
+ 
   .hero {
     padding-top: 134px;
   }
@@ -218,7 +231,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     width: 1394px;
-    height: 929px;
+    height: 350px;
     border-radius: 20px;
   }
   @media (min-device-pixel-ratio: 2),
@@ -226,6 +239,7 @@
     (min-resolution: 2dppx) {
     .hero-image {
       background-image: url('../img/hero/hero-image-desktop-optim@2x.png');
+     
     }
   }
   .hero-header {
@@ -235,19 +249,12 @@
     letter-spacing: -1.48px;
 
   }
-  .button-filter {
-    padding: 12px 32px;
-    font-size: 16px;
-    line-height: 1.16px;
-    letter-spacing: -0.48px;
-    gap: 10px;
+  .hero-filters-wrapper {
+   
+   display: none;
   }
 
-  .hero-filters-wrapper {
-    display: flex;
-    max-width: 182px;
-    margin-top: 64px;
-  }
+ 
   .hero-box1 {
     width: 672px;
   }
@@ -262,8 +269,9 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    width: 256px;
-    height: 171px;
+    width: 168px;
+    /* height: 171px; */
+    height: 100px;
     border-radius: 20px;
 
   }
@@ -272,4 +280,17 @@
     line-height: 1.33; 
 letter-spacing: -0.36px;
   }
+  .hero-bigbox{
+    display: flex;
+  }
+.hero-box-rightside{
+  padding-top: 15px;
+ margin-left: 607px;
+}
+.hero-tags{
+  margin-top: 32px;
+  width: 182px;
+  display: block;
+ 
+}
 }
