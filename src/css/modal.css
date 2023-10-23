@@ -32,25 +32,11 @@ overflow-y: auto;
 display: flex;
 flex-flow: column nowrap;
 align-items: center;
-z-index: 99;
+z-index: 5;
 justify-content: flex-start;
 background: rgba(4, 4, 4, 0.40);
         
 }
-
-/* .modal-window {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    margin: 0;
-    max-width: 100%;
-    border-radius: 20px;
-    background: var(--body-text-color);
-    color: var(--background-color);
-    padding: 40px 20px;
-    z-index: 100;
-} */
 
 .modal-open {
     overflow: hidden;
@@ -65,6 +51,7 @@ color: var(--background-color);
 padding:40px 20px;
 transform: translate(0, -50%) scalex(1);
 transform: translate(0, 50%)scaley(1);
+transition: all 1s;
 }
 
 .button-close {
@@ -78,6 +65,7 @@ justify-content: center;
 align-items: center;
 padding: 0;
 fill: var(--background-color);
+transition: all 0.3s;
 }
 
 /*!---------MOBILE---------*/
@@ -110,6 +98,26 @@ margin-bottom: 10px;
 font-size: 20px;
 font-weight: 500;
 line-height: 1;
+}
+
+.name-exercies::first-letter {
+    text-transform: uppercase;
+}
+
+.target::first-letter {
+    text-transform: uppercase;
+}
+
+.body::first-letter {
+    text-transform: uppercase;
+}
+
+.equipment::first-letter {
+    text-transform: uppercase;
+}
+
+.popular::first-letter {
+    text-transform: uppercase;
 }
 
 .rating {
@@ -175,6 +183,7 @@ line-height: 1,28;
 }
 
 .btn-add-to-favorites {
+border: 1px solid #F4F4F4;
 color: #242424;
 width: 183px;
 height: 48px;
@@ -187,7 +196,19 @@ align-items: center;
 gap: 8px;
 border-radius: 30px;
 background: var(--background-color);
+    stroke: #242424;
+    transition: all 0.3s;
 }
+
+/* js */
+
+.on-click-btn {
+background-color: transparent;
+color: #F4F4F4;
+stroke: #F4F4F4;
+}
+
+
 }
 
 /*!---------TABLET---------*/
@@ -203,6 +224,9 @@ background: var(--background-color);
     height: 259px;
 }
 
+.button-close{
+    height: 28px;
+}
 
 .img-and-text {
     display: flex;
@@ -240,10 +264,6 @@ background: var(--background-color);
     margin-bottom: 64px;
  }
 
- .btn-add-to-favorites {
-     color: var(--body-text-color);
-
- }
 
  .rating-stars{
     margin-top: 8px;
@@ -338,12 +358,3 @@ background: var(--background-color);
     transform: rotate(90deg);
 }
 
-/* js */
-
-.on-click-btn{
-border-radius: 30px;
-border: 1px solid var(--background-color);
-background-color: var(--body-text-color);
-color: var(--background-color) ;
-fill: var(--background-color);
-}
