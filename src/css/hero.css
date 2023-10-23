@@ -24,7 +24,9 @@ min-width: 94px;
   letter-spacing: -0.8px;
   margin-bottom: 14px;
 }
-
+.hero-button-filters{
+  cursor: auto;
+}
 .hero-p {
   color: var(--white-color);
   font-size: 18px;
@@ -72,8 +74,6 @@ min-width: 94px;
 }
 .image-rounded {
   border-radius: 60px;
-
-
 }
 
 .button-filter {
@@ -294,4 +294,5 @@ letter-spacing: -0.36px;
   display: block;
  
 }
+
 }
