@@ -43,22 +43,22 @@ function createFavoritesMarkup(arr){
     return arr.map(({name,bodyPart,target,time,burnedCalories,_id})=>`
     <li class="fav-item" id='${_id}'>
             <div class="fav-box-link">
-                <a href="../index.html" class="fav-link">WORKOUT</a>
+                <a href="./index.html" class="fav-link">WORKOUT</a>
                 <button class="fav-btn-delete">
                 <svg  width="16" height="16">
-                    <use class="fav-icon-trach" href="../img/icons.svg#icon-trash"></use>
+                    <use class="fav-icon-trach" href="./img/icons.svg#icon-trash"></use>
                 </svg>
                 </button>
                 
             </div>
             <button type="button" class="fav-btn"> Start
                 <svg class="fav-icon-arrow" width="16" height="16">
-                    <use  href="../img/icons.svg#icon-arrow"></use>
+                    <use  href="./img/icons.svg#icon-arrow"></use>
                 </svg>
             </button>
             <h3 class="fav-title">
                 <svg class="fav-icon-running" width="24" height="24">
-                    <use href="../img/icons.svg#icon-running-stick" y="4" height="16" ></use>
+                    <use href="./img/icons.svg#icon-running-stick" y="4" height="16" ></use>
                 </svg>
                 ${name.charAt(0).toUpperCase() + name.slice(1)}
             </h3>
