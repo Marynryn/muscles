@@ -179,11 +179,22 @@ function onItemClick(evt) {
         evt.target.textContent
       );
       refs.listPhotoCard.innerHTML = createMarkupCardInfo(results);
+
+      // for Olia ============================================
+      modalStartBtn = document.querySelectorAll('.btn-start');
+      console.log(modalStartBtn, 'ModalStartBTn11111');
+      // modalStartBtn.forEach(button =>
+      // button.addEventListener('click', onModalTestBtn));
     }
   );
-
   refs.listPhotoCard.removeEventListener('click', onItemClick);
 }
+
+// // !! TESTTESTEST
+// function onModalTestBtn() {
+//   console.log('HEELLLLLLLLOooooooooo');
+// }
+
 async function fetchExercisesDetails(key, value, page) {
   try {
     let params = {
@@ -318,3 +329,5 @@ function createMarkupCardPhoto(arr) {
     )
     .join('');
 }
+
+export let modalStartBtn = [];
