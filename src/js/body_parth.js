@@ -190,10 +190,7 @@ function onItemClick(evt) {
   refs.listPhotoCard.removeEventListener('click', onItemClick);
 }
 
-function closeOpenModal() { console.log("hiiii");
-    modalWindow.classList.toggle('is-hidden');
-   
-}
+
 async function fetchExercisesDetails(key, value, page) {
   try {
     let params = {
@@ -344,44 +341,91 @@ console.log(modalStartBtn)
 
 
 
-// MODAL/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// ! open and close modal window
+//! --------------------------------------------MODAL--------------------------------------------
 const closeModalBtn = document.querySelector('[data-modal-close]');
 const modalWindow = document.querySelector(".modal-section")
-modalStartBtn.forEach( button =>
-    button.addEventListener('click', closeOpenModal))
-closeModalBtn.addEventListener('click', closeOpenModal)
-// modalStartBtn.addEventListener('click', closeOpenModal)
+const btnFavorites = document.querySelector(".btn-add-to-favorites")
+const modalWindows = document.querySelector('.modal-window')
+const nameExercies = document.querySelector('.name-exercies')
+const ratingValues = document.querySelector('.rating_value')
+const targets = document.querySelector('.target')
+const body = document.querySelector('.body')
+const equipments = document.querySelector('.equipment')
+const popular = document.querySelector('.popular')
+const descriptions = document.querySelector('.description-of-exercises')
+const imgModal = document.querySelector('.img-modal')
+// ! open and close modal window
 
-// function closeOpenModal() { console.log("hiiii");
-//     modalWindow.classList.toggle('is-hidden');
-   
-// }
+closeModalBtn.addEventListener('click', closeModal)
 
+function closeModal() {
+modalWindow.classList.toggle('is-hidden');
+  btnFavorites.classList.toggle('on-click-btn');
+  btnFavorites.disabled = false
+}
+
+function closeOpenModal(evt) {
+  evt.preventDefault();
+
+  modalWindow.classList.toggle('is-hidden');
+
+
+  async function infoInModal() {
+    try {
+      const ID = evt.currentTarget.parentNode.parentNode.dataset.id;
+      const params = {
+        endpoint: `exercises/${ID}`,
+      };
+      return await getData(params);
+    } catch (e) {
+      console.log(e)
+    }
+  };
+
+  infoInModal().then(({ _id, bodyPart, description, equipment, gifUrl, name, popularity, rating, target }) => {
+    marcupA(_id, bodyPart, description, equipment, gifUrl, name, popularity, rating, target);
+    if (localStorage.getItem(`Name-Exercies: ${_id}`) !== null) {
+      btnFavorites.disabled = true
+  btnFavorites.classList.toggle('on-click-btn');
+    }
+  })
+}
+ 
+function marcupA(_id, bodyPart, description, equipment, gifUrl, name, popularity, rating, target) {
+  modalWindows.setAttribute("data-id", _id );
+  nameExercies.textContent = name;
+  ratingValues.textContent = Number(rating);
+  targets.textContent = target;
+  body.textContent = bodyPart;
+  equipments.textContent = equipment;
+  popular.textContent = popularity;
+  descriptions.textContent = description;
+  imgModal.src = gifUrl;
+}
 
 // ! add exercise in favorites
-const btnFavorites = document.querySelector(".btn-add-to-favorites")
+
 btnFavorites.addEventListener('click', addToFavorites)
 
 function isDataInLocalStorage(key) {
     return localStorage.getItem(key) !== null;
 }
 
-function addToFavorites() {
-    const dataToSave = 'X';
-    localStorage.setItem('keyX', dataToSave);
 
-    const keyInLocalStorage = isDataInLocalStorage('keyX');
-    if (keyInLocalStorage) { 
-        btnFavorites.classList.add('on-click-btn');
-        btnFavorites.textContent = 'This exercise in your Favorites';
-    }
+
+function addToFavorites(evt) {
+const dataToSave = evt.currentTarget.parentNode.dataset.id;
+const nameOfEx = `Name-Exercies: ${dataToSave}`
+localStorage.setItem(nameOfEx, dataToSave);
+  if (isDataInLocalStorage(nameOfEx)) {
+    btnFavorites.classList.toggle('on-click-btn');
+  }
+  btnFavorites.disabled = true
 }
 
 // ! rating stars
 const stars = document.querySelectorAll('.star');
 const ratingStars = document.querySelector('.rating_value');
-
 const ratingValue = Math.round(parseFloat(ratingStars.textContent));
 
 stars.forEach((star, index) => {
