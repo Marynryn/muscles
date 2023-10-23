@@ -1,25 +1,141 @@
 /* Общие стили для футера */
+/* footer {
+  margin: 0 auto;
+  background-color: #242424;
+  color: #fff;
+  height: auto;
+} */
 footer {
-  background-color: #000;
+  background-color: #242424;
   color: #fff;
   padding: 20px 0;
   height: auto;
 }
-
 .container {
   max-width: 1440px;
   margin: 0 auto;
   padding: 0 20px;
   box-sizing: border-box;
 }
+/* .container {
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}  */
 
-.header-logo-icon {
+.footer-space {
+}
+
+.footer-logo-icon {
   fill: white;
   width: 132px;
   height: 24px;
-  flex-shrink: 0;
 }
 
+.footer-social {
+  margin-bottom: 40px;
+}
+
+.footer-soc-links {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.footer-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+  gap: 8px;
+  border-radius: 10px;
+  border: 1px solid rgba(244, 244, 244, 0.1);
+  width: 40px;
+  height: 40px;
+  padding: 8px;
+  fill: #f4f4f4;
+}
+.footer-link:hover {
+  fill: #242424;
+  background: #F4F4F4;
+}
+.footer-title {
+  min-width: 335px;
+  color: #f4f4f4;
+  font-size: 40px;
+  line-height: 48px;
+  letter-spacing: -0.8px;
+}
+
+.footer-form-subt {
+  color: #f4f4f4;
+  font-size: 14px;
+  line-height: 18px;
+  margin-top: 20px;
+}
+
+.footer-input {
+  width: 350px;
+  display: flex;
+  padding: 12px 0 12px 14px;
+  align-items: center;
+  gap: 20px;
+  border-radius: 30px;
+  border: 1px solid #f4f4f4;
+  background-color: transparent;
+  margin-top: 20px;
+}
+
+.footer-input::placeholder {
+  color: rgba(244, 244, 244, 0.6);
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.footer-button {
+  display: flex;
+  padding: 12px 157px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
+  background: #f4f4f4;
+  color: #242424;
+  line-height: 24px;
+  border: none;
+  margin-top: 20px;
+}
+
+.footer-button:hover{
+  color: #F4F4F4;
+  border: 1px solid #F4F4F4;
+  background: transparent;
+}
+
+
+.footer-info {
+  color: #c6cdd1;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: -0.28px;
+}
+.footer-update {
+  margin-top: 100px;
+  display: flex;
+  align-items: end;
+  gap: 95px;
+}
+.footer-descrip {
+ min-width: 200px
+}
+.footer-privacy {
+  min-width: 250px;
+  margin-top: 10px;
+}
+.footer-2023 {
+
+}
+
+/* 
 .row {
   display: flex;
   flex-wrap: wrap;
@@ -41,7 +157,6 @@ footer {
 .icon {
   border-radius: 10px;
   border: 1px solid rgba(244, 244, 244, 0.10);
-
   display: flex;
   padding: 8px;
   align-items: center;
@@ -107,40 +222,94 @@ footer {
   font-weight: 400;
   line-height: 18px;
   letter-spacing: -0.28px;
-}
+} */
 
 /* Стили для мобильных устройств*/
-@media (max-width: 375px) {
-  footer {
+@media (min-width: 375px) {
+  /* footer {
     height: 588px;
   }
 
   .col-12 {
     flex: 0 0 100%;
     max-width: 100%;
+  } */
+  .footer-container {
+     padding: 40px 20px;
   }
 }
 
 /* Стили для планшетов*/
-@media (min-width: 376px) and (max-width: 768px) {
-  footer {
+@media (min-width: 768px) {
+  /* footer {
     height: 526px;
-  }
+  } */
 
-  .col-12 {
+  /* .col-12 {
     flex: 0 0 100%;
     max-width: 100%;
+  } */
+  .footer-container {
+    padding: 64px 32px 32px 32px;
   }
+  .footer-space {
+    display: flex;
+    gap: 100px;
+  }
+.footer-total {
+  display: contents;
+}
+.footer-title {
+  min-width: 448px;
+font-size: 56px;
+line-height: 60px; 
+letter-spacing: -1.12px;
+margin-bottom: 32px;
+}
+.footer-form-subt {
+  font-size: 18px;
+  line-height: 24px
+}
+  
 }
 
 /* Стили для настольных компьютеров*/
-@media (min-width: 769px) and (max-width: 1440px) {
-  footer {
+@media (min-width: 1440px) {
+   /* footer {
     height: 328px;
-  }
+  } */
 
-  .col-md-4 {
+  /* .col-md-4 {
     flex: 0 0 33.333%;
     max-width: 33.333%;
+  }  */
+  .footer-title  {
+    min-width: 554px;
+  }
+  .footer-input::placeholder {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .footer-form-subt {
+    margin-top: 20px;
+  }
+  .footer-text {
+    display: contents;
+  }
+  
+  .footer-space {
+    display: flex;
+    gap: 158px;
+  }
+  .footer-title {
+    min-width: 554px;
+  }
+
+  .footer-2023 {
+  margin: auto;
+  }
+
+  .footer-descrip {
+    min-width: 200px;
   }
 }
