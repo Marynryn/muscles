@@ -3,7 +3,7 @@
   padding-bottom: 32px;
 }
 .hero-container {
-  padding-top: 48px;
+  padding-top: 80px;
   position: relative;
   padding-bottom: 32px;
 }
@@ -21,11 +21,11 @@
   color: var(--white-color);
   font-size: 18px;
   font-weight: 400;
+
   line-height: 24px;
   letter-spacing: -0.36px;
   padding-bottom: 20px;
   width: 335px;
-}
 
 .hero-span-italic {
   font-style: italic;
@@ -39,9 +39,12 @@
 
 .hero-star-icon {
   gap: 5px;
+  width: 38px;
+  height: 38px;
 }
 
 .hero-image {
+
   background-image: url('../img/hero/hero-image-optim.png');
   background-position: center;
   background-repeat: no-repeat;
@@ -57,9 +60,12 @@
   .hero-image {
     background-image: url('../img/hero/hero-image-optim@2x.png');
   }
+
 }
 .image-rounded {
   border-radius: 60px;
+
+
 }
 
 .button-filter {
@@ -99,9 +105,11 @@
 /* HERO-TABLET */
 @media screen and (min-width: 768px) {
   .hero-container {
-    padding-top: 66px;
+    padding-top: 100px;
     position: relative;
     max-width: 768px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 
   .hero-star-icon {
@@ -112,7 +120,6 @@
   .hero-p {
     width: 528px;
   }
-
   .hero-image {
     display: flex;
     background-image: url('../img/hero/hero-image-tablet-optim.png');
@@ -130,7 +137,11 @@
     .hero-image {
       background-image: url('../img/hero/hero-image-tablet-optim@2x.png');
     }
+
   }
+.hero-box1{
+  width: 594px;
+}
   .hero-box2 {
     display: flex;
     align-items: center;
@@ -140,7 +151,9 @@
   .hero-header {
     font-size: 74px;
     font-weight: 400;
+
     line-height: 1.18;
+
   }
   .shop-now-button {
     width: 114px;
@@ -169,18 +182,26 @@
 /* HERO-DESKTOP*/
 @media screen and (min-width: 1440px) {
   .hero-container {
-    padding-top: 133px;
+    padding-top: 96px;
     position: relative;
     padding-bottom: 32px;
     max-width: 1440px;
+    display: block;
   }
-
+  .hero-header{
+    width: 594px;
+    font-size: 74px;
+  }
+  .hero-image{
+    width: 1394px;
+  }
   .hero {
     padding-top: 134px;
   }
   .hero-p {
     width: 491px;
   }
+
   .hero-box-image {
     background-image: url('../img/hero/hero-box-image.png');
     background-position: center;
@@ -189,6 +210,7 @@
     width: 256px;
     height: 171px;
     border-radius: 20px;
+
   }
   .hero-image {
     background-image: url('../img/hero/hero-image-desktop-optim.png');
@@ -211,6 +233,7 @@
     font-weight: 400;
     line-height: 1.17;
     letter-spacing: -1.48px;
+
   }
   .button-filter {
     padding: 12px 32px;
@@ -229,6 +252,7 @@
     width: 672px;
   }
   .hero-box2 {
+
     position: relative;
   }
 
@@ -241,5 +265,11 @@
     width: 256px;
     height: 171px;
     border-radius: 20px;
+
+  }
+  .hero-subtitle{
+    font-size: 18px;
+    line-height: 1.33; 
+letter-spacing: -0.36px;
   }
 }
