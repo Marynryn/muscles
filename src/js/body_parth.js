@@ -330,4 +330,4 @@ function createMarkupCardPhoto(arr) {
     .join('');
 }
 
-export let modalStartBtn = [];
+export const modalStartBtn = document.querySelectorAll(".btn-start")
