@@ -148,6 +148,14 @@
     row-gap: 16px;
     column-gap: 32px;
   }
+  .container-tablet {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 16px;
+  }
+
   .js-quote-container::after {
     top: 40px;
     right: 40px;
@@ -210,6 +218,20 @@
     flex-direction: column;
     gap: 32px;
   }
+
+  .container-tablet {
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 32px;
+  }
+  .js-quote-container {
+    transition: scale 300ms ease-in-out;
+  }
+  .js-quote-container:hover {
+    scale: 1.03;
+  }
+
   .js-quote-text {
     width: 314px;
   }
@@ -217,6 +239,10 @@
     background-image: url('../img/quote/quote-desctop-exer-1x.jpg');
     width: 444px;
     height: 242px;
+    transition: scale 300ms ease-in-out;
+  }
+  .quote-img-item:hover {
+    scale: 1.03;
   }
 
   @media (min-device-pixel-ratio: 2),
@@ -226,6 +252,13 @@
       background-image: url('../img/quote/quote-desctop-exer-2x.jpg');
     }
   }
+  .quote-static-item {
+    transition: scale 300ms ease-in-out;
+  }
+  .quote-static-item:hover {
+    scale: 1.03;
+  }
+
   .quote-static-text {
     width: 314px;
     height: 163px;
@@ -239,6 +272,9 @@
 .quote-item-favorites {
   margin-bottom: 40px;
 }
+.js-favorites-autor {
+  display: none;
+}
 
 .quote-static-item-favorites {
   display: flex;
@@ -246,7 +282,9 @@
   border-radius: 20px;
   padding: 20px 196px 20px 20px;
   background-color: var(--primary-white-color);
+  margin-bottom: 20px;
 }
+
 .quote-icon {
   margin-bottom: 15px;
 }
@@ -275,6 +313,9 @@
 }
 
 @media screen and (min-width: 768px) {
+  .js-favorites-autor {
+    display: contents;
+  }
   .quote-item-favorites {
     display: flex;
     flex-wrap: wrap;
@@ -284,6 +325,10 @@
   .js-quote-container-favorites {
     width: 100%;
     padding: 40px 40px 40px 90px;
+  }
+  .favorites-desctop {
+    display: flex;
+    gap: 16px;
   }
 
   .quote-static-item-favorites {
@@ -303,10 +348,7 @@
     }
   }
 }
-@media screen and (min-width: 768px) {
-  .quote-static-item-favorites {
-    padding: 25px 95px 25px 25px;
-  }
+@media screen and (min-width: 1400px) {
   .quote-img-item-favorites {
     background-image: url('../img/quote/quote-desctop-favorites-1x.jpg');
     width: 239px;
@@ -317,5 +359,11 @@
     .quote-img-item-favorites {
       background-image: url('../img/quote/quote-desctop-favorites-2x.jpg');
     }
+  }
+
+  .quote-static-item-favorites {
+    padding: 25px 95px 25px 25px;
+    width: 239px;
+    height: 141px;
   }
 }

@@ -6,3 +6,5 @@ import './js/modal';
 import './js/mobile-modal';
 import './js/extra';
 import './js/api';
+import './js/background';
+

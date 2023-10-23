@@ -1,13 +1,16 @@
 <section class="hero-background">
-  <div class="container">
-    <div class="hero-container">
+  <div class="container hero-container">
       <div class="hero-box1">
         <div class="first-section">
           <h1 class="hero-header">
-            get <span class="hero-span">body</span> in shape,<span
-              class="hero-span"
-              >stay</span
-            >
+            <svg class="hero-star-icon" width="60" height="60">
+              <use href="/img/icons.svg#big-star"></use>
+            </svg>
+            <span class="hero-span-uppercase">g</span
+            ><span class="hero-span-lowercase">et</span>
+            <span class="hero-span-uppercase hero-span-italic">b</span
+            ><span class="hero-span-italic">ody</span> in shape,
+            <span class="hero-span-uppercase hero-span">s</span>tay healthy
           </h1>
 
           <div class="hero-subtitle">
@@ -22,31 +25,31 @@
         <div class="hero-image">
           <picture class="hero-image2">
             <source
-              media="(min-width: 1280px)"
+              media="(min-width: 1440px)"
               srcset="
-                ./img/hero-image-desktop-optim.png    1x,
-                ./img/hero-image-desktop-optim@2x.png 2x
+                ./img/hero/hero-image-desktop-optim.png    1x,
+                ./img/hero/hero-image-desktop-optim@2x.png 2x
               "
             />
             <source
               media="(min-width: 768px)"
               srcset="
-                ./img/hero-image-tablet-optim.png    1x,
-                ./img/hero-image-tablet-optim@2x.png 2x
+                ./img/hero/hero-image-tablet-optim.png    1x,
+                ./img/hero/hero-image-tablet-optim@2x.png 2x
               "
             />
             <source
               media="(max-width: 767px)"
               srcset="
-                ./img/hero-image-optim.png    1x,
-                ./img/hero-image-optim@2x.png 2x
+                ./img/hero/hero-image-optim_old.png 1x,
+                ./img/hero/hero-image-optim@2x.png 2x
               "
             />
             <img
-              src="./img/hero-image-optim.png"
+              src="./img/hero/hero-image-optim_old.png"
               alt="womans"
-              width="704"
-              height="550"
+              width="1200"
+              height="800"
               class="image-rounded"
             />
           </picture>
@@ -68,6 +71,6 @@
           </button>
         </div>
       </div>
-    </div>
+    
   </div>
 </section>
