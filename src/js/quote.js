@@ -13,11 +13,10 @@ async function startApi() {
   }
 }
 
-const pageId = 'page1';
 const quoteEl = document.querySelector('.js-quote-container');
 function markapQuote({ author, quote }) {
   const markap = `<p class="js-quote-text">${quote}</p>
-            <h2 class="js-quote-autor">${author}</h2>`;
+            <h2 class="js-quote-autor js-favorites-autor">${author}</h2>`;
 
   quoteEl.insertAdjacentHTML('beforeend', markap);
 
