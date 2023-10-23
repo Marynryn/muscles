@@ -181,7 +181,7 @@ function onItemClick(evt) {
       refs.listPhotoCard.innerHTML = createMarkupCardInfo(results);
 
       // for Olia ============================================
-      modalStartBtn = document.querySelectorAll('.btn-start');
+       modalStartBtn = document.querySelectorAll('.btn-start');
       console.log(modalStartBtn, 'ModalStartBTn11111');
       // modalStartBtn.forEach(button =>
       // button.addEventListener('click', onModalTestBtn));
@@ -330,4 +330,5 @@ function createMarkupCardPhoto(arr) {
     .join('');
 }
 
-export const modalStartBtn = document.querySelectorAll(".btn-start")
+ export let modalStartBtn = [];
+console.log(modalStartBtn)
