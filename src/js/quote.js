@@ -8,9 +8,7 @@ async function startApi() {
     const data = await getData(params);
 
     markapQuote(data);
-  } catch (e) {
-    // console.log(e);
-  }
+  } catch (e) {}
 }
 
 const quoteEl = document.querySelector('.js-quote-container');
@@ -21,7 +19,6 @@ function markapQuote({ author, quote }) {
   quoteEl.insertAdjacentHTML('beforeend', markap);
 
   const currentDate = new Date().toLocaleDateString();
-  // console.log(currentDate);
   localStorage.setItem(currentDate, JSON.stringify({ author, quote }));
 }
 
