@@ -13,7 +13,7 @@ function toggleScrollToTopButton() {
     document.body.scrollTop = 0; 
     document.documentElement.scrollTop = 0; 
   });
- 
+
   window.onscroll = toggleScrollToTopButton;
 
 
@@ -47,7 +47,7 @@ function toggleScrollToTopButton() {
 
 
 function showLoader () {
-const loader = document. getElementById("loader");
+const loader = document.getElementById("loader");
 loader.style.display = "block";
 }
 function hideLoader () {

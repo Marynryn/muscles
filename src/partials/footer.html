@@ -1,50 +1,3 @@
-<!-- FOOTER  -->
-<!-- <footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-12 col-md-4 logo">
-                <a href="./index.html" id="logo-link" title="Home page">
-                    <svg class="header-logo-icon" width="132" height="24">
-                        <use href="/img/sport-sprite.svg#icon-logo"></use>
-                    </svg>
-                </a>
-            </div>
-            <div class="col-12 col-md-4">
-                <div class="col-12 col-md-4">
-                    <ul class="social-media-links">
-                        <li class="facebook"><a href="https://www.facebook.com/goITclub/  "><svg class="icon" width="40"
-                                    height="40">
-                                    <use href="/img/icons.svg#icon-facebook"></use>
-                                </svg></a></li>
-                        <li class="instagram"><a href="https://www.instagram.com/goitclub/"><svg class="icon" width="40"
-                                    height="40">
-                                    <use href="/img/icons.svg#icon-instagram"></use>
-                                </svg></a></li>
-                        <li class="youtube"><a href="https://www.youtube.com/c/GoIT"><svg class="icon" width="40"
-                                    height="40">
-                                    <use href="/img/icons.svg#icon-youtube"></use>
-                                </svg></a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-12 col-md-4">
-                <p class="company-slogan">Transforming your body shape with us.</p>
-            </div>
-            <p class="text">Subscribe and learn about new exercises!</p>
-        </div>
-        <div class="row">
-            <div class="col-12">
-                <form action="" method="post">
-                    <input class="email" type="email" name="email" placeholder="Email">
-                    <button type="submit" class="button">Send</button>
-                </form>
-            </div>
-        </div>
-        <p class="your-energy">Your Energy. All rights reserved.</p>
-        <p class="privacy">Privacy Policy / Terms of Service</p>
-        <p class="yers">©2023</p>
-    </div>
-</footer> -->
 
 <footer class="footer-container">
   <div class="container">
@@ -100,7 +53,7 @@
           <p class="footer-title">Transforming your <span class="body">body</span>  shape with us</p>
         </div>
 
-        <form class="footer-form">
+        <form class="footer-form" id="subscription-form">
           <p class="footer-form-subt">
             Subscribe and learn about new exercises!
           </p>
@@ -108,8 +61,10 @@
             class="footer-input"
             type="email"
             name="email"
+            id="email-input"
             placeholder="Email"
-          />
+            required 
+            />
           <button type="submit" class="footer-button">Send</button>
         </form>
       </div>
