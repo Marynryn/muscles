@@ -117,6 +117,10 @@
 }
 /* HERO-TABLET */
 @media screen and (min-width: 768px) {
+  .hero-header{
+    letter-spacing: -1.48px;
+    line-height: 1;
+  }
   .hero-container {
     padding-top: 100px;
     position: relative;
@@ -163,10 +167,11 @@
   }
 
   .hero-header {
+    width: 630px;
     font-size: 74px;
     font-weight: 400;
     font-family:  Neue Montreal, sans-serif; 
-    line-height: 1.18;
+    line-height: 1;
   }
   .shop-now-button {
     width: 114px;
@@ -205,8 +210,10 @@
     display: block;
   }
   .hero-header {
-    width: 594px;
+    width: 630px;
     font-size: 74px;
+    letter-spacing: -1.48px;
+    line-height: 1;
   }
 
   .hero {
