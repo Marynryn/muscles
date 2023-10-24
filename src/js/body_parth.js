@@ -42,7 +42,7 @@ function onBtnClick(evt) {
   if (evt.target.tagName !== 'BUTTON') {
     return;
   }
-
+isMainScreen = true;
   refs.mainTitle.textContent = 'Exercises';
   refs.spanTitle.textContent = '';
   refs.exercisesForm.style.display = 'none';
