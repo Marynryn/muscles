@@ -1,28 +1,28 @@
 /* Reset styles */
-@font-face{
+@font-face {
   font-family: Neue Montreal;
-  src: url("/fonts/NeueMontreal-Italic.otf") format("otf");
+  src: url('/fonts/NeueMontreal-Italic.otf') format('otf');
   font-style: italic;
 }
-@font-face{
+@font-face {
   font-family: Neue Montreal;
-  src: url("/fonts/NeueMontreal-Medium.otf") format("otf");
+  src: url('/fonts/NeueMontreal-Medium.otf') format('otf');
   font-weight: 500;
 }
-@font-face{
+@font-face {
   font-family: Neue Montreal;
-  src: url("/fonts/NeueMontreal-Regular.otf") format("otf");
+  src: url('/fonts/NeueMontreal-Regular.otf') format('otf');
   font-weight: 400;
   font-style: normal;
 }
 body {
-font-family:  Neue Montreal, sans-serif;  
-margin: 0 auto;                                 
-font-size: 16px;
-line-height: 1.5;
-font-weight: 400;
-color: var(--body-text-color);
-background-color: var(--background-color);
+  font-family: Neue Montreal, sans-serif;
+  margin: 0 auto;
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 400;
+  color: var(--body-text-color);
+  background-color: var(--background-color);
 }
 
 /* html {
@@ -60,18 +60,16 @@ img {
   max-width: 100%;
   height: auto;
 }
-.hidden{
-opacity: 0;
-pointer-events: none;
+.hidden {
+  opacity: 0;
+  pointer-events: none;
 }
 .container {
   width: 100%;
   padding-left: 20px;
   padding-right: 20px;
 }
-section {
-  padding-bottom: 80px;
-}
+
 @media screen and (min-width: 375px) {
   .container {
     max-width: 375px;
@@ -96,9 +94,12 @@ section {
     padding-bottom: 90px;
   }
 }
-html, body {
+html,
+body {
   width: 100%;
-   height:100%;
-   margin: 0;
+  height: 100%;
+  margin: 0;
   padding: Opx;
+
   }
+

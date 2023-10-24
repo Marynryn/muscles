@@ -128,6 +128,10 @@ function makePagination(page, perPage, totalPages, text) {
 
         makePagination(Number(page), Number(perPage), totalPages, text);
         refs.listInfoCard.innerHTML = createMarkupCardInfo(results);
+        modalStartBtn = document.querySelectorAll('.btn-start');
+        // console.log(modalStartBtn, 'ModalStartBTn11111');
+        modalStartBtn.forEach( button =>
+          button.addEventListener('click', closeOpenModal))
         // console.log('helllllo');
       });
       return;

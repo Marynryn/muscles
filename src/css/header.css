@@ -12,6 +12,10 @@
   fill: #242424;
   width: 132px;
 }
+body.dark_mode .header-logo-img {
+  fill: var(--background-color);
+}
+
 .header-pages {
   display: none;
 }
@@ -93,7 +97,7 @@
 @media (min-width: 768px) {
   .header-container {
     padding-top: 24px;
-    padding-bottom: 24px;
+    padding-bottom: 0px;
   }
   .header-pages {
     display: flex;
@@ -147,6 +151,11 @@
     background-color: rgba(36, 36, 36, 0.8);
     fill: #f4f4f4;
   }
+  body.dark_mode .social-link {
+    fill: var(--background-color);
+    border: 1px solid var(--background-color);
+  }
+
   .header-burger {
     display: none;
   }
