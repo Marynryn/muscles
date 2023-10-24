@@ -1,4 +1,4 @@
-import"./background-36665fce.js";const s={list:document.querySelector(".fav-list"),text:document.querySelector(".fav-text")};s.list.addEventListener("click",r);fetch("https://your-energy.b.goit.study/api/exercises?bodypart=waist&page=1&limit=10").then(t=>t.json()).then(({results:t})=>{s.text.classList.add("is-hidden"),s.list.innerHTML=o(t)});function o(t){return t.map(({name:e,bodyPart:i,target:a,time:n,burnedCalories:l,_id:c})=>`
+import"./background-734dabaa.js";const s={list:document.querySelector(".fav-list"),text:document.querySelector(".fav-text")};s.list.addEventListener("click",r);fetch("https://your-energy.b.goit.study/api/exercises?bodypart=waist&page=1&limit=10").then(t=>t.json()).then(({results:t})=>{s.text.classList.add("is-hidden"),s.list.innerHTML=o(t)});function o(t){return t.map(({name:e,bodyPart:i,target:a,time:n,burnedCalories:l,_id:c})=>`
     <li class="fav-item" id='${c}'>
             <div class="fav-box-link">
 
