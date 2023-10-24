@@ -135,6 +135,10 @@ body.dark_mode .button-filter {
     letter-spacing: -1.48px;
     line-height: 1;
   }
+
+  .hero-background {
+    padding-bottom: 68px;
+  }
   .hero-container {
     padding-top: 100px;
     position: relative;
@@ -152,6 +156,7 @@ body.dark_mode .button-filter {
 
   .hero-p {
     min-width: 280px;
+    padding-bottom: 0px;
   }
   .hero-image {
     display: flex;
@@ -159,9 +164,10 @@ body.dark_mode .button-filter {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    width: 704px;
+    width: 100%;
     height: 550px;
     border-radius: 20px;
+    padding-bottom: 0px;
   }
 
   @media (min-device-pixel-ratio: 2),
@@ -170,6 +176,9 @@ body.dark_mode .button-filter {
     .hero-image {
       background-image: url('../img/hero/hero-image-tablet-optim@2x.png');
     }
+  }
+  .hero-bigbox {
+    margin-bottom: 20px;
   }
   .hero-box1 {
     width: 594px;
@@ -201,7 +210,6 @@ body.dark_mode .button-filter {
     font-size: 16px;
     height: 32px;
     cursor: pointer;
-    margin-bottom: 10px;
     font-family: Neue Montreal, sans-serif;
   }
 
