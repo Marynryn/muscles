@@ -2,7 +2,6 @@ const themeToggle = document.querySelector('.change_theme--btn');
 const sunIcon = document.querySelector('.icon_sun');
 const moonIcon = document.querySelector('.icon_moon');
 const savedTheme = localStorage.getItem('theme');
-// console.log(savedTheme);
 const body = document.querySelector('body');
 
 themeToggle.addEventListener('click', toggleTheme);

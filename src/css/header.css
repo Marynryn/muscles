@@ -173,18 +173,18 @@ body.dark_mode .header-logo-img {
   }
 }
 
+.header-logo-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/*============ backqround Theme ================ */
 .dark_mode {
   background-color: black;
 }
 
 .change_theme--btn {
-  /* width: 32px;
-  height: 32px;
-  background-color: #fff;
-  border-radius: 50px;
-  justify-content: center;
-  align-items: center; */
-
   margin: 0 10px;
   width: 60px;
   border: 1px solid var(--body-text-color);
@@ -214,11 +214,6 @@ body.dark_mode .header-logo-img {
   left: calc(100% - 28px);
 }
 
-.header-logo-container {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
 .change_theme {
   display: flex;
 }
