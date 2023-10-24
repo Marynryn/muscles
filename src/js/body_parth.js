@@ -372,7 +372,8 @@ const body = document.querySelector('.body')
 const equipments = document.querySelector('.equipment')
 const popular = document.querySelector('.popular')
 const descriptions = document.querySelector('.description-of-exercises')
-const imgModal = document.querySelector('.img-modal')
+const imgModal = document.querySelector('.img-modal');
+const overflow = document.body;
 // ! open and close modal window
 
 closeModalBtn.addEventListener('click', closeModal)
@@ -380,13 +381,15 @@ closeModalBtn.addEventListener('click', closeModal)
 function closeModal() {
 modalWindow.classList.toggle('is-hidden');
   btnFavorites.classList.toggle('on-click-btn');
-  btnFavorites.disabled = false
+  btnFavorites.disabled = false;
+  overflow.style.overflow = 'visible';
 }
 
 function closeOpenModal(evt) {
   evt.preventDefault();
-
+  
   modalWindow.classList.toggle('is-hidden');
+  overflow.style.overflow = 'hidden';
 
 
   async function infoInModal() {
