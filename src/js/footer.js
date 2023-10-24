@@ -1,0 +1,1 @@
+import { getData, patchData, postData } from './api.js';

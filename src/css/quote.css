@@ -1,4 +1,5 @@
 .quote-title {
+  font-family:  Neue Montreal, sans-serif; 
   color: var(--background-color);
   font-size: 20px;
   font-style: normal;
@@ -46,6 +47,7 @@
 }
 
 .js-quote-text {
+  font-family:  Neue Montreal, sans-serif; 
   color: rgba(244, 244, 244, 0.6);
   font-size: 14px;
   font-style: normal;
@@ -56,6 +58,7 @@
   margin-bottom: 16px;
 }
 .js-quote-autor {
+  font-family:  Neue Montreal, sans-serif; 
   color: var(--background-color);
   font-size: 14px;
   font-style: normal;
@@ -105,6 +108,7 @@
   background-color: var(--primary-white-color);
 }
 .quote-static-title {
+  font-family:  Neue Montreal, sans-serif; 
   color: var(--body-text-color);
   font-size: 20px;
   font-style: normal;
@@ -113,6 +117,7 @@
   margin-bottom: 4px;
 }
 .quote-static-title-sec {
+  font-family:  Neue Montreal, sans-serif; 
   color: rgba(36, 36, 36, 0.6);
   font-size: 14px;
   font-style: normal;
@@ -124,7 +129,7 @@
 .quote-static-text {
   color: var(--body-text-color);
   overflow: hidden;
-
+  font-family:  Neue Montreal, sans-serif; 
   height: 105px;
   font-size: 14px;
   font-style: normal;
@@ -195,6 +200,7 @@
     padding: 40px 40px 40px 90px;
   }
   .quote-static-title {
+    font-family:  Neue Montreal, sans-serif; 
     font-size: 24px;
     line-height: 1.33;
     margin-bottom: 6px;

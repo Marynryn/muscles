@@ -17,8 +17,9 @@
   min-width: 94px;
 }
 .hero-header {
+  font-family:  Neue Montreal, sans-serif; 
   color: var(--body-text-color);
-  font-size: 40px;
+  font-size: 38px;
   font-weight: 400;
   line-height: 1.2;
   letter-spacing: -0.8px;
@@ -29,10 +30,10 @@
 }
 .hero-p {
   color: var(--white-color);
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 400;
-
-  line-height: 24px;
+  font-family:  Neue Montreal, sans-serif; 
+  line-height: 1.28;
   letter-spacing: -0.36px;
   padding-bottom: 20px;
   width: 335px;
@@ -77,6 +78,7 @@
 
 .button-filter {
   height: 26px;
+  font-family:  Neue Montreal, sans-serif; 
   /* padding: 4px 16px; */
   border-radius: 30px;
   border-color: var(--hero-btn-hover-color);
@@ -163,7 +165,7 @@
   .hero-header {
     font-size: 74px;
     font-weight: 400;
-
+    font-family:  Neue Montreal, sans-serif; 
     line-height: 1.18;
   }
   .shop-now-button {
@@ -181,6 +183,7 @@
     height: 32px;
     cursor: pointer;
     margin-bottom: 10px;
+    font-family:  Neue Montreal, sans-serif; 
   }
 
   /* .hero-filters-wrapper {
