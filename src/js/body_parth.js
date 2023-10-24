@@ -1,3 +1,4 @@
+
 import { getData, patchData, postData } from './api.js';
 import axios from 'axios';
 import Pagination from 'tui-pagination';
@@ -7,21 +8,41 @@ const refs = {
   exercisesList: document.querySelector('.exercises-list'),
   exercisesForm: document.querySelector('.exercises-form'),
   listPhotoCard: document.querySelector('.js-list-cards-photo'),
-  mainTitle: document.querySelector('.exercises-title'),
-  spanTitle: document.querySelector('.title-span-exercise'),
+  listInfoCard: document.querySelector('.js-list-cards-information'),
+  mainTitle: document.querySelector('.exercises-span-title'),
+  spanTitle: document.querySelector('.exercises-part-title'),
   divInputButton: document.querySelector('.input-button'),
+  startCardsPhoto: document.querySelector('.js-btn-body-parts')
 };
 
 refs.exercisesList.addEventListener('click', onBtnClick);
 let lastSelectedSectionBtn = undefined;
 let lastSelectedCardTitle = undefined;
-
+let maxCardOnScreen = 12;
 let isMainScreen = true;
+
+startApi(1,"Body parts").then(
+  ({ results, page, perPage, totalPages }) => {
+    //   console.log(page, perPage, totalPages);
+    lastSelectedSectionBtn= refs.startCardsPhoto
+    lastSelectedSectionBtn.classList.add('current')
+    makePagination(
+      Number(page),
+      Number(perPage),
+      totalPages,
+      'Body parts'
+    );
+    
+      refs.listInfoCard.innerHTML= ''
+    refs.listPhotoCard.innerHTML = createMarkupCardPhoto(results);
+  }
+);
 
 function onBtnClick(evt) {
   if (evt.target.tagName !== 'BUTTON') {
     return;
   }
+
   refs.mainTitle.textContent = 'Exercises';
   refs.spanTitle.textContent = '';
   refs.exercisesForm.style.display = 'none';
@@ -45,7 +66,7 @@ function onBtnClick(evt) {
         totalPages,
         evt.target.textContent
       );
-
+        refs.listInfoCard.innerHTML= ''
       refs.listPhotoCard.innerHTML = createMarkupCardPhoto(results);
     }
   );
@@ -54,10 +75,10 @@ function onBtnClick(evt) {
 }
 
 let width =
-  window.innerWidth ||
-  document.documentElement.clientWidth ||
+  window.innerWidth 
+  document.documentElement.clientWidth 
   document.body.clientWidth;
-let maxCardOnScreen = 12;
+
 
 if (width === 375) {
   maxCardOnScreen = 9;
@@ -106,7 +127,7 @@ function makePagination(page, perPage, totalPages, text) {
         console.log(page, perPage, totalPages);
 
         makePagination(Number(page), Number(perPage), totalPages, text);
-        refs.listPhotoCard.innerHTML = createMarkupCardInfo(results);
+        refs.listInfoCard.innerHTML = createMarkupCardInfo(results);
         console.log('helllllo');
       });
       return;
@@ -120,7 +141,7 @@ function makePagination(page, perPage, totalPages, text) {
 
         makePagination(Number(page), Number(perPage), totalPages, text);
 
-        refs.listPhotoCard.innerHTML = createMarkupCardPhoto(results);
+refs.listPhotoCard.innerHTML = createMarkupCardPhoto(results);
       }
     );
   });
@@ -128,10 +149,7 @@ function makePagination(page, perPage, totalPages, text) {
 
 // ! на картинку клік - перекидає на карточку з інформацією
 
-// if (eventListenerActive) {
-//   console.log(eventListenerActive, 'EVENTTTTTT');
 refs.listPhotoCard.addEventListener('click', onItemClick);
-// }
 
 function onItemClick(evt) {
   if (evt.target.tagName === 'UL') {
@@ -178,11 +196,12 @@ function onItemClick(evt) {
         totalPages,
         evt.target.textContent
       );
-      refs.listPhotoCard.innerHTML = createMarkupCardInfo(results);
+      refs.listPhotoCard.innerHTML = ''
+      refs.listInfoCard.innerHTML = createMarkupCardInfo(results);
 
       // for Olia ============================================
        modalStartBtn = document.querySelectorAll('.btn-start');
-      console.log(modalStartBtn, 'ModalStartBTn11111');
+      // console.log(modalStartBtn, 'ModalStartBTn11111');
       modalStartBtn.forEach( button =>
         button.addEventListener('click', closeOpenModal))
     }
@@ -190,10 +209,10 @@ function onItemClick(evt) {
   refs.listPhotoCard.removeEventListener('click', onItemClick);
 }
 
-function closeOpenModal() { console.log("hiiii");
-    modalWindow.classList.toggle('is-hidden');
+// function closeOpenModal() { console.log("hiiii");
+//     modalWindow.classList.toggle('is-hidden');
    
-}
+// }
 async function fetchExercisesDetails(key, value, page) {
   try {
     let params = {
@@ -225,7 +244,7 @@ function onInputSearch(evt) {
     if (results.length === 0) {
       console.log('За вашим запитом нічого не знайдено :( Спробуйте ще раз!');
     }
-    refs.listPhotoCard.innerHTML = createMarkupCardInfo(results);
+    refs.listInfoCard.innerHTML = createMarkupCardInfo(results);
     refs.exercisesForm.reset();
   });
 }
@@ -249,15 +268,13 @@ async function fetchExercisesByKeyword(inputValue) {
     console.log(e);
   }
 }
-
 // ! 2 Функції розмітки
 function createMarkupCardInfo(arr) {
   return arr
     .map(
       ({ _id, bodyPart, name, burnedCalories, time, rating, target }) => `
       
- <li class="card-info-item" data-id="${_id}">
-  <div class="div-icon-workout">
+ <li class="card-info-item-ex" data-id="${_id}">
     <div class="div-workout-rating">
       <a class="link-workout">workout</a>
       <p class="js-text-rating">
@@ -273,13 +290,11 @@ function createMarkupCardInfo(arr) {
         <use href="../img/icons.svg#icon-arrow"></use>
       </svg>
     </button>
-  </div>
-
   <h3 class="exercise-title">
     <svg class="exercise-icon-running" width="24" height="24">
       <use href="../img/icons.svg#icon-running-stick" height="16" y="4"></use>
     </svg>
-    ${name}
+    <span>${name.charAt(0).toUpperCase() + name.slice(1)}</span>
   </h3>
 
   <ul class="js-exercise-list">
@@ -287,22 +302,19 @@ function createMarkupCardInfo(arr) {
     <li class="exercise-list-text">
       <p class="exercise-label">
         Burned calories:
-        <span class="exercise-text-span">
-          
-          ${burnedCalories}/${time}min
-        </span>
+        <span class="exercise-text-span">${burnedCalories} / ${time} min</span>
       </p>
     </li>
 
     <li class="exercise-list-text">
-      <p class="exercise-label">
-        Body part: <span class="exercise-text-span"> ${bodyPart}</span>
+      <p class="exercise-label label-width-bodypart">
+        Body part: <span class="exercise-text-span">${bodyPart.charAt(0).toUpperCase() + bodyPart.slice(1)}</span>
       </p>
     </li>
 
     <li class="exercise-list-text">
-      <p class="exercise-label">
-        Target: <span class="exercise-text-span"> ${target}</span>
+      <p class="exercise-label label-width-target">
+        Target: <span class="exercise-text-span">${target.charAt(0).toUpperCase() + target.slice(1)}</span>
       </p>
     </li>
   </ul>
@@ -344,44 +356,91 @@ console.log(modalStartBtn)
 
 
 
-// MODAL/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// ! open and close modal window
+//! --------------------------------------------MODAL--------------------------------------------
 const closeModalBtn = document.querySelector('[data-modal-close]');
 const modalWindow = document.querySelector(".modal-section")
-modalStartBtn.forEach( button =>
-    button.addEventListener('click', closeOpenModal))
-closeModalBtn.addEventListener('click', closeOpenModal)
-// modalStartBtn.addEventListener('click', closeOpenModal)
+const btnFavorites = document.querySelector(".btn-add-to-favorites")
+const modalWindows = document.querySelector('.modal-window')
+const nameExercies = document.querySelector('.name-exercies')
+const ratingValues = document.querySelector('.rating_value')
+const targets = document.querySelector('.target')
+const body = document.querySelector('.body')
+const equipments = document.querySelector('.equipment')
+const popular = document.querySelector('.popular')
+const descriptions = document.querySelector('.description-of-exercises')
+const imgModal = document.querySelector('.img-modal')
+// ! open and close modal window
 
-// function closeOpenModal() { console.log("hiiii");
-//     modalWindow.classList.toggle('is-hidden');
-   
-// }
+closeModalBtn.addEventListener('click', closeModal)
 
+function closeModal() {
+modalWindow.classList.toggle('is-hidden');
+  btnFavorites.classList.toggle('on-click-btn');
+  btnFavorites.disabled = false
+}
+
+function closeOpenModal(evt) {
+  evt.preventDefault();
+
+  modalWindow.classList.toggle('is-hidden');
+
+
+  async function infoInModal() {
+    try {
+      const ID = evt.currentTarget.parentNode.parentNode.dataset.id;
+      const params = {
+        endpoint: `exercises/${ID}`,
+      };
+      return await getData(params);
+    } catch (e) {
+      console.log(e)
+    }
+  };
+
+  infoInModal().then(({ _id, bodyPart, description, equipment, gifUrl, name, popularity, rating, target }) => {
+    marcupA(_id, bodyPart, description, equipment, gifUrl, name, popularity, rating, target);
+    if (localStorage.getItem(`Name-Exercies: ${_id}`) !== null) {
+      btnFavorites.disabled = true
+  btnFavorites.classList.toggle('on-click-btn');
+    }
+  })
+}
+ 
+function marcupA(_id, bodyPart, description, equipment, gifUrl, name, popularity, rating, target) {
+  modalWindows.setAttribute("data-id", _id );
+  nameExercies.textContent = name;
+  ratingValues.textContent = Number(rating);
+  targets.textContent = target;
+  body.textContent = bodyPart;
+  equipments.textContent = equipment;
+  popular.textContent = popularity;
+  descriptions.textContent = description;
+  imgModal.src = gifUrl;
+}
 
 // ! add exercise in favorites
-const btnFavorites = document.querySelector(".btn-add-to-favorites")
+
 btnFavorites.addEventListener('click', addToFavorites)
 
 function isDataInLocalStorage(key) {
     return localStorage.getItem(key) !== null;
 }
 
-function addToFavorites() {
-    const dataToSave = 'X';
-    localStorage.setItem('keyX', dataToSave);
 
-    const keyInLocalStorage = isDataInLocalStorage('keyX');
-    if (keyInLocalStorage) { 
-        btnFavorites.classList.add('on-click-btn');
-        btnFavorites.textContent = 'This exercise in your Favorites';
-    }
+
+function addToFavorites(evt) {
+const dataToSave = evt.currentTarget.parentNode.dataset.id;
+const nameOfEx = `Name-Exercies: ${dataToSave}`
+localStorage.setItem(nameOfEx, dataToSave);
+  if (isDataInLocalStorage(nameOfEx)) {
+    btnFavorites.classList.toggle('on-click-btn');
+  }
+  btnFavorites.disabled = true
 }
 
 // ! rating stars
 const stars = document.querySelectorAll('.star');
 const ratingStars = document.querySelector('.rating_value');
-
 const ratingValue = Math.round(parseFloat(ratingStars.textContent));
 
 stars.forEach((star, index) => {

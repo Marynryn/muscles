@@ -19,7 +19,9 @@ function createFavoritesMarkup(arr){
     return arr.map(({name,bodyPart,target,time,burnedCalories,_id})=>`
     <li class="fav-item" id='${_id}'>
             <div class="fav-box-link">
+
                 <a href="./index.html" class="fav-link">workout</a>
+
                 <button class="fav-btn-delete">
                 <svg  width="16" height="16">
                     <use class="fav-icon-trach" href="./img/icons.svg#icon-trash"></use>
