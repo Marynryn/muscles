@@ -20,7 +20,7 @@ export const getData = async params => {
    }
 
     const req = await axios.get(url);
-    console.log(req.data);
+    // console.log(req.data);
   return req.data;
 };
 
@@ -38,7 +38,7 @@ export const postData = async (endpoint, body) => {
   try {
     const url = BASE_URL + endpoint;
     const req = await axios.post(url, body);
-    console.log(req.data);
+    // console.log(req.data);
     return req.data;
   } catch (e) {
     throw new Error(e.response.data.message);

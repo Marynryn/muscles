@@ -9,7 +9,7 @@ async function startApi() {
 
     markapQuote(data);
   } catch (e) {
-    console.log(e);
+    // console.log(e);
   }
 }
 
@@ -21,7 +21,7 @@ function markapQuote({ author, quote }) {
   quoteEl.insertAdjacentHTML('beforeend', markap);
 
   const currentDate = new Date().toLocaleDateString();
-  console.log(currentDate);
+  // console.log(currentDate);
   localStorage.setItem(currentDate, JSON.stringify({ author, quote }));
 }
 

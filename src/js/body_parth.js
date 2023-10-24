@@ -89,9 +89,9 @@ window.addEventListener('resize', onResize);
 function onResize() {
   if (width === 375) {
     maxCardOnScreen = 9;
-    console.log(maxCardOnScreen, 'lol');
+    // console.log(maxCardOnScreen, 'lol');
   }
-  console.log('Window width:', width);
+  // console.log('Window width:', width);
 }
 
 async function startApi(page, text) {
@@ -104,7 +104,7 @@ async function startApi(page, text) {
     };
     return await getData(params);
   } catch (e) {
-    console.log(e);
+    // console.log(e);
   }
 }
 
@@ -124,20 +124,20 @@ function makePagination(page, perPage, totalPages, text) {
         lastSelectedCardTitle,
         pagination.getCurrentPage()
       ).then(({ results, page, perPage, totalPages }) => {
-        console.log(page, perPage, totalPages);
+        // console.log(page, perPage, totalPages);
 
         makePagination(Number(page), Number(perPage), totalPages, text);
         refs.listInfoCard.innerHTML = createMarkupCardInfo(results);
-        console.log('helllllo');
+        // console.log('helllllo');
       });
       return;
     }
-    console.log('Page changed to:', event.page);
+    // console.log('Page changed to:', event.page);
 
     // Do something when the page changes
     startApi(event.page, text).then(
       ({ results, page, perPage, totalPages }) => {
-        console.log(page, perPage, totalPages);
+        // console.log(page, perPage, totalPages);
 
         makePagination(Number(page), Number(perPage), totalPages, text);
 
@@ -153,7 +153,7 @@ refs.listPhotoCard.addEventListener('click', onItemClick);
 
 function onItemClick(evt) {
   if (evt.target.tagName === 'UL') {
-    console.log(evt.target.tagName);
+    // console.log(evt.target.tagName);
     return;
   }
 
@@ -228,7 +228,7 @@ async function fetchExercisesDetails(key, value, page) {
 
     return await getData(params);
   } catch (e) {
-    console.log(e);
+    // console.log(e);
   }
 }
 // ! Інпут
@@ -242,7 +242,7 @@ function onInputSearch(evt) {
 
   fetchExercisesByKeyword(inputValue).then(({ results }) => {
     if (results.length === 0) {
-      console.log('За вашим запитом нічого не знайдено :( Спробуйте ще раз!');
+      // console.log('За вашим запитом нічого не знайдено :( Спробуйте ще раз!');
     }
     refs.listInfoCard.innerHTML = createMarkupCardInfo(results);
     refs.exercisesForm.reset();
@@ -260,12 +260,12 @@ async function fetchExercisesByKeyword(inputValue) {
       // equipment: 'barbell',
       keyword: `${inputValue}`,
     };
-    console.log(lastSelectedSectionBtn.dataset.id, 'LOooooool');
+    // console.log(lastSelectedSectionBtn.dataset.id, 'LOooooool');
     params[lastSelectedSectionBtn.dataset.id] = lastSelectedCardTitle;
-    console.log(params, 'params');
+    // console.log(params, 'params');
     return await getData(params);
   } catch (e) {
-    console.log(e);
+    // console.log(e);
   }
 }
 // ! 2 Функції розмітки
@@ -342,7 +342,7 @@ function createMarkupCardPhoto(arr) {
 }
 
  export let modalStartBtn = [];
-console.log(modalStartBtn)
+
 
 
 
@@ -393,7 +393,7 @@ function closeOpenModal(evt) {
       };
       return await getData(params);
     } catch (e) {
-      console.log(e)
+      // console.log(e)
     }
   };
 
