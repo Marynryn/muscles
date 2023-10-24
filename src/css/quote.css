@@ -367,4 +367,8 @@
     /* width: 239px; */
     height: 141px;
   }
+  .quote-static-item-favorites {
+    margin-right: 16px;
+    padding-right: 10px;
+  }
 }
