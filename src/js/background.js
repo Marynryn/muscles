@@ -1,15 +1,16 @@
-const themeButton = document.querySelector('.change_theme--btn');
+const themeToggle = document.querySelector('.change_theme--btn');
 const sunIcon = document.querySelector('.icon_sun');
 const moonIcon = document.querySelector('.icon_moon');
 const savedTheme = localStorage.getItem('theme');
 // console.log(savedTheme);
 const body = document.querySelector('body');
 
-themeButton.addEventListener('click', toggleTheme);
+themeToggle.addEventListener('click', toggleTheme);
 
 function toggleTheme() {
   const body = document.body;
   body.classList.toggle('dark_mode');
+  themeToggle.classList.toggle('change_theme--btn-on');
 
   if (body.classList.contains('dark_mode')) {
     localStorage.setItem('theme', 'light');

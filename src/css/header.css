@@ -178,18 +178,49 @@ body.dark_mode .header-logo-img {
 }
 
 .change_theme--btn {
-  width: 32px;
+  /* width: 32px;
   height: 32px;
   background-color: #fff;
   border-radius: 50px;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
+
+  margin: 0 10px;
+  width: 60px;
+  border: 1px solid var(--body-text-color);
+  border-radius: 35px;
+  position: relative;
+  background: var(--body-text-color);
+  cursor: pointer;
+}
+
+.change_theme--btn::before {
+  content: '';
+  position: absolute;
+  height: 24px;
+  width: 24px;
+  border: 1px solid var(--body-text-color);
+  border-radius: 35px;
+  background: var(--background-color);
+  top: 3px;
+  left: 2px;
+}
+.icon_sun,
+.icon_moon {
+  height: 100%;
+}
+
+.change_theme--btn.change_theme--btn-on::before {
+  left: calc(100% - 28px);
 }
 
 .header-logo-container {
   display: flex;
   align-items: center;
   gap: 8px;
+}
+.change_theme {
+  display: flex;
 }
 
 .decor-theme {
