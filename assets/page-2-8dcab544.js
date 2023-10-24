@@ -6,19 +6,19 @@ import"./background-b35271bd.js";const s={list:document.querySelector(".fav-list
 
                 <button class="fav-btn-delete">
                 <svg  width="16" height="16">
-                    <use class="fav-icon-trach" href="./img/icons.svg#icon-trash"></use>
+                    <use class="fav-icon-trach" href="../img/icons.svg#icon-trash"></use>
                 </svg>
                 </button>
                 
             </div>
             <button type="button" class="fav-btn"> Start
                 <svg class="fav-icon-arrow" width="16" height="16">
-                    <use  href="./img/icons.svg#icon-arrow"></use>
+                    <use  href="../img/icons.svg#icon-arrow"></use>
                 </svg>
             </button>
             <h3 class="fav-title">
                 <svg class="fav-icon-running" width="24" height="24">
-                    <use href="./img/icons.svg#icon-running-stick" y="4" height="16" ></use>
+                    <use href="../img/icons.svg#icon-running-stick" y="4" height="16" ></use>
                 </svg>
                 <span>${e.charAt(0).toUpperCase()+e.slice(1)}</span>
             </h3>
@@ -40,4 +40,4 @@ import"./background-b35271bd.js";const s={list:document.querySelector(".fav-list
                 </li>
             </ul>
         </li>
-    `).join("")}function r(t){if(!t.target.closest(".fav-btn-delete")){console.log(123);return}const e=t.target.closest(".fav-item");if(e){const i=e.id;document.getElementById(i).remove()}v()}function v(){s.list.childElementCount===0&&s.text.classList.remove("is-hidden")}
+    `).join("")}function r(t){if(!t.target.closest(".fav-btn-delete"))return;const e=t.target.closest(".fav-item");if(e){const i=e.id;document.getElementById(i).remove()}v()}function v(){s.list.childElementCount===0&&s.text.classList.remove("is-hidden")}
