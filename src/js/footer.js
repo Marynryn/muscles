@@ -16,7 +16,7 @@ form.addEventListener('submit', function (event) {
           email: emailInput,
         };
         const data = await postData(endpoint, body);
-        Notiflix.Notify.success(' Замовлення підписки на розсилку нових вправ відправлено', {
+        Notiflix.Notify.success('The subscription order for the newsletter of new exercises has been sent', {
           position: 'center-center',
           width: '400px',
           height:'500px',
@@ -24,7 +24,7 @@ form.addEventListener('submit', function (event) {
         })
         input.value = '';
       } catch (e) {
-        Notiflix.Notify.failure('Помилка при відправці підписки.', {
+        Notiflix.Notify.failure('Error sending subscription.', {
           position: 'center-center',
         width: '400px',
         height:'500px',
