@@ -67,6 +67,7 @@
 }
 
 .fav-link{
+    text-transform: uppercase;
     padding: 5px 7.5px;
     font-size: 12px;
     font-weight: 500;
@@ -96,6 +97,13 @@
     text-overflow: ellipsis;
     white-space: nowrap;
 }
+.fav-title span{
+ width: 220px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; 
+}
+
 
 .fav-icon-running{
     background-color: black;
@@ -124,12 +132,17 @@
     line-height: 1.5;
 }
 
+.text-width-elipses{
+    width: 30px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; 
+}
+
 @media screen and (min-width: 375px){
     .fav-list{
         max-width: 335px;
      }
-
-}
     .fav-item-text {
     gap: 4px;
 }
@@ -142,11 +155,13 @@
 }
 
 .text-width-elipses{
-    width: 57px;
+    width: 65px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis; 
 }
+}
+
 
 
 @media screen and (min-width: 768px) {
@@ -187,14 +202,14 @@
     }
 
     .fav-title span{
-        width: 270px;
+        width: 260px;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis; 
     }
 
     .text-width-elipses{
-        width: 65px;
+        width: 75px;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis; 
@@ -245,6 +260,12 @@
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis; 
+    }
+    .text-width-elipses{
+        width: 100px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis; 
     }
 
 }
