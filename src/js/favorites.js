@@ -24,19 +24,19 @@ function createFavoritesMarkup(arr){
 
                 <button class="fav-btn-delete">
                 <svg  width="16" height="16">
-                    <use class="fav-icon-trach" href="./img/icons.svg#icon-trash"></use>
+                    <use class="fav-icon-trach" href="../img/icons.svg#icon-trash"></use>
                 </svg>
                 </button>
                 
             </div>
             <button type="button" class="fav-btn"> Start
                 <svg class="fav-icon-arrow" width="16" height="16">
-                    <use  href="./img/icons.svg#icon-arrow"></use>
+                    <use  href="../img/icons.svg#icon-arrow"></use>
                 </svg>
             </button>
             <h3 class="fav-title">
                 <svg class="fav-icon-running" width="24" height="24">
-                    <use href="./img/icons.svg#icon-running-stick" y="4" height="16" ></use>
+                    <use href="../img/icons.svg#icon-running-stick" y="4" height="16" ></use>
                 </svg>
                 <span>${name.charAt(0).toUpperCase() + name.slice(1)}</span>
             </h3>
@@ -63,7 +63,7 @@ function createFavoritesMarkup(arr){
 
 function onDeleteItem(e){
     if (!e.target.closest('.fav-btn-delete')) {
-        console.log(123)
+        // console.log(123)
         return;
     }
 
