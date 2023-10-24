@@ -228,7 +228,7 @@ async function fetchExercisesDetails(key, value, page) {
 
     return await getData(params);
   } catch (e) {
-    // console.log(e);
+    console.log(e);
   }
 }
 // ! Інпут
@@ -265,7 +265,7 @@ async function fetchExercisesByKeyword(inputValue) {
     // console.log(params, 'params');
     return await getData(params);
   } catch (e) {
-    // console.log(e);
+    console.log(e);
   }
 }
 // ! 2 Функції розмітки
@@ -387,13 +387,14 @@ function closeOpenModal(evt) {
 
   async function infoInModal() {
     try {
-      const ID = evt.currentTarget.parentNode.parentNode.dataset.id;
+    //  console.log (evt.currentTarget.closest(".card-info-item-ex"))
+      const ID = evt.currentTarget.closest(".card-info-item-ex").dataset.id;
       const params = {
         endpoint: `exercises/${ID}`,
       };
       return await getData(params);
     } catch (e) {
-      // console.log(e)
+      console.log(e)
     }
   };
 
