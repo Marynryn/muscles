@@ -4,7 +4,7 @@ const refs = {
 }
 
 refs.list.addEventListener('click', onDeleteItem)
-refs.list.addEventListener('click', onOpenModal)
+
 
 fetch('https://your-energy.b.goit.study/api/exercises?bodypart=waist&page=1&limit=10')
 .then((res) => res.json())
@@ -15,35 +15,13 @@ fetch('https://your-energy.b.goit.study/api/exercises?bodypart=waist&page=1&limi
     }
 }) 
 
-
-// fetch(
-//     'https://your-energy.b.goit.study/api/filters?filter=Muscles&page=1&limit=12'
-//   )
-//     .then(res => res.json())
-//     .then(
-//       ({ results }) =>
-//         (refs.list.innerHTML = createMarkupCardPhoto(results))
-//     );
-
-// function createMarkupCardPhoto(arr) {
-//     return arr
-//       .map(
-//         ({ filter, name, imgURL }) =>
-//           `<li class="js-card-photo-item"   style="background-image: linear-gradient(0deg, rgba(17, 17, 17, 0.50) 0%, rgba(17, 17, 17, 0.50) 100%), url(${imgURL});">
-//              <div class="js-card-text">
-//               <h3 class="js-title-card-photo">${name}</h3>
-//               <p class ="js-text-card-photo">${filter}</p>
-//              </div>
-//           </li>`
-//       )
-//       .join('');
-//   }
-
 function createFavoritesMarkup(arr){ 
     return arr.map(({name,bodyPart,target,time,burnedCalories,_id})=>`
     <li class="fav-item" id='${_id}'>
             <div class="fav-box-link">
-                <a href="./index.html" class="fav-link">WORKOUT</a>
+
+                <a href="./index.html" class="fav-link">workout</a>
+
                 <button class="fav-btn-delete">
                 <svg  width="16" height="16">
                     <use class="fav-icon-trach" href="./img/icons.svg#icon-trash"></use>
@@ -60,22 +38,22 @@ function createFavoritesMarkup(arr){
                 <svg class="fav-icon-running" width="24" height="24">
                     <use href="./img/icons.svg#icon-running-stick" y="4" height="16" ></use>
                 </svg>
-                ${name.charAt(0).toUpperCase() + name.slice(1)}
+                <span>${name.charAt(0).toUpperCase() + name.slice(1)}</span>
             </h3>
             <ul class="fav-list-text">
                 <li class="fav-item-text">
                     <p class="fav-label">Burned calories:
-                        <span class="fav-text-span">${burnedCalories} / ${time}</span>
+                        <span class="fav-text-span">${burnedCalories} / ${time} min</span>
                     </p>
                 </li>
                 <li class="fav-item-text">
                     <p class="fav-label">Body part:
-                        <span class="fav-text-span">${bodyPart}</span>
+                        <span class="fav-text-span">${bodyPart.charAt(0).toUpperCase() + bodyPart.slice(1)}</span>
                     </p>
                 </li>
                 <li class="fav-item-text">
-                    <p class="fav-label">Target:
-                        <span class="fav-text-span">${target}</span>
+                    <p class="fav-label text-width-elipses">Target:
+                        <span class="fav-text-span">${target.charAt(0).toUpperCase() + target.slice(1)}</span>
                     </p>
                 </li>
             </ul>
@@ -84,7 +62,8 @@ function createFavoritesMarkup(arr){
 }
 
 function onDeleteItem(e){
-    if (!e.target.classList.contains('fav-icon-trach')) {
+    if (!e.target.closest('.fav-btn-delete')) {
+        console.log(123)
         return;
     }
 
@@ -104,8 +83,3 @@ function checkItem() {
     }
 }
 
-function onOpenModal(){
-
-}
-
-1440>856
