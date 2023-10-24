@@ -6,7 +6,9 @@
   line-height: 1;
   margin-bottom: 6px;
 }
-
+.quote-img-item-favorites{
+  min-width: 280px;
+}
 .js-quote-container::after {
   content: '';
   position: absolute;
@@ -66,7 +68,7 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  min-width: 335px;
+  min-width: 280px;
   height: 242px;
   border-radius: 20px;
 }
@@ -275,6 +277,7 @@
   border-radius: 20px;
   background-color: var(--primary-white-color);
   margin-bottom: 20px;
+  padding: 20px 20px 20px 70px;
 }
 
 .quote-icon {
@@ -288,7 +291,7 @@
 }
 .quote-img-item-favorites {
   background-image: url('../img/quote/quote-mobile-favorites-1x.jpg');
-  width: 335px;
+  /* width: 335px; */
   height: 119px;
   background-position: center;
   background-repeat: no-repeat;
@@ -329,6 +332,7 @@
   .quote-img-item-favorites {
     background-image: url('../img/quote/quote-tablet-favorites-1x.jpg');
     height: 141px;
+     width: 335px;
   }
 
   @media (min-device-pixel-ratio: 2),
