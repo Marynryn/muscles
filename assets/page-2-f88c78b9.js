@@ -1,4 +1,4 @@
-import"./background-b7b89df7.js";const s={list:document.querySelector(".fav-list"),text:document.querySelector(".fav-text")};s.list.addEventListener("click",r);s.list.addEventListener("click",f);fetch("https://your-energy.b.goit.study/api/exercises?bodypart=waist&page=1&limit=10").then(t=>t.json()).then(({results:t})=>{s.text.classList.add("is-hidden"),s.list.innerHTML=o(t)});function o(t){return t.map(({name:e,bodyPart:i,target:a,time:n,burnedCalories:l,_id:c})=>`
+import"./background-a188bcc8.js";const s={list:document.querySelector(".fav-list"),text:document.querySelector(".fav-text")};s.list.addEventListener("click",r);s.list.addEventListener("click",f);fetch("https://your-energy.b.goit.study/api/exercises?bodypart=waist&page=1&limit=10").then(t=>t.json()).then(({results:t})=>{s.text.classList.add("is-hidden"),s.list.innerHTML=o(t)});function o(t){return t.map(({name:e,bodyPart:i,target:a,time:n,burnedCalories:l,_id:c})=>`
     <li class="fav-item" id='${c}'>
             <div class="fav-box-link">
                 <a href="./index.html" class="fav-link">WORKOUT</a>

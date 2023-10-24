@@ -17,9 +17,9 @@
       rel="stylesheet"
     />
     
-    <script type="module" crossorigin src="/muscles/assets/index-430cc230.js"></script>
-    <link rel="modulepreload" crossorigin href="/muscles/assets/background-b7b89df7.js">
-    <link rel="stylesheet" href="/muscles/assets/background-93a140cd.css">
+    <script type="module" crossorigin src="/muscles/assets/index-d284c4af.js"></script>
+    <link rel="modulepreload" crossorigin href="/muscles/assets/background-a188bcc8.js">
+    <link rel="stylesheet" href="/muscles/assets/background-58769ab4.css">
     <link rel="stylesheet" href="/muscles/assets/index-a0b14d8a.css">
   </head>
   <body class="dark_mode">
@@ -263,10 +263,49 @@
 
      
       <section class="exercises">
-        <div class="container container-favirites">
-           
-          <!-- Quote -->
-          <div class="quote-item">
+        <div class="container">
+          <!-- Body-parth -->
+          <div class="title-search-container">  
+  <h3 class="exercises-title"><span class="exercises-span-title">Exercises</span><span class="exercises-part-title"></span></h3>
+<div class="search-container"> 
+  <form class="exercises-form">
+      <input type="text" placeholder="Search" name="target" class="exercises-input" id="exercises-input">
+      <button type="submit" class="exercises-btn-form">
+          <svg class="exercises-search">
+              <use href="../img/icons.svg#icon-search"></use>
+          </svg>
+      </button>
+  </form>
+
+  <ul class="exercises-list">
+      <li class="exercises-item">
+          <button type="button" class="exercises-btn js-btn-body-parts" data-id="bodypart">Body parts</button>
+      </li>
+
+      <li class="exercises-item">
+          <button type="button" class="exercises-btn js-btn-muscles" data-id="muscles">Muscles</button>
+      </li>
+
+      <li class="exercises-item">
+          <button type="button" class="exercises-btn js-btn-equipment" data-id="equipment">Equipment</button>
+      </li>
+  </ul>
+
+</div>
+</div>
+<div class="info-container">
+<!-- For cards with photo -->
+<div class="container-cards"> 
+<ul class="js-list-cards-photo"></ul>
+
+<ul class="js-list-cards-information"></ul>
+
+<!-- Tui Pagination -->
+<div id="pagination" class="tui-pagination"></div>
+</div>
+
+
+<div class="quote-item">
   <div class="container-tablet">
     <div class="js-quote-container">
       <h3 class="quote-title">Quote of the day</h3>
@@ -290,70 +329,7 @@
   </div>
 </div>
 
-
-          <!-- Body-parth -->
-          <div class="container-exercises">
-  <h3>
-    <span class="exercises-title">Exercises</span
-    ><span class="title-span-exercise"></span>
-  </h3>
-
-  <form class="exercises-form">
-    <input
-      type="text"
-      placeholder="Search"
-      name="target"
-      class="exercises-input"
-      id="exercises-input"
-    />
-    <button type="submit" class="exercises-btn-form">
-      <svg class="exercises-search">
-        <use href="/muscles/assets/icons-b11c80d8.svg#icon-search"></use>
-      </svg>
-    </button>
-  </form>
-
-  <ul class="exercises-list">
-    <li class="exercises-item">
-      <button
-        type="button"
-        class="exercises-btn js-btn-body-parts"
-        data-id="bodypart"
-      >
-        Body parts
-      </button>
-    </li>
-
-    <li class="exercises-item">
-      <button
-        type="button"
-        class="exercises-btn js-btn-muscles"
-        data-id="muscles"
-      >
-        Muscles
-      </button>
-    </li>
-
-    <li class="exercises-item">
-      <button
-        type="button"
-        class="exercises-btn js-btn-equipment"
-        data-id="equipment"
-      >
-        Equipment
-      </button>
-    </li>
-  </ul>
-
-  <!-- For cards with photo -->
-  <ul class="js-list-cards-photo"></ul>
-
-  <ul class="js-list-cards-information"></ul>
-
-  <!-- Tui Pagination -->
-  <div id="pagination" class="tui-pagination"></div>
 </div>
-
         </div>
       </section>
 
