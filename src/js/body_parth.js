@@ -280,19 +280,19 @@ function createMarkupCardInfo(arr) {
       <p class="js-text-rating">
         ${rating}
         <svg class="icon-star" width="18" height="18">
-          <use href="../img/icons.svg#icon-star"></use>
+          <use href="./img/icons.svg#icon-star"></use>
         </svg>
       </p>
     </div>
     <button type="button" class="btn-start" >
       Start
       <svg class="icon-arrow" width="16" height="16">
-        <use href="../img/icons.svg#icon-arrow"></use>
+        <use href="./img/icons.svg#icon-arrow"></use>
       </svg>
     </button>
   <h3 class="exercise-title">
     <svg class="exercise-icon-running" width="24" height="24">
-      <use href="../img/icons.svg#icon-running-stick" height="16" y="4"></use>
+      <use href="./img/icons.svg#icon-running-stick" height="16" y="4"></use>
     </svg>
     <span>${name.charAt(0).toUpperCase() + name.slice(1)}</span>
   </h3>
