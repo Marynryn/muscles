@@ -1,34 +1,61 @@
 <div class="container-exercises">
-    <h3><span class="exercises-title">Exercises</span><span class="title-span-exercise"></span></h3>
+  <h3>
+    <span class="exercises-title">Exercises</span
+    ><span class="title-span-exercise"></span>
+  </h3>
 
-    <form class="exercises-form">
-        <input type="text" placeholder="Search" name="target" class="exercises-input" id="exercises-input">
-        <button type="submit" class="exercises-btn-form">
-            <svg class="exercises-search">
-                <use href="./img/icons.svg#icon-search"></use>
-            </svg>
-        </button>
-    </form>
+  <form class="exercises-form">
+    <input
+      type="text"
+      placeholder="Search"
+      name="target"
+      class="exercises-input"
+      id="exercises-input"
+    />
+    <button type="submit" class="exercises-btn-form">
+      <svg class="exercises-search">
+        <use href="./img/icons.svg#icon-search"></use>
+      </svg>
+    </button>
+  </form>
 
-    <ul class="exercises-list">
-        <li class="exercises-item">
-            <button type="button" class="exercises-btn js-btn-body-parts" data-id="bodypart">Body parts</button>
-        </li>
+  <ul class="exercises-list">
+    <li class="exercises-item">
+      <button
+        type="button"
+        class="exercises-btn js-btn-body-parts"
+        data-id="bodypart"
+      >
+        Body parts
+      </button>
+    </li>
 
-        <li class="exercises-item">
-            <button type="button" class="exercises-btn js-btn-muscles" data-id="muscles">Muscles</button>
-        </li>
+    <li class="exercises-item">
+      <button
+        type="button"
+        class="exercises-btn js-btn-muscles"
+        data-id="muscles"
+      >
+        Muscles
+      </button>
+    </li>
 
-        <li class="exercises-item">
-            <button type="button" class="exercises-btn js-btn-equipment" data-id="equipment">Equipment</button>
-        </li>
-    </ul>
+    <li class="exercises-item">
+      <button
+        type="button"
+        class="exercises-btn js-btn-equipment"
+        data-id="equipment"
+      >
+        Equipment
+      </button>
+    </li>
+  </ul>
 
-    <!-- For cards with photo -->
-    <ul class="js-list-cards-photo"></ul>
+  <!-- For cards with photo -->
+  <ul class="js-list-cards-photo"></ul>
 
-    <ul class="js-list-cards-information"></ul>
+  <ul class="js-list-cards-information"></ul>
 
-    <!-- Tui Pagination -->
-    <div id="pagination" class="tui-pagination"></div>
+  <!-- Tui Pagination -->
+  <div id="pagination" class="tui-pagination"></div>
 </div>

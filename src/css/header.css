@@ -1,4 +1,3 @@
-
 .header-container {
   padding-top: 20px;
   padding-bottom: 20px;
@@ -45,7 +44,6 @@
 .header-menu.is-open {
   transform: translateX(0);
   width: 210px;
- 
 }
 .menu-closed-btn {
   stroke: #f4f4f4;
@@ -69,7 +67,6 @@
 }
 .mob-wrap-pages {
   color: #f4f4f4;
-  font-family: Neue Montreal;
   font-size: 14px;
   line-height: 1.28;
 }

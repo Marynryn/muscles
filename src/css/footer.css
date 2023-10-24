@@ -5,10 +5,14 @@
   color: #fff;
   height: auto;
 } */
+
+.footer-container {
+  padding-top: 40px;
+  padding-bottom: 20px;
+}
 footer {
   background-color: #242424;
   color: #fff;
-  padding: 20px 0;
   height: auto;
 }
 
@@ -17,7 +21,6 @@ footer {
   padding: 0 20px;
   box-sizing: border-box;
 }  */
-
 
 .footer-logo-icon {
   fill: white;
@@ -112,19 +115,14 @@ footer {
   font-size: 14px;
   line-height: 18px;
   letter-spacing: -0.28px;
+  margin-bottom: 10px;
 }
 .footer-update {
   margin-top: 100px;
   display: flex;
   align-items: end;
+  justify-content: space-between;
 }
-.footer-descrip {
-  min-width: 200px;
-}
-.footer-privacy {
-  min-width: 250px;
-  margin-top: 10px;}
-
 
 /* 
 .row {
@@ -215,21 +213,6 @@ footer {
   letter-spacing: -0.28px;
 } */
 
-/* Стили для мобильных устройств*/
-@media (min-width: 375px) {
-  /* footer {
-    height: 588px;
-  }
-
-  .col-12 {
-    flex: 0 0 100%;
-    max-width: 100%;
-  } */
-  .footer-container {
-    padding: 40px 20px;
-  }
-}
-
 /* Стили для планшетов*/
 @media (min-width: 768px) {
   /* footer {
@@ -240,8 +223,21 @@ footer {
     flex: 0 0 100%;
     max-width: 100%;
   } */
+  .footer-update {
+    justify-content: normal;
+  }
+  .footer-info {
+    margin-bottom: 0;
+  }
+  .footer-descrip {
+    margin-right: 78px;
+  }
+  .footer-2023 {
+    margin-left: 208px;
+  }
   .footer-container {
-    padding: 64px 32px 32px 32px;
+    padding-top: 64px;
+    padding-bottom: 32px;
   }
 
   .footer-space {
@@ -257,8 +253,8 @@ footer {
     font-size: 56px;
     line-height: 60px;
     letter-spacing: -1.12px;
-
     margin-bottom: 32px;
+    margin-top: 0;
   }
   .footer-form-subt {
     font-size: 18px;
@@ -286,25 +282,34 @@ footer {
   .footer-form-subt {
     margin-top: 20px;
   }
-  .footer-text {
-    display: contents;
-  }
 
   .footer-space {
     display: flex;
     gap: 158px;
   }
-  .footer-title {
+  /* .footer-title {
     min-width: 554px;
-  }
-
+  } */
 
   .footer-2023 {
-    margin: auto;
+    margin-left: 535px;
   }
 
-
   .footer-descrip {
-    min-width: 200px;
+    margin-right: 136px;
+  }
+  .footer-cont-form {
+    display: flex;
+    flex-direction: row;
+    gap: 158px;
+  }
+  .footer-update {
+    margin-top: 54px;
+  }
+  .footer-button {
+    min-width: 350px;
+  }
+  .footer-input {
+    min-width: 350px;
   }
 }
