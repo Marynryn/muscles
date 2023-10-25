@@ -31,6 +31,9 @@ body.dark_mode .header-logo-img {
 .header-burger-img {
   stroke: #242424;
 }
+body.dark_mode .header-burger-img {
+  stroke: var(--background-color);
+}
 .header-menu {
   position: fixed;
   top: 0;
@@ -193,6 +196,9 @@ body.dark_mode .header-logo-img {
   background: var(--body-text-color);
   cursor: pointer;
 }
+body.dark_mode .change_theme--btn {
+  border: 1px solid var(--background-color);
+}
 
 .change_theme--btn::before {
   content: '';
@@ -208,8 +214,14 @@ body.dark_mode .header-logo-img {
 .icon_sun,
 .icon_moon {
   height: 100%;
+  stroke: var(--background-color);
 }
-
+body.dark_mode .icon_moon .icon_sun {
+  fill: var(--background-color);
+}
+body.dark_mode .icon_sun {
+  fill: var(--background-color);
+}
 .change_theme--btn.change_theme--btn-on::before {
   left: calc(100% - 28px);
 }
