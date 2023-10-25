@@ -14,30 +14,23 @@ refs.list.addEventListener('click', onDeleteItem)
 
 getFavoritesItemFromLS()
 
-
-
 function getFavoritesItemFromLS() {
     if(!LS){
 return;
-    }
-    
-      console.log(data)
+    }   
+     
     const values = Object.values(data);
     for (const value of values) {
-        console.log(value._id);
+      
         infoDetails.push(value);
         isInfoCards = true;
-    }
-          
+    }   
         }
 
 if (isInfoCards) {
     refs.list.innerHTML = createFavoritesMarkup(infoDetails);
     checkFavoritesItems()
 }
-
-
-
 
 function createFavoritesMarkup(arr){ 
     return arr.map(({name, bodyPart, target, time, burnedCalories, _id})=>`
@@ -83,12 +76,10 @@ function onDeleteItem(e){
     if (!e.target.closest('.fav-btn-delete')) {
         return;
     }
-
-
-    async function fetchInfoDetails() {
+ async function fetchInfoDetails() {
         try {
           const ID = e.target.closest(".fav-item").dataset.id
-          console.log(ID)
+          
           const params = {
             endpoint: `exercises/${ID}`,
           };

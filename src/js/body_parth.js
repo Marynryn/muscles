@@ -21,7 +21,7 @@ let lastSelectedCardTitle = undefined;
 let lastSectionValue = '';
 let lastFetchedData = [];
 let lastPaginationOptions = {};
-// let lastSelectedPaginationPage = 1;
+
 let maxCardOnScreen = 12;
 let isMainScreen = true;
 const TABLET_WIDTH = 768;
@@ -31,10 +31,7 @@ refs.exerciseSectionsList.addEventListener('click', onClickSectionButton);
 refs.exercisesTitle.addEventListener('click', onClickExercisesTitle)
 window.addEventListener('resize', onResize);
 
-
 updateMaxCardOnScreen()
-
-
 
 function onClickExercisesTitle(evt){
   resetExercisesTitle();
@@ -45,13 +42,9 @@ function onClickExercisesTitle(evt){
   const {itemsPerPage, totalItems} = lastPaginationOptions
 
   const currentPage = 1;
-
-  console.log('currentPage', currentPage);
-
+ 
   updatePagination(currentPage, Number(itemsPerPage) , totalItems, lastSectionValue)
-
   clearListInfoCard()
-
   updateListPhotoCard(lastFetchedData)
   refs.listPhotoCard.addEventListener('click', onItemClick)
 }
@@ -85,8 +78,6 @@ isMainScreen = true;
       page: page,
       };
 
-      console.log(perPage * totalPages)
-
       updatePagination(
         Number(page),
         Number(perPage),
@@ -108,7 +99,6 @@ function resetExercisesTitle() {
   refs.spanTitle.textContent = '';
 }
 
-
 function showSearchInputForm(isDisplay){
   refs.exercisesForm.style.display = isDisplay ? 'block' : 'none';
 }
@@ -118,21 +108,16 @@ function updateMaxCardOnScreen() {
   maxCardOnScreen = width < TABLET_WIDTH ? 9 : 12;
 }
 
-
 function getWindowWidth() {
   return window.innerWidth ||
   document.documentElement.clientWidth ||
   document.body.clientWidth;
 }
 
-
-
 function onResize() {
   clearListInfoCard()
    updateMaxCardOnScreen()
 
-
-  // console.log(maxCardOnScreen);
   fetchExercisesSection(1,"Body parts").then(
     ({ results, page, perPage, totalPages }) => {
 
@@ -159,7 +144,6 @@ fetchExercisesSection(1,"Body parts")
   ({ results, page, perPage, totalPages }) => {
    
     updateCurrentSectionButton()
-    
     updatePagination(
       Number(page),
       Number(perPage),
@@ -206,7 +190,7 @@ async function fetchExercisesSection(page, text) {
     };
     return await getData(params);
   } catch (e) {
-    // console.log(e);
+    console.log(e);
   }
 }
 
@@ -240,15 +224,12 @@ function updatePagination(page, perPage, totalPages, sectionTextValue) {
       return;
     }
 
-    // lastSelectedPaginationPage = pagination.getCurrentPage()
-
     fetchExercisesSection(event.page, sectionTextValue).then(
       ({ results, page, perPage, totalPages }) => {
         updatePagination(Number(page), Number(perPage), totalPages, sectionTextValue);
         updateListPhotoCard(results);
         if(scrollToEx){
           scrollToEx.scrollIntoView({behavior: 'smooth'});
-          
         }
       }
     );
@@ -268,7 +249,7 @@ refs.listPhotoCard.addEventListener('click', onItemClick);
 
 function onItemClick(evt) {
   if (evt.target.tagName === 'UL') {
-    // console.log(evt.target.tagName);
+   
     return;
   }
 
@@ -284,10 +265,7 @@ function onItemClick(evt) {
 
   lastSelectedCardTitle = sectionValue;
 
-  // refs.mainTitle.textContent = refs.mainTitle.textContent.replace(' / ', '');
-
   addDetailsTextForExercisesTitle(sectionValue)
-
   
   fetchExercisesDetails(sectionKey, sectionValue, 1).then(
     ({ results, page, perPage, totalPages }) => {
@@ -320,10 +298,7 @@ async function fetchExercisesDetails(key, value, page) {
       page: page,
       limit: 12,
       endpoint: 'exercises',
-      // bodypart: 'back',
-      // muscles: 'lats',
-      // equipment: 'barbell',
-      // keyword: 'pull',
+      
     };
     params[key] = value;
 
@@ -339,7 +314,6 @@ function onInputSearch(evt) {
   evt.preventDefault();
 
   const inputValue = evt.currentTarget.elements.target.value;
-  //   console.log(inputValue);
 
   fetchExercisesByKeyword(inputValue).then(({ results }) => {
 
@@ -362,7 +336,7 @@ async function fetchExercisesByKeyword(inputValue) {
     };
  
     params[lastSelectedSectionBtn.dataset.id] = lastSelectedCardTitle;
-    // console.log(params, 'params');
+  
     return await getData(params);
   } catch (e) {
     console.log(e);
@@ -437,28 +411,11 @@ function createMarkupCardPhoto(arr) {
     .join('');
 }
 
- export let modalStartBtn = [];
-
-
-
-
-
-
-
-
-
-
-
+ let modalStartBtn = [];
 
 
 
 //! --------------------------------------------MODAL--------------------------------------------
-
-
- 
-//  btnFavorites.textContent.toggle("Remove from favorites", "Add to favorites");
- 
-
 
 
 
@@ -501,7 +458,7 @@ function onOpenModal(evt) {
   async function updateInfoInModalWindow() {
     try {
       const ID = evt.currentTarget.closest(".card-info-item-ex").dataset.id;
-      console.log(ID)
+      
       const params = {
         endpoint:`exercises/${ID}`,
       };
@@ -514,8 +471,13 @@ function onOpenModal(evt) {
     createMarkupModalWindow(_id, bodyPart, description, equipment, gifUrl, name, popularity, rating, target);
     if (localStorage.getItem(`Exercies-Name: ${name}`) !== null) {
       btnFavorites.classList.add('on-click-btn');
+      btnFavorites.textContent = 'Remove from favorites';
     } else {
       btnFavorites.classList.remove('on-click-btn');
+      btnFavorites.innerHTML = `Add to favorites
+      <svg class="star" width="16" height="16">
+          <use href="./img/icons.svg#icon-heart"></use>
+      </svg>`
     }
   })
 }
@@ -536,7 +498,7 @@ btnFavorites.addEventListener('click', onClickFavoritesBtn)
 function onClickFavoritesBtn(evt) {
   async function updateInfoForModalWindow() {
     try {
-      const ID = evt.currentTarget.parentNode.dataset.id
+      const ID = evt.currentTarget.parentNode.parentNode.dataset.id
       const params = {
         endpoint: `exercises/${ID}`,
       };
@@ -562,11 +524,6 @@ function onClickFavoritesBtn(evt) {
       <svg class="star" width="16" height="16">
           <use href="./img/icons.svg#icon-heart"></use>
       </svg>`
-       
-     
-        
-    
-      
       
       delete localStorageData[nameOfEx];
       localStorage.removeItem(nameOfEx, JSON.stringify(dataToSave))
