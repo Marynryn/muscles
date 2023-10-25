@@ -516,6 +516,7 @@ function createMarkupModalWindow(_id, bodyPart, description, equipment, gifUrl, 
 btnFavorites.addEventListener('click', onClickFavoritesBtn)
 
 function onClickFavoritesBtn(evt) {
+ 
   async function updateInfoForModalWindow() {
     try {
       const ID = evt.currentTarget.parentNode.dataset.id
@@ -528,31 +529,92 @@ function onClickFavoritesBtn(evt) {
     }
   };
 
-  updateInfoForModalWindow().then(({ _id, bodyPart, name, target, burnedCalories }) => {
+  updateInfoForModalWindow().then(({ _id, bodyPart, name, target, burnedCalories,time }) => {
     const dataToSave = {
-      id: _id,
-      names: name,
-      calories: burnedCalories,
-      bodyParts: bodyPart,
-      targets: target,
+      _id,
+      name,
+     burnedCalories,
+     bodyPart,
+       target,
+      time,
     };
-    const nameOfEx = `Exercies-Name: ${name}`;
-    let localStorageData = JSON.parse(localStorage.getItem('localStorageData') || '{}');
 
-    if (localStorage.getItem(nameOfEx) !== null) {
-      btnFavorites.classList.remove('on-click-btn');
-      delete localStorageData[nameOfEx];
-      localStorage.removeItem(nameOfEx, JSON.stringify(dataToSave))
-      localStorage.setItem('localStorageData', JSON.stringify(localStorageData));
 
+   
+    btnFavorites.classList.toggle("on-click-btn");
+
+    var storedObjectsJSON = localStorage.getItem('dataToSave');
+
+    var storedObjects = storedObjectsJSON ? JSON.parse(storedObjectsJSON) : [];
+
+    
+    var index = storedObjects.findIndex(function(obj) {
+        return obj._id === dataToSave._id;
+    });
+
+    if (index !== -1) {
+        
+        storedObjects.splice(index, 1);
+        
     } else {
-      btnFavorites.classList.add('on-click-btn');
-      localStorageData[nameOfEx] = dataToSave;
-      localStorage.setItem(nameOfEx, JSON.stringify(dataToSave));
-      localStorage.setItem('localStorageData', JSON.stringify(localStorageData));
+        
+        storedObjects.push(dataToSave);
+        
     }
-  });
+
+    localStorage.setItem("dataToSave", JSON.stringify(storedObjects));
+});
 }
+
+
+ 
+   
+//     var storedObjectsJSON = localStorage.getItem('dataToSave'); // Получаем строку JSON из LocalStorage
+
+//     var storedObjects = storedObjectsJSON ? JSON.parse(storedObjectsJSON) : [];
+
+//     if (storedObjects.length > 0) {
+//         // Если в массиве уже есть объекты, добавьте новый объект в массив
+//         storedObjects.push(dataToSave);
+//         localStorage.setItem('dataToSave', JSON.stringify(storedObjects));
+//         alert('Новый объект добавлен в массив и сохранен в LocalStorage.');
+//     } else {
+//         // Если массив пуст, создайте новый массив и добавьте в него первый объект
+//         var firstObject = {dataToSave };
+//         var newObjects = [firstObject];
+//         localStorage.setItem('dataToSave', JSON.stringify(newObjects));
+//         alert('Первый объект добавлен в массив и сохранен в LocalStorage.');
+//     }
+// });}
+
+
+
+// let dataToSaveJSON =localStorage.getItem("dataToSave");
+
+// if(dataToSaveJSON){
+//   localStorage.removeItem("dataToSave");}
+//   else{
+//      localStorage.setItem("dataToSave",JSON.stringify(dataToSave))
+//   }
+//     })}
+   
+    // const nameOfEx = `Exercies-Name: ${name}`;
+    // let localStorageData = JSON.parse(localStorage.getItem('localStorageData') || '{}');
+
+    // if (localStorage.getItem(nameOfEx) !== null) {
+    //   btnFavorites.classList.remove('on-click-btn');
+    //   delete localStorageData[nameOfEx];
+    //   localStorage.removeItem(nameOfEx, JSON.stringify(dataToSave))
+    //   localStorage.setItem('localStorageData', JSON.stringify(localStorageData));
+
+    // } else {
+    //   btnFavorites.classList.add('on-click-btn');
+    //   localStorageData[nameOfEx] = dataToSave;
+    //   localStorage.setItem(nameOfEx, JSON.stringify(dataToSave));
+    //   localStorage.setItem('localStorageData', JSON.stringify(localStorageData));
+    // }
+  
+
 
 // ! rating stars
 const stars = document.querySelectorAll('.star');

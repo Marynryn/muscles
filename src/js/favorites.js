@@ -2,49 +2,34 @@ const refs = {
     list: document.querySelector('.fav-list'),
     text: document.querySelector('.fav-text'),
 }
-
+const LS = localStorage.getItem('dataToSave');
+    const data = JSON.parse(LS);
+    // let localStorageData = JSON.parse(localStorage.getItem('localStorageData') || '{}');
+ let infoDetails = [];
 refs.list.addEventListener('click', onDeleteItem)
-// getFavoritesItemFromLS()
-
-//  let ids = [];
-// function getFavoritesItemFromLS() {
-//     const LS = localStorage.getItem('localStorageData');
-//     const data = JSON.parse(LS);
-//     console.log(data)
-//     console.log(data['Exercies-Name: dumbbell burpee'])
-//     if (data && data['Exercies-Name: dumbbell burpee']) {
-//       const exerciseData = data['Exercies-Name: dumbbell burpee'];
-      
-  
-// //       for (const exerciseName in exerciseData) {
-// //         if (exerciseData.hasOwnProperty(exerciseName)) {
-        
-// //           const exercise = exerciseData[exerciseName];
-// //           if (exercise && exercise.id) {
-// //             console.log(exercise.id)
-// //             ids.push(exercise.id);
-// //           }
-// //         }
-// //       }
-// //     }
-// //   }
-
-//   console.log(ids)
+getFavoritesItemFromLS()
 
 
-//   fetch('https://your-energy.b.goit.study/api/exercises?bodypart=waist&page=1&limit=10')
-//   .then((res) => res.json())
-//   .then(({results}) => {
-//       if(true){
-//           refs.text.classList.add('is-hidden')
-//           refs.list.innerHTML= createFavoritesMarkup(results)
-
+function getFavoritesItemFromLS() {
     
+      console.log(data)
+    const values = Object.values(data);
+    for (const value of values) {
+        console.log(value);
+        
+        infoDetails.push(value);
+
+    }
+          
+        }
+        console.log(infoDetails);
+        refs.list.innerHTML = createFavoritesMarkup(infoDetails);
+
 
 
 function createFavoritesMarkup(arr){ 
     return arr.map(({name,bodyPart,target,time,burnedCalories,_id})=>`
-    <li class="fav-item" id='${_id}'>
+    <li class="fav-item" data-name=${name} data-id="${_id}" id=${_id}>
             <div class="fav-box-link">
 
                 <a href="./index.html" class="fav-link">workout</a>
@@ -88,10 +73,14 @@ function onDeleteItem(e){
     }
 
     const itemToDelete = e.target.closest('.fav-item')
+    const titleDetails = itemToDelete.dataset.name;
+
+    console.log(titleDetails)
     if (itemToDelete) {
-        removeFavotitesItem(itemToDelete)
-    }
-    checkItem()
+        removeFavotitesItem(itemToDelete);
+        
+}
+    // checkItem()
 }
 
 
@@ -102,8 +91,45 @@ function checkFavoritesItems() {
 }
 
 function removeFavotitesItem(itemToDelete){
-        const itemId = itemToDelete.id;
+  
+    
+    
+    const itemId = itemToDelete.id;
+       
         const item = document.getElementById(itemId)
         item.remove()
 }
+const btnDelit = document.querySelector(".fav-btn-delete")
+btnDelit.addEventListener("click", function(event){
+    
+    if (event.target.classList.contains('fav-btn-delete')) {
+        console.log("ryjgrf pageYOffset;fnf")
+        var cardElement = event.target.parentElement;
+        var idToDelete = cardElement.getAttribute('data-id');
+console.log(idToDelete)
+console.log(idToDelete)
+        // Получите объекты из Local Storage
+        var storedObjectsJSON = localStorage.getItem('dataToSave');
+        var storedObjects = storedObjectsJSON ? JSON.parse(storedObjectsJSON) : [];
+
+        // Найдите индекс объекта, который нужно удалить
+        var indexToDelete = storedObjects.findIndex(function(obj) {
+            return obj._id === idToDelete;
+        });
+
+        if (indexToDelete !== -1) {
+            
+            storedObjects.splice(indexToDelete, 1);
+
+            localStorage.setItem('dataToSave', JSON.stringify(storedObjects));
+
+            
+            cardElement.remove();
+            alert('Объект с ID ' + idToDelete + ' удален из LocalStorage.');
+        } else {
+            alert('Объект с ID ' + idToDelete + ' не найден в LocalStorage.');
+        }
+    }
+
+})
 
