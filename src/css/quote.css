@@ -369,4 +369,13 @@
     margin-right: 16px;
     padding-right: 10px;
   }
+  .quote-static-item{
+    width: 444px;
+  }
+  .quote-item-favorites{
+    width: 494px;
+  }
+  .favorites-desctop{
+    width: 494px;
+  }
 }
