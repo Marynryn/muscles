@@ -520,10 +520,7 @@ function onClickFavoritesBtn(evt) {
     let localStorageData = JSON.parse(localStorage.getItem('localStorageData') || '{}');
     if (localStorage.getItem(nameOfEx) !== null) {
       btnFavorites.classList.remove('on-click-btn');
-       btnFavorites.innerHTML = `Add to favorites
-      <svg class="star" width="16" height="16">
-          <use href="./img/icons.svg#icon-heart"></use>
-      </svg>`
+      btnFavorites.textContent = 'Add to favorites';
       
       delete localStorageData[nameOfEx];
       localStorage.removeItem(nameOfEx, JSON.stringify(dataToSave))
