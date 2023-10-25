@@ -1,4 +1,3 @@
-
 function toggleScrollToTopButton() {
     const button = document.getElementById("scrollToTopButton");
     
@@ -15,36 +14,6 @@ function toggleScrollToTopButton() {
   });
 
   window.onscroll = toggleScrollToTopButton;
-
-
-  //?======================
-
-
-//   const loader = document.querySelector('.loader');
-
-
-// function showLoader() {
-//   loader.style.display = 'block';
-// }
-
-// function hideLoader() {
-//   loader.style.display = 'none';
-// }
-
-
-// axios.get('')
-//   .then(function (response) {
-//     hideLoader(); 
-//     const data = response.data;
-//   })
-//   .catch(function (error) {
- 
-//     hideLoader(); 
-//     console.error('Помилка запиту', error);
-//   });
-
-// showLoader();
-
 
 function showLoader () {
 const loader = document.getElementById("loader");

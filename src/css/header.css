@@ -184,6 +184,7 @@ body.dark_mode .header-burger-img {
 
 /*============ backqround Theme ================ */
 .dark_mode {
+  transition: background-color 1.5s;
   background-color: black;
 }
 
@@ -217,9 +218,11 @@ body.dark_mode .change_theme--btn {
   stroke: var(--background-color);
 }
 body.dark_mode .icon_moon .icon_sun {
+  
   fill: var(--background-color);
 }
 body.dark_mode .icon_sun {
+
   fill: var(--background-color);
 }
 .change_theme--btn.change_theme--btn-on::before {

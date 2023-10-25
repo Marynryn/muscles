@@ -1,7 +1,6 @@
 import { getData, patchData, postData } from './api.js';
 import Notiflix from 'notiflix';
 
-
 let form = document.querySelector('.footer-form');
 let input = document.querySelector('.footer-input');
 
@@ -35,5 +34,3 @@ form.addEventListener('submit', function (event) {
     }
     startApi();
     })
-
-    

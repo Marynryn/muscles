@@ -199,6 +199,29 @@ background: var(--background-color);
     stroke: #242424;
     transition: all 0.3s;
 }
+.btn-remove-from-favorites
+{
+    
+border: 1px solid #F4F4F4;
+color: #242424;
+width: 183px;
+height: 48px;
+font-size: 14px;
+line-height: 1,28;
+display: flex;
+padding: 12px 24px;
+justify-content: center;
+align-items: center;
+gap: 8px;
+border-radius: 30px;
+background: var(--background-color);
+    stroke: #242424;
+    transition: all 0.3s;}
+    .madol-btn{
+        display: flex;
+        gap: 15px;
+    }
+
 
 /* js */
 
@@ -255,16 +278,12 @@ stroke: #F4F4F4;
 .info-of-exercises::before {
     margin: 16px auto 8px;
 }
-
 .info-of-exercises::after {
     margin: 8px auto 16px;
 }
-
  .description-of-exercises {
     margin-bottom: 64px;
  }
-
-
  .rating-stars{
     margin-top: 8px;
  }
@@ -278,10 +297,6 @@ stroke: #F4F4F4;
         width: 708px;
     }
 }
-
-
-
-
 .card-info-item {
     position: relative;
     display: flex;
@@ -289,9 +304,7 @@ stroke: #F4F4F4;
     flex-wrap: wrap;
     justify-content: space-between;
     max-width: 335px;
-    /* max-height: 141px; */
     padding: 16px;
-    /* background-color: var(--background-color); */
     background-color: #fff;
     border-radius: 15px;
     margin-bottom: 20px;
@@ -326,7 +339,6 @@ stroke: #F4F4F4;
 
 .btn-start {
     position: absolute;
-    /* grid-row: 1; */
     background-color: inherit;
     right: 16px;
     top: 16px;

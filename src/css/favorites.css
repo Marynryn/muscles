@@ -45,7 +45,6 @@ body.dark_mode .favorites-title{
     text-overflow: ellipsis;
     max-width: 335px;
     padding: 16px;
-    /* background-color: var(--background-color); */
     background-color: #fff;
     border-radius: 15px;
     margin-bottom: 20px;
@@ -168,8 +167,6 @@ body.dark_mode .favorites-title{
 }
 }
 
-
-
 @media screen and (min-width: 768px) {
     .favorites-title{
         font-size: 44px;
@@ -219,8 +216,7 @@ body.dark_mode .favorites-title{
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis; 
-    }
-    
+    }  
 }
 
 @media screen and (min-width: 1440px){
@@ -276,14 +272,12 @@ body.dark_mode .favorites-title{
 
 }
 
-
 .fav-icon-delete{
     position: absolute;
     width: 18px;
     height: 18px;
     left: 0;
     top: 0;
-    
   }
   
   .fav-icon-delete::after{

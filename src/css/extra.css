@@ -37,20 +37,6 @@
     transition: background-color, color .5s ease-in-out, box-shadow .3s ease-in-out;
   }
 
-/* 
-  #scrollToTopButton {
-    display: none; 
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    padding: 10px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-} */
-
-
   .scroll-icon {
     fill:rgba(36, 36, 36, 0.50);
     display: flex;

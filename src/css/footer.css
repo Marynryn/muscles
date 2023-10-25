@@ -9,10 +9,8 @@ footer {
   height: auto;
 }
 .body{
- 
 font-style: italic;
 }
-
 
 .footer-logo-icon {
   fill: white;
@@ -117,7 +115,6 @@ font-style: italic;
   justify-content: space-between;
 }
 
-
 @media (min-width: 768px) {
  
   .footer-update {
@@ -159,7 +156,6 @@ font-style: italic;
   }
 }
 
-
 @media (min-width: 1440px) {
   
   .footer-title {
@@ -178,7 +174,6 @@ font-style: italic;
     gap: 158px;
   }
   
-
   .footer-2023 {
     margin-left: 535px;
   }

@@ -7,6 +7,7 @@ const body = document.querySelector('body');
 themeToggle.addEventListener('click', toggleTheme);
 
 function toggleTheme() {
+  
   const body = document.body;
   body.classList.toggle('dark_mode');
   themeToggle.classList.toggle('change_theme--btn-on');
