@@ -51,7 +51,7 @@ body.dark_mode .favorites-title{
     margin-bottom: 20px;
 }
 
-.fav-btn{
+.fav-btn-start{
     position: absolute;
     background-color: inherit;
     display: flex;
@@ -180,7 +180,6 @@ body.dark_mode .favorites-title{
         column-gap: 16px;
         row-gap: 32px;
         max-width: 100%;
-        justify-content: center;
     }
 
     .fav-text{
@@ -195,7 +194,7 @@ body.dark_mode .favorites-title{
         width: calc((100% - 16px) / 2);
     }
 
-    .fav-btn{
+    .fav-btn-start{
         font-size: 16px;
         line-height: 1.5;
         height: 24px;

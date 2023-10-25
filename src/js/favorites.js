@@ -1,34 +1,46 @@
+import { getData } from "./api";
+
 const refs = {
     list: document.querySelector('.fav-list'),
     text: document.querySelector('.fav-text'),
 }
-const LS = localStorage.getItem('dataToSave');
-    const data = JSON.parse(LS);
-    // let localStorageData = JSON.parse(localStorage.getItem('localStorageData') || '{}');
+const LS = localStorage.getItem('localStorageData');
+const data = JSON.parse(LS);
  let infoDetails = [];
+
+ let isInfoCards = false;
+
 refs.list.addEventListener('click', onDeleteItem)
+
 getFavoritesItemFromLS()
 
 
+
 function getFavoritesItemFromLS() {
+    if(!LS){
+return;
+    }
     
       console.log(data)
     const values = Object.values(data);
     for (const value of values) {
-        console.log(value);
-        
+        console.log(value._id);
         infoDetails.push(value);
-
+        isInfoCards = true;
     }
           
         }
-        console.log(infoDetails);
-        refs.list.innerHTML = createFavoritesMarkup(infoDetails);
+
+if (isInfoCards) {
+    refs.list.innerHTML = createFavoritesMarkup(infoDetails);
+    checkFavoritesItems()
+}
+
 
 
 
 function createFavoritesMarkup(arr){ 
-    return arr.map(({name,bodyPart,target,time,burnedCalories,_id})=>`
+    return arr.map(({name, bodyPart, target, time, burnedCalories, _id})=>`
     <li class="fav-item" data-name=${name} data-id="${_id}" id=${_id}>
             <div class="fav-box-link">
 
@@ -39,7 +51,7 @@ function createFavoritesMarkup(arr){
                 </button>
                 
             </div>
-            <button type="button" class="fav-btn"> Start
+            <button type="button" class="fav-btn-start"> Start
                 <span class="fav-icon-arrow"></span>
             </button>
             <h3 class="fav-title">
@@ -72,64 +84,66 @@ function onDeleteItem(e){
         return;
     }
 
-    const itemToDelete = e.target.closest('.fav-item')
-    const titleDetails = itemToDelete.dataset.name;
 
-    console.log(titleDetails)
+    async function fetchInfoDetails() {
+        try {
+          const ID = e.target.closest(".fav-item").dataset.id
+          console.log(ID)
+          const params = {
+            endpoint: `exercises/${ID}`,
+          };
+          return await getData(params);
+        } catch (err) {
+          console.log(err)
+        }
+      };
+      fetchInfoDetails().then(({ _id, bodyPart, name, target, burnedCalories, time }) => {
+        const dataToSave = {
+          _id,
+          name,
+          burnedCalories,
+          bodyPart,
+          target,
+          time
+        };
+        const nameOfDetails = `Exercies-Name: ${name}`;
+        let localStorageData = JSON.parse(localStorage.getItem('localStorageData') || '{}');
+        if (localStorage.getItem(nameOfDetails) !== null) {
+          delete localStorageData[nameOfDetails];
+          localStorage.removeItem(nameOfDetails, JSON.stringify(dataToSave))
+          localStorage.setItem('localStorageData', JSON.stringify(localStorageData));
+        }else {
+            localStorageData[nameOfEx] = dataToSave;
+            localStorage.setItem(nameOfEx, JSON.stringify(dataToSave));
+            localStorage.setItem('localStorageData', JSON.stringify(localStorageData));
+          }
+
+      });
+
+    const itemToDelete = e.target.closest('.fav-item')
+
     if (itemToDelete) {
         removeFavotitesItem(itemToDelete);
         
 }
-    // checkItem()
+checkFavoritesItems()
 }
 
+function removeFavotitesItem(itemToDelete){
+            const itemId = itemToDelete.id;
+            const item = document.getElementById(itemId)
+            item.remove()
+        }
 
 function checkFavoritesItems() {
     if (refs.list.childElementCount === 0) {
         refs.text.classList.remove('is-hidden')
+    }else{
+        refs.text.classList.add('is-hidden')
     }
 }
 
-function removeFavotitesItem(itemToDelete){
-  
-    
-    
-    const itemId = itemToDelete.id;
-       
-        const item = document.getElementById(itemId)
-        item.remove()
-}
-const btnDelit = document.querySelector(".fav-btn-delete")
-btnDelit.addEventListener("click", function(event){
-    
-    if (event.target.classList.contains('fav-btn-delete')) {
-        console.log("ryjgrf pageYOffset;fnf")
-        var cardElement = event.target.parentElement;
-        var idToDelete = cardElement.getAttribute('data-id');
-console.log(idToDelete)
-console.log(idToDelete)
-        // Получите объекты из Local Storage
-        var storedObjectsJSON = localStorage.getItem('dataToSave');
-        var storedObjects = storedObjectsJSON ? JSON.parse(storedObjectsJSON) : [];
 
-        // Найдите индекс объекта, который нужно удалить
-        var indexToDelete = storedObjects.findIndex(function(obj) {
-            return obj._id === idToDelete;
-        });
 
-        if (indexToDelete !== -1) {
-            
-            storedObjects.splice(indexToDelete, 1);
 
-            localStorage.setItem('dataToSave', JSON.stringify(storedObjects));
-
-            
-            cardElement.remove();
-            alert('Объект с ID ' + idToDelete + ' удален из LocalStorage.');
-        } else {
-            alert('Объект с ID ' + idToDelete + ' не найден в LocalStorage.');
-        }
-    }
-
-})
 
