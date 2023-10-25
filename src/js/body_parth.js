@@ -219,7 +219,7 @@ function updatePagination(page, perPage, totalPages, sectionTextValue) {
   }
   const pagination = new Pagination('pagination', paginationOptions);
 
-  
+   const scrollToEx = document.querySelector(".hero-filters");
   pagination.on('afterMove', function (event) {
     
     if (!isMainScreen) {
@@ -231,6 +231,11 @@ function updatePagination(page, perPage, totalPages, sectionTextValue) {
         updatePagination(Number(page), Number(perPage), totalPages, sectionTextValue);
         updateListInfoCard(results);
         setupListInfoCardStartButtons();
+       
+        if(scrollToEx){
+          scrollToEx.scrollIntoView({behavior: 'smooth'});
+          
+        }
       });
       return;
     }
@@ -241,6 +246,10 @@ function updatePagination(page, perPage, totalPages, sectionTextValue) {
       ({ results, page, perPage, totalPages }) => {
         updatePagination(Number(page), Number(perPage), totalPages, sectionTextValue);
         updateListPhotoCard(results);
+        if(scrollToEx){
+          scrollToEx.scrollIntoView({behavior: 'smooth'});
+          
+        }
       }
     );
   });
@@ -444,6 +453,15 @@ function createMarkupCardPhoto(arr) {
 
 
 //! --------------------------------------------MODAL--------------------------------------------
+
+
+ 
+//  btnFavorites.textContent.toggle("Remove from favorites", "Add to favorites");
+ 
+
+
+
+
 const closeModalBtn = document.querySelector('[data-modal-close]');
 const modalWindow = document.querySelector(".modal-section")
 const btnFavorites = document.querySelector(".btn-add-to-favorites")
@@ -457,26 +475,31 @@ const popular = document.querySelector('.popular')
 const descriptions = document.querySelector('.description-of-exercises')
 const imgModal = document.querySelector('.img-modal');
 const overflow = document.body;
-
 // ! open and close modal window
+window.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape') {
+    onCloseModal();
+  }
+});
+
+// 
+modalWindow.addEventListener('click', (event) => {
+  if (event.target === modalWindow) {
+    onCloseModal();
+  }
+});
 
 closeModalBtn.addEventListener('click', onCloseModal)
-
 function onCloseModal() {
-
 modalWindow.classList.toggle('is-hidden');
   overflow.style.overflow = 'visible';
 }
-
 function onOpenModal(evt) {
   evt.preventDefault();
   modalWindow.classList.toggle('is-hidden');
   overflow.style.overflow = 'hidden';
-
-
   async function updateInfoInModalWindow() {
     try {
-      
       const ID = evt.currentTarget.closest(".card-info-item-ex").dataset.id;
       console.log(ID)
       const params = {
@@ -487,8 +510,6 @@ function onOpenModal(evt) {
       console.log(err)
     }
   };
-
-
   updateInfoInModalWindow().then(({ _id, bodyPart, description, equipment, gifUrl, name, popularity, rating, target }) => {
     createMarkupModalWindow(_id, bodyPart, description, equipment, gifUrl, name, popularity, rating, target);
     if (localStorage.getItem(`Exercies-Name: ${name}`) !== null) {
@@ -498,7 +519,6 @@ function onOpenModal(evt) {
     }
   })
 }
- 
 function createMarkupModalWindow(_id, bodyPart, description, equipment, gifUrl, name, popularity, rating, target) {
   modalWindows.setAttribute("data-id", _id );
   nameExercies.textContent = name;
@@ -510,13 +530,10 @@ function createMarkupModalWindow(_id, bodyPart, description, equipment, gifUrl, 
   descriptions.textContent = description;
   imgModal.src = gifUrl;
 }
-
 // ! add exercise in favorites
-
 btnFavorites.addEventListener('click', onClickFavoritesBtn)
 
 function onClickFavoritesBtn(evt) {
- 
   async function updateInfoForModalWindow() {
     try {
       const ID = evt.currentTarget.parentNode.dataset.id
@@ -528,101 +545,48 @@ function onClickFavoritesBtn(evt) {
       console.log(err)
     }
   };
-
-  updateInfoForModalWindow().then(({ _id, bodyPart, name, target, burnedCalories,time }) => {
+  updateInfoForModalWindow().then(({ _id, bodyPart, name, target, burnedCalories, time }) => {
     const dataToSave = {
       _id,
       name,
-     burnedCalories,
-     bodyPart,
-       target,
-      time,
+      burnedCalories,
+      bodyPart,
+      target,
+      time
     };
-
-
-   
-    btnFavorites.classList.toggle("on-click-btn");
-
-    var storedObjectsJSON = localStorage.getItem('dataToSave');
-
-    var storedObjects = storedObjectsJSON ? JSON.parse(storedObjectsJSON) : [];
-
+    const nameOfEx = `Exercies-Name: ${name}`;
+    let localStorageData = JSON.parse(localStorage.getItem('localStorageData') || '{}');
+    if (localStorage.getItem(nameOfEx) !== null) {
+      btnFavorites.classList.remove('on-click-btn');
+       btnFavorites.innerHTML = `Add to favorites
+      <svg class="star" width="16" height="16">
+          <use href="./img/icons.svg#icon-heart"></use>
+      </svg>`
+       
+     
+        
     
-    var index = storedObjects.findIndex(function(obj) {
-        return obj._id === dataToSave._id;
-    });
-
-    if (index !== -1) {
-        
-        storedObjects.splice(index, 1);
-        
+      
+      
+      delete localStorageData[nameOfEx];
+      localStorage.removeItem(nameOfEx, JSON.stringify(dataToSave))
+      localStorage.setItem('localStorageData', JSON.stringify(localStorageData));
     } else {
-        
-        storedObjects.push(dataToSave);
-        
+      btnFavorites.classList.add('on-click-btn');
+      btnFavorites.textContent = 'Remove from favorites';
+      localStorageData[nameOfEx] = dataToSave;
+      localStorage.setItem(nameOfEx, JSON.stringify(dataToSave));
+      localStorage.setItem('localStorageData', JSON.stringify(localStorageData));
     }
-
-    localStorage.setItem("dataToSave", JSON.stringify(storedObjects));
-});
+  });
 }
-
-
- 
-   
-//     var storedObjectsJSON = localStorage.getItem('dataToSave'); // Получаем строку JSON из LocalStorage
-
-//     var storedObjects = storedObjectsJSON ? JSON.parse(storedObjectsJSON) : [];
-
-//     if (storedObjects.length > 0) {
-//         // Если в массиве уже есть объекты, добавьте новый объект в массив
-//         storedObjects.push(dataToSave);
-//         localStorage.setItem('dataToSave', JSON.stringify(storedObjects));
-//         alert('Новый объект добавлен в массив и сохранен в LocalStorage.');
-//     } else {
-//         // Если массив пуст, создайте новый массив и добавьте в него первый объект
-//         var firstObject = {dataToSave };
-//         var newObjects = [firstObject];
-//         localStorage.setItem('dataToSave', JSON.stringify(newObjects));
-//         alert('Первый объект добавлен в массив и сохранен в LocalStorage.');
-//     }
-// });}
-
-
-
-// let dataToSaveJSON =localStorage.getItem("dataToSave");
-
-// if(dataToSaveJSON){
-//   localStorage.removeItem("dataToSave");}
-//   else{
-//      localStorage.setItem("dataToSave",JSON.stringify(dataToSave))
-//   }
-//     })}
-   
-    // const nameOfEx = `Exercies-Name: ${name}`;
-    // let localStorageData = JSON.parse(localStorage.getItem('localStorageData') || '{}');
-
-    // if (localStorage.getItem(nameOfEx) !== null) {
-    //   btnFavorites.classList.remove('on-click-btn');
-    //   delete localStorageData[nameOfEx];
-    //   localStorage.removeItem(nameOfEx, JSON.stringify(dataToSave))
-    //   localStorage.setItem('localStorageData', JSON.stringify(localStorageData));
-
-    // } else {
-    //   btnFavorites.classList.add('on-click-btn');
-    //   localStorageData[nameOfEx] = dataToSave;
-    //   localStorage.setItem(nameOfEx, JSON.stringify(dataToSave));
-    //   localStorage.setItem('localStorageData', JSON.stringify(localStorageData));
-    // }
-  
-
 
 // ! rating stars
 const stars = document.querySelectorAll('.star');
 const ratingStars = document.querySelector('.rating_value');
 const ratingValue = Math.round(parseFloat(ratingStars.textContent));
-
 stars.forEach((star, index) => {
     if (index < ratingValue) {
-        star.classList.add('active-star'); 
+        star.classList.add('active-star');
     }
 });
