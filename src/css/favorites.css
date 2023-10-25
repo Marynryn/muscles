@@ -1,3 +1,10 @@
+body.dark_mode .favorites-title{
+    color: var(--background-color);
+  }
+
+  body.dark_mode .fav-text{
+    color: var(--background-color);
+  }
 
 .favorites-title{
     font-family:  Neue Montreal, sans-serif; 
@@ -58,9 +65,6 @@
     line-height: 1.2;
     padding: 0;
 }
-.fav-icon-arrow{
-    transform: rotate(90deg);
-}
 .fav-box-link{
     display: flex;
     gap: 8px;
@@ -78,6 +82,7 @@
 }
 
 .fav-btn-delete{
+    position: relative;
     padding: 0;
     width: 16px;
     height: 16px;
@@ -98,7 +103,7 @@
     text-overflow: ellipsis;
     white-space: nowrap;
 }
-.fav-title span{
+.fav-title .fav-title-text{
  width: 220px;
     white-space: nowrap;
     overflow: hidden;
@@ -148,7 +153,7 @@
     gap: 4px;
 }
 
-.fav-title span{
+.fav-title .fav-title-text{
     width: 250px;
     white-space: nowrap;
     overflow: hidden;
@@ -202,7 +207,7 @@
         margin-bottom: 8px;
     }
 
-    .fav-title span{
+    .fav-title .fav-title-text{
         width: 260px;
         white-space: nowrap;
         overflow: hidden;
@@ -256,7 +261,7 @@
         margin: 0;
         width: calc((100% - 16px) / 2);
     }
-    .fav-title span{
+    .fav-title .fav-title-text{
             width: 330px;
             white-space: nowrap;
             overflow: hidden;
@@ -270,4 +275,69 @@
     }
 
 }
+
+
+.fav-icon-delete{
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    left: 0;
+    top: 0;
+    
+  }
+  
+  .fav-icon-delete::after{
+    content: '';
+    background-image: url(../img/favorites/icon-trash.svg);
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    left: 0;
+    top: 0;
+  background-position: center;
+  background-color: inherit;
+  background-repeat: no-repeat;
+  }
+  
+  .fav-icon-arrow{
+    position: relative;
+    width: 18px;
+    height: 18px;
+  }
+  
+  .fav-icon-arrow::after{
+    content: '';
+    background-image: url(../img/favorites/icon-arrow.svg);
+    position: absolute;
+    transform: rotate(90deg);
+    width: 16px;
+    height: 16px;
+    left: 0;
+    top: 0;
+  background-position: center;
+  background-color: inherit;
+  background-repeat: no-repeat;
+  }
+  
+  .fav-icon-running{
+    position: relative;
+    width: 24px;
+    height: 24px;
+    background-color: #242424;
+    border-radius: 50%;
+  }
+  
+  .fav-icon-running::after{
+    content: '';
+    background-image: url(../img/favorites/icon-running-stick.svg);
+    position: absolute;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    left: 3px;
+    top: 3px;
+    background-position: center;
+    background-color: inherit;
+    background-repeat: no-repeat;
+  }
 
