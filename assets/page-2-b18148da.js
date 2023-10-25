@@ -1,0 +1,1 @@
+import"./background-f41616fb.js";const o={list:document.querySelector(".fav-list"),text:document.querySelector(".fav-text")};o.list.addEventListener("click",c);function c(e){if(!e.target.closest(".fav-btn-delete"))return;const t=e.target.closest(".fav-item");t&&i(t),checkItem()}function i(e){const t=e.id;document.getElementById(t).remove()}
