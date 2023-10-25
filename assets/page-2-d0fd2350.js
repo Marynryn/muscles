@@ -1,4 +1,4 @@
-import"./background-cdcefff0.js";const r={list:document.querySelector(".fav-list"),text:document.querySelector(".fav-text")},f=localStorage.getItem("dataToSave"),i=JSON.parse(f);let c=[];r.list.addEventListener("click",u);v();function v(){console.log(i);const a=Object.values(i);for(const t of a)console.log(t),c.push(t)}console.log(c);r.list.innerHTML=p(c);function p(a){return a.map(({name:t,bodyPart:e,target:s,time:l,burnedCalories:n,_id:o})=>`
+import"./background-721bac78.js";const r={list:document.querySelector(".fav-list"),text:document.querySelector(".fav-text")},f=localStorage.getItem("dataToSave"),i=JSON.parse(f);let c=[];r.list.addEventListener("click",u);v();function v(){console.log(i);const a=Object.values(i);for(const t of a)console.log(t),c.push(t)}console.log(c);r.list.innerHTML=p(c);function p(a){return a.map(({name:t,bodyPart:e,target:s,time:l,burnedCalories:n,_id:o})=>`
     <li class="fav-item" data-name=${t} data-id="${o}" id=${o}>
             <div class="fav-box-link">
 
