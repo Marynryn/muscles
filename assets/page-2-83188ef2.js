@@ -1,4 +1,4 @@
-import{g as S}from"./background-6edafb75.js";const n={list:document.querySelector(".fav-list"),text:document.querySelector(".fav-text")},p=localStorage.getItem("localStorageData"),x=JSON.parse(p);let v=[],m=!1;n.list.addEventListener("click",D);I();function I(){if(!p)return;const t=Object.values(x);for(const e of t)v.push(e),m=!0}m&&(n.list.innerHTML=h(v),d());function h(t){return t.map(({name:e,bodyPart:s,target:a,time:l,burnedCalories:o,_id:i})=>`
+import{g as S}from"./background-4ec40f8f.js";const n={list:document.querySelector(".fav-list"),text:document.querySelector(".fav-text")},p=localStorage.getItem("localStorageData"),x=JSON.parse(p);let v=[],m=!1;n.list.addEventListener("click",D);I();function I(){if(!p)return;const t=Object.values(x);for(const e of t)v.push(e),m=!0}m&&(n.list.innerHTML=h(v),d());function h(t){return t.map(({name:e,bodyPart:s,target:a,time:l,burnedCalories:o,_id:i})=>`
     <li class="fav-item" data-name=${e} data-id="${i}" id=${i}>
             <div class="fav-box-link">
 
