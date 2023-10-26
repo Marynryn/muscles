@@ -363,7 +363,7 @@ function createMarkupCardInfo(arr) {
     <div class="div-workout-rating">
       <a class="link-workout">workout</a>
       <p class="js-text-rating">
-        ${rating}
+        ${checkRating(rating)}
         <span class="ex-icon-star" width="18" height="18"></span>
       </p>
     </div>
@@ -421,7 +421,9 @@ function createMarkupCardPhoto(arr) {
     .join('');
 }
 
-
+function checkRating(rating){
+  return rating.toFixed(1)
+}
 
 
 
