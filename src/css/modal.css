@@ -137,7 +137,7 @@ font-size: 12px;
 color: var(--background-color);
 font-size: 14px;
 font-weight: 500;
-line-height: 1,28;
+line-height: 1.28;
 }
 
 .name-info {
@@ -179,7 +179,7 @@ margin: 8px auto 20px;
 margin-bottom: 20px;
 color: rgba(244, 244, 244, 0.60);
 font-size: 14px;
-line-height: 1,28;
+line-height: 1.28;
 }
 
 .btn-add-to-favorites {
@@ -188,7 +188,7 @@ color: #242424;
 width: 183px;
 height: 48px;
 font-size: 14px;
-line-height: 1,28;
+line-height: 1.28;
 display: flex;
 padding: 12px 24px;
 justify-content: center;
@@ -199,24 +199,7 @@ background: var(--background-color);
     stroke: #242424;
     transition: all 0.3s;
 }
-.btn-remove-from-favorites
-{
-    
-border: 1px solid #F4F4F4;
-color: #242424;
-width: 183px;
-height: 48px;
-font-size: 14px;
-line-height: 1,28;
-display: flex;
-padding: 12px 24px;
-justify-content: center;
-align-items: center;
-gap: 8px;
-border-radius: 30px;
-background: var(--background-color);
-    stroke: #242424;
-    transition: all 0.3s;}
+
     .madol-btn{
         display: flex;
         gap: 15px;

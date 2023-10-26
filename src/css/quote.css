@@ -236,7 +236,7 @@
     transition: scale 300ms ease-in-out;
   }
   .js-quote-container:hover {
-    scale: 1.03;
+    scale: 1.3;
   }
 
   .js-quote-text {
@@ -249,7 +249,7 @@
     transition: scale 300ms ease-in-out;
   }
   .quote-img-item:hover {
-    scale: 1.03;
+    scale: 1.3;
   }
 
   @media (min-device-pixel-ratio: 2),
@@ -263,7 +263,7 @@
     transition: scale 300ms ease-in-out;
   }
   .quote-static-item:hover {
-    scale: 1.03;
+    scale: 1.3;
   }
 
   .quote-static-text {
