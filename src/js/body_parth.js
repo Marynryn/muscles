@@ -284,7 +284,7 @@ function onItemClick(evt) {
       setupListInfoCardStartButtons()
     }
   );
-  refs.listPhotoCard.removeEventListener('click', onItemClick);
+ 
 }
 
 function addDetailsTextForExercisesTitle(detailText) {
