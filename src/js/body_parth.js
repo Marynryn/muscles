@@ -1,6 +1,7 @@
 
 import { getData, patchData, postData } from './api.js';
 import axios from 'axios';
+import { Notify } from 'notiflix';
 import Pagination from 'tui-pagination';
 import 'tui-pagination/dist/tui-pagination.css';
 
@@ -21,6 +22,7 @@ let lastSelectedCardTitle = undefined;
 let lastSectionValue = '';
 let lastFetchedData = [];
 let lastPaginationOptions = {};
+let modalStartBtn = [];
 
 let maxCardOnScreen = 12;
 let isMainScreen = true;
@@ -30,7 +32,6 @@ const PAGINATION_VISIBLE_PAGES = 3;
 refs.exerciseSectionsList.addEventListener('click', onClickSectionButton);
 refs.exercisesTitle.addEventListener('click', onClickExercisesTitle)
 window.addEventListener('resize', onResize);
-
 updateMaxCardOnScreen()
 
 function onClickExercisesTitle(evt){
@@ -105,6 +106,8 @@ function showSearchInputForm(isDisplay){
 
 function updateMaxCardOnScreen() {
   let width = getWindowWidth()
+  resetExercisesTitle();
+  showSearchInputForm(false)
   maxCardOnScreen = width < TABLET_WIDTH ? 9 : 12;
 }
 
@@ -116,7 +119,7 @@ function getWindowWidth() {
 
 function onResize() {
   clearListInfoCard()
-   updateMaxCardOnScreen()
+  updateMaxCardOnScreen()
 
   fetchExercisesSection(1,"Body parts").then(
     ({ results, page, perPage, totalPages }) => {
@@ -203,7 +206,7 @@ function updatePagination(page, perPage, totalPages, sectionTextValue) {
   }
   const pagination = new Pagination('pagination', paginationOptions);
 
-   const scrollToEx = document.querySelector(".hero-filters");
+   const scrollToEx = document.querySelector(".exercises-title");
   pagination.on('afterMove', function (event) {
     
     if (!isMainScreen) {
@@ -217,8 +220,8 @@ function updatePagination(page, perPage, totalPages, sectionTextValue) {
         setupListInfoCardStartButtons();
        
         if(scrollToEx){
+          console.log(1)
           scrollToEx.scrollIntoView({behavior: 'smooth'});
-          
         }
       });
       return;
@@ -229,6 +232,7 @@ function updatePagination(page, perPage, totalPages, sectionTextValue) {
         updatePagination(Number(page), Number(perPage), totalPages, sectionTextValue);
         updateListPhotoCard(results);
         if(scrollToEx){
+          console.log(2)
           scrollToEx.scrollIntoView({behavior: 'smooth'});
         }
       }
@@ -318,12 +322,18 @@ function onInputSearch(evt) {
   fetchExercisesByKeyword(inputValue).then(({ results }) => {
 
     if (results.length === 0) {
-      throw new Error(response.status)
+      throw new Error(error.message)
+      return;
     }
 
     updateListInfoCard(results);
     refs.exercisesForm.reset();
   })
+  .catch(err => {
+    
+    Notify.failure(`not found, try again 🔎`)
+  })
+  
 }
 // ! API
 async function fetchExercisesByKeyword(inputValue) {
@@ -411,7 +421,7 @@ function createMarkupCardPhoto(arr) {
     .join('');
 }
 
- let modalStartBtn = [];
+
 
 
 

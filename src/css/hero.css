@@ -205,7 +205,7 @@ body.dark_mode .button-filter {
     padding: 4px 16px;
     font-size: 16px;
     height: 32px;
-    cursor: pointer;
+    cursor: auto;
     font-family: Neue Montreal, sans-serif;
   }
 
