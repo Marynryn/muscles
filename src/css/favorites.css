@@ -236,10 +236,6 @@ body.dark_mode .favorites-title{
         padding-right: 16px;
         min-width: 856px;
     }
-    .box-fav:first-child{
-        padding: auto auto;
-        
-    }
 
     .box-fav::-webkit-scrollbar {
         width: 8px;

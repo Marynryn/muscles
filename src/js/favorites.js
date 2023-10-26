@@ -7,8 +7,9 @@ const refs = {
 const LS = localStorage.getItem('localStorageData');
 const data = JSON.parse(LS);
  let infoDetails = [];
-
+ let arrayButtonsStart = []
  let isInfoCards = false;
+
 
 refs.list.addEventListener('click', onDeleteItem)
 
@@ -29,6 +30,7 @@ return;
 
 if (isInfoCards) {
     refs.list.innerHTML = createFavoritesMarkup(infoDetails);
+    setupListInfoCardStartButtons()
     checkFavoritesItems()
 }
 
@@ -132,6 +134,81 @@ function checkFavoritesItems() {
     }else{
         refs.text.classList.add('is-hidden')
     }
+}
+
+function setupListInfoCardStartButtons() {
+    arrayButtonsStart = document.querySelectorAll('.fav-btn-start');
+    arrayButtonsStart.forEach( button =>
+    button.addEventListener('click', onOpenModal))
+}
+
+//   ========================Modal====================
+
+const closeModalBtn = document.querySelector('[data-modal-close]');
+const modalWindow = document.querySelector(".modal-section")
+const btnFavorites = document.querySelector(".btn-add-to-favorites")
+const modalWindows = document.querySelector('.modal-window')
+const nameExercies = document.querySelector('.name-exercies')
+const ratingValues = document.querySelector('.rating_value')
+const targets = document.querySelector('.target')
+const body = document.querySelector('.body')
+const equipments = document.querySelector('.equipment')
+const popular = document.querySelector('.popular')
+const descriptions = document.querySelector('.description-of-exercises')
+const imgModal = document.querySelector('.img-modal');
+const overflow = document.body;
+
+
+window.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+      onCloseModal();
+    }
+  });
+  
+  // 
+  modalWindow.addEventListener('click', (event) => {
+    if (event.target === modalWindow) {
+      onCloseModal();
+    }
+  });
+
+
+closeModalBtn.addEventListener('click', onCloseModal)
+function onCloseModal() {
+modalWindow.classList.toggle('is-hidden');
+overflow.style.overflow = 'visible';
+}
+function onOpenModal(evt) {
+evt.preventDefault();
+btnFavorites.style.display= 'none'
+modalWindow.classList.toggle('is-hidden');
+overflow.style.overflow = 'hidden';
+async function updateInfoInModalWindow() {
+    try {
+    const ID = evt.currentTarget.closest(".fav-item").dataset.id;
+    
+    const params = {
+        endpoint:`exercises/${ID}`,
+    };
+    return await getData(params);
+    } catch (err) {
+    console.log(err)
+    }
+};
+updateInfoInModalWindow().then(({ _id, bodyPart, description, equipment, gifUrl, name, popularity, rating, target }) => {
+    createMarkupModalWindow(_id, bodyPart, description, equipment, gifUrl, name, popularity, rating, target);
+})
+}
+function createMarkupModalWindow(_id, bodyPart, description, equipment, gifUrl, name, popularity, rating, target) {
+  modalWindows.setAttribute("data-id", _id );
+  nameExercies.textContent = name;
+  ratingValues.textContent = Number(rating);
+  targets.textContent = target;
+  body.textContent = bodyPart;
+  equipments.textContent = equipment;
+  popular.textContent = popularity;
+  descriptions.textContent = description;
+  imgModal.src = gifUrl;
 }
 
 

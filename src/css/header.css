@@ -107,24 +107,29 @@ body.dark_mode .header-burger-img {
     padding: 14px 36px;
     border-radius: 60px;
     background-color: #242424;
-    gap: 7px;
+    gap: 20px;
   }
   .header-item-link {
     color: #f4f4f4;
     font-family: Neue Montreal;
     font-size: 16px;
     line-height: 1.5;
-    padding: 6px 12px;
+    /* padding: 6px 12px; */
   }
   .page2 {
     color: #f4f4f4;
   }
 
   .header-pages-active {
+    /* background-color: #f4f4f4;
+    color: #242424;
+    border-radius: 30px;
+    width: 66px; */
     background-color: #f4f4f4;
     color: #242424;
     border-radius: 30px;
-    width: 66px;
+    min-width: 120px;
+    padding: 5px 10px 5px 10px;
   }
 
   .header-pages-active2 {
@@ -212,8 +217,13 @@ body.dark_mode .change_theme--btn {
   top: 3px;
   left: 2px;
 }
-.icon_sun,
+.icon_sun{
+  display: block;
+  height: 100%;
+  stroke: var(--background-color);
+}
 .icon_moon {
+  display: none;
   height: 100%;
   stroke: var(--background-color);
 }
