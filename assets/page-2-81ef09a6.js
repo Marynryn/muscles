@@ -1,4 +1,4 @@
-import{g}from"./background-4c853c70.js";const u={list:document.querySelector(".fav-list"),text:document.querySelector(".fav-text")},S=localStorage.getItem("localStorageData"),b=JSON.parse(S);let y=[],v=[],x=!1;u.list.addEventListener("click",D);q();function q(){if(!S)return;const t=Object.values(b);for(const e of t)y.push(e),x=!0}x&&(u.list.innerHTML=w(y),E(),h());function w(t){return t.map(({name:e,bodyPart:a,target:o,time:s,burnedCalories:n,_id:l})=>`
+import{g}from"./background-69fd3e2e.js";const u={list:document.querySelector(".fav-list"),text:document.querySelector(".fav-text")},S=localStorage.getItem("localStorageData"),b=JSON.parse(S);let y=[],v=[],x=!1;u.list.addEventListener("click",D);q();function q(){if(!S)return;const t=Object.values(b);for(const e of t)y.push(e),x=!0}x&&(u.list.innerHTML=w(y),E(),h());function w(t){return t.map(({name:e,bodyPart:a,target:o,time:s,burnedCalories:n,_id:l})=>`
     <li class="fav-item" data-name=${e} data-id="${l}" id=${l}>
             <div class="fav-box-link">
 
