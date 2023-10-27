@@ -67,7 +67,7 @@ body.dark_mode .hero-star-icon {
 }
 
 .hero-image {
-  background-image: url('./img/hero/hero-image-optim.png');
+  background-image: url('../img/hero/hero-image-optim.png');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -81,7 +81,7 @@ body.dark_mode .hero-star-icon {
   (min-resolution: 192dpi),
   (min-resolution: 2dppx) {
   .hero-image {
-    background-image: url('./img/hero/hero-image-optim@2x.png');
+    background-image: url('../img/hero/hero-image-optim@2x.png');
   }
 }
 .image-rounded {
