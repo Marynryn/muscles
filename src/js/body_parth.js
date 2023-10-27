@@ -334,6 +334,7 @@ function onInputSearch(evt) {
   .catch(err => {
     
     Notify.failure(`not found, try again 🔎`)
+    refs.exercisesForm.reset();
   })
   
 }
