@@ -212,6 +212,14 @@ function createMarkupModalWindow(_id, bodyPart, description, equipment, gifUrl, 
 }
 
 
+const stars = document.querySelectorAll('.star');
+const ratingStars = document.querySelector('.rating_value');
+const ratingValue = Math.round(parseFloat(ratingStars.textContent));
+stars.forEach((star, index) => {
+    if (index < ratingValue) {
+        star.classList.add('active-star');
+    }
+});
 
 
 
