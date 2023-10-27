@@ -327,6 +327,8 @@ function onInputSearch(evt) {
     }
 
     updateListInfoCard(results);
+
+    setupListInfoCardStartButtons()
     refs.exercisesForm.reset();
   })
   .catch(err => {
