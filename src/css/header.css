@@ -4,6 +4,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-family: "Neue Montreal", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 .header-logo {
   height: 24px;
@@ -15,7 +18,11 @@
 body.dark_mode .header-logo-img {
   fill: var(--background-color);
 }
-
+/* .header-pages-item-link{
+  font-family: Neue Montreal, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+} */
 .header-pages {
   display: none;
 }

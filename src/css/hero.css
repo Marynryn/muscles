@@ -3,7 +3,7 @@
   padding-bottom: 32px;
 }
 .hero-container {
-  padding-top: 80px;
+  padding-top: 64px;
   position: relative;
 }
 .hero-background {
@@ -19,9 +19,9 @@
   min-width: 94px;
 }
 .hero-header {
-  font-family: Neue Montreal, sans-serif;
+
   color: var(--body-text-color);
-  font-size: 38px;
+  font-size: 40px;
   font-weight: 400;
   line-height: 1.2;
   letter-spacing: -0.8px;
@@ -37,7 +37,7 @@ body.dark_mode .hero-header {
   color: var(--white-color);
   font-size: 14px;
   font-weight: 400;
-  font-family: Neue Montreal, sans-serif;
+ 
   line-height: 1.28;
   letter-spacing: -0.36px;
   padding-bottom: 20px;
@@ -67,7 +67,7 @@ body.dark_mode .hero-star-icon {
 }
 
 .hero-image {
-  background-image: url('../img/hero/hero-image-optim.png');
+  background-image: url('./img/hero/hero-image-optim.png');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -81,7 +81,7 @@ body.dark_mode .hero-star-icon {
   (min-resolution: 192dpi),
   (min-resolution: 2dppx) {
   .hero-image {
-    background-image: url('../img/hero/hero-image-optim@2x.png');
+    background-image: url('./img/hero/hero-image-optim@2x.png');
   }
 }
 .image-rounded {
@@ -90,14 +90,14 @@ body.dark_mode .hero-star-icon {
 
 .button-filter {
   height: 26px;
-  font-family: Neue Montreal, sans-serif;
+ 
   border-radius: 30px;
   border-color: var(--hero-btn-hover-color);
   color: var(--hero-btn-hover-color);
   background-color: transparent;
   border: 1px solid var(--body-text-color);
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 400;
   width: 74px;
 }
 body.dark_mode .button-filter {
@@ -151,8 +151,10 @@ body.dark_mode .button-filter {
   }
 
   .hero-p {
-    min-width: 280px;
+    min-width: 528px;
+    font-size: 18px;
     padding-bottom: 0px;
+    line-height:  1.33;
   }
   .hero-image {
     display: flex;
@@ -265,6 +267,10 @@ body.dark_mode .button-filter {
     .hero-image {
       background-image: url('../img/hero/hero-image-desktop-optim@2x.png');
     }
+    .hero-box-image {
+      background-image: url('.img/hero/hero-box-image@2x.png');
+    }
+
   }
   .hero-header {
     font-size: 74px;
