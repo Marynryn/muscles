@@ -447,6 +447,7 @@ const popular = document.querySelector('.popular')
 const descriptions = document.querySelector('.description-of-exercises')
 const imgModal = document.querySelector('.img-modal');
 const overflow = document.body;
+let dataToSave = {}
 // ! open and close modal window
 window.addEventListener('keydown', (event) => {
   if (event.key === 'Escape') {
@@ -482,7 +483,15 @@ function onOpenModal(evt) {
       console.log(err)
     }
   };
-  updateInfoInModalWindow().then(({ _id, bodyPart, description, equipment, gifUrl, name, popularity, rating, target }) => {
+  updateInfoInModalWindow().then(({ _id, time, burnedCalories, bodyPart, description, equipment, gifUrl, name, popularity, rating, target }) => {
+     dataToSave = {
+      _id,
+      name,
+      burnedCalories,
+      bodyPart,
+      target,
+      time
+    };
     createMarkupModalWindow(_id, bodyPart, description, equipment, gifUrl, name, popularity, rating, target);
     if (localStorage.getItem(`Exercies-Name: ${name}`) !== null) {
       btnFavorites.classList.add('on-click-btn');
@@ -511,27 +520,8 @@ function createMarkupModalWindow(_id, bodyPart, description, equipment, gifUrl, 
 btnFavorites.addEventListener('click', onClickFavoritesBtn)
 
 function onClickFavoritesBtn(evt) {
-  async function updateInfoForModalWindow() {
-    try {
-      const ID = evt.currentTarget.parentNode.parentNode.dataset.id
-      const params = {
-        endpoint: `exercises/${ID}`,
-      };
-      return await getData(params);
-    } catch (err) {
-      console.log(err)
-    }
-  };
-  updateInfoForModalWindow().then(({ _id, bodyPart, name, target, burnedCalories, time }) => {
-    const dataToSave = {
-      _id,
-      name,
-      burnedCalories,
-      bodyPart,
-      target,
-      time
-    };
-    const nameOfEx = `Exercies-Name: ${name}`;
+
+  const nameOfEx = `Exercies-Name: ${dataToSave.name}`;
     let localStorageData = JSON.parse(localStorage.getItem('localStorageData') || '{}');
     if (localStorage.getItem(nameOfEx) !== null) {
       btnFavorites.classList.remove('on-click-btn');
@@ -547,7 +537,6 @@ function onClickFavoritesBtn(evt) {
       localStorage.setItem(nameOfEx, JSON.stringify(dataToSave));
       localStorage.setItem('localStorageData', JSON.stringify(localStorageData));
     }
-  });
 }
 
 // ! rating stars

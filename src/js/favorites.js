@@ -5,9 +5,11 @@ const refs = {
     text: document.querySelector('.fav-text'),
 }
 const LS = localStorage.getItem('localStorageData');
-const data = JSON.parse(LS);
+const parsedLocalStorageData = JSON.parse(LS);
+
  let infoDetails = [];
  let arrayButtonsStart = []
+ let keysLocalStorage = []
  let isInfoCards = false;
 
 
@@ -19,8 +21,13 @@ function getFavoritesItemFromLS() {
     if(!LS){
 return;
     }   
+    const keys = Object.keys(parsedLocalStorageData)
+    for (const key of keys) {
+        keysLocalStorage.push(key)
+
+    }
      
-    const values = Object.values(data);
+    const values = Object.values(parsedLocalStorageData);
     for (const value of values) {
       
         infoDetails.push(value);
@@ -36,7 +43,7 @@ if (isInfoCards) {
 
 function createFavoritesMarkup(arr){ 
     return arr.map(({name, bodyPart, target, time, burnedCalories, _id})=>`
-    <li class="fav-item" data-name=${name} data-id="${_id}" id=${_id}>
+    <li class="fav-item" data-name=${name} id=${_id}>
             <div class="fav-box-link">
 
                 <a href="./index.html" class="fav-link">workout</a>
@@ -78,55 +85,33 @@ function onDeleteItem(e){
     if (!e.target.closest('.fav-btn-delete')) {
         return;
     }
- async function fetchInfoDetails() {
-        try {
-          const ID = e.target.closest(".fav-item").dataset.id
-          
-          const params = {
-            endpoint: `exercises/${ID}`,
-          };
-          return await getData(params);
-        } catch (err) {
-          console.log(err)
-        }
-      };
-      fetchInfoDetails().then(({ _id, bodyPart, name, target, burnedCalories, time }) => {
-        const dataToSave = {
-          _id,
-          name,
-          burnedCalories,
-          bodyPart,
-          target,
-          time
-        };
-        const nameOfDetails = `Exercies-Name: ${name}`;
-        let localStorageData = JSON.parse(localStorage.getItem('localStorageData') || '{}');
-        if (localStorage.getItem(nameOfDetails) !== null) {
-          delete localStorageData[nameOfDetails];
-          localStorage.removeItem(nameOfDetails, JSON.stringify(dataToSave))
-          localStorage.setItem('localStorageData', JSON.stringify(localStorageData));
-        }else {
-            localStorageData[nameOfEx] = dataToSave;
-            localStorage.setItem(nameOfEx, JSON.stringify(dataToSave));
-            localStorage.setItem('localStorageData', JSON.stringify(localStorageData));
-          }
 
-      });
 
     const itemToDelete = e.target.closest('.fav-item')
 
     if (itemToDelete) {
         removeFavotitesItem(itemToDelete);
-        
-}
-checkFavoritesItems()
+    }
+    checkFavoritesItems()
 }
 
 function removeFavotitesItem(itemToDelete){
-            const itemId = itemToDelete.id;
-            const item = document.getElementById(itemId)
-            item.remove()
-        }
+    const itemSpan = itemToDelete.querySelector(".fav-title-text")
+    const titleName = itemSpan.textContent.toLowerCase()
+
+    const nameOfDetails = `Exercies-Name: ${titleName}`;
+
+    let copyLocalStorageData = JSON.parse(localStorage.getItem('localStorageData') || '{}');
+    delete copyLocalStorageData[nameOfDetails];
+    localStorage.setItem('localStorageData', JSON.stringify(copyLocalStorageData));
+
+    removeItem(itemToDelete.id)
+}
+
+function removeItem(itemId){
+    const item = document.getElementById(itemId)
+    item.remove()
+}
 
 function checkFavoritesItems() {
     if (refs.list.childElementCount === 0) {
@@ -220,6 +205,8 @@ stars.forEach((star, index) => {
         star.classList.add('active-star');
     }
 });
+
+
 
 
 
